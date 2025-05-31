@@ -1,0 +1,77 @@
+
+body {
+    margin: 0;
+    background-color: #121212;
+    color: #fff;
+}
+
+.main-body {
+   
+    padding: 30px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+
+.main-card{
+   
+    display:flex;
+    flex-direction: column;
+}
+
+.cards{
+    display:flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+.card {
+    background-color: #1e1e2f;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    color: #fff;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.card p {
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.card span {
+    color: #76ff03;
+    font-size: 14px;
+}
+
+.chart-card, .recent-activity {
+    background-color: #1e1e2f;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.recent-activity table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+}
+
+.recent-activity th,
+.recent-activity td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+canvas {
+    background: transparent;
+}
+

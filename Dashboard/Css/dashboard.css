@@ -1,0 +1,66 @@
+.hamburger {
+
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px 16px;
+    display: none;
+    background-color: #333;
+    color: white;
+    border: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+}
+
+/* Dashboard base styles */
+.dashboard {
+position: fixed;
+top: 0;
+left: -250px; /* hide it off-screen */
+width: 220px;
+height: 100vh;
+background-color: #222;
+transition: left 0.3s ease;
+z-index: 1000;
+
+/* Prevent blocking content when hidden */
+pointer-events: none;
+opacity: 0;
+padding-top:60px;
+}
+/* Responsive behavior for small screens */
+
+.hamburger {
+display: block;
+}
+
+    
+.dashboard.open {
+left: 0;
+pointer-events: auto;
+opacity: 1;
+}
+
+
+ul li{
+list-style: none;
+}
+
+ul{
+width:400px;
+}
+
+li{
+width:fit-content
+}
+
+.dashboard a{
+    text-decoration: none;
+    color:white;
+}
+
+.dashboard a:hover{
+    color:royalblue;
+}
+

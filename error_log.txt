@@ -1,0 +1,40 @@
+[30-May-2025 07:21:30 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'vehiclerenting.bookings' doesn't exist in C:\xampp\htdocs\project\User\Php\rate_vehicle.php:25
+Stack trace:
+#0 C:\xampp\htdocs\project\User\Php\rate_vehicle.php(25): mysqli->prepare('SELECT v.vehicl...')
+#1 {main}
+  thrown in C:\xampp\htdocs\project\User\Php\rate_vehicle.php on line 25
+[30-May-2025 07:21:47 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'vehiclerenting.vehicles' doesn't exist in C:\xampp\htdocs\project\User\Php\rate_vehicle.php:25
+Stack trace:
+#0 C:\xampp\htdocs\project\User\Php\rate_vehicle.php(25): mysqli->prepare('SELECT v.vehicl...')
+#1 {main}
+  thrown in C:\xampp\htdocs\project\User\Php\rate_vehicle.php on line 25
+[30-May-2025 07:21:56 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'v.name' in 'field list' in C:\xampp\htdocs\project\User\Php\rate_vehicle.php:25
+Stack trace:
+#0 C:\xampp\htdocs\project\User\Php\rate_vehicle.php(25): mysqli->prepare('SELECT v.vehicl...')
+#1 {main}
+  thrown in C:\xampp\htdocs\project\User\Php\rate_vehicle.php on line 25
+[30-May-2025 07:24:24 Europe/Berlin] PHP Warning:  Undefined array key "image" in C:\xampp\htdocs\project\User\Php\rate_vehicle.php on line 66
+[30-May-2025 07:24:24 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\project\User\Php\rate_vehicle.php on line 66
+[30-May-2025 07:24:24 Europe/Berlin] PHP Warning:  Undefined array key "name" in C:\xampp\htdocs\project\User\Php\rate_vehicle.php on line 68
+[30-May-2025 07:24:24 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\project\User\Php\rate_vehicle.php on line 68
+[30-May-2025 07:24:24 Europe/Berlin] PHP Warning:  Undefined array key "description" in C:\xampp\htdocs\project\User\Php\rate_vehicle.php on line 69
+[30-May-2025 07:24:24 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\project\User\Php\rate_vehicle.php on line 69
+[30-May-2025 07:28:37 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'vehiclerenting.bookings' doesn't exist in C:\xampp\htdocs\project\User\Php\rate_vehicle.php:36
+Stack trace:
+#0 C:\xampp\htdocs\project\User\Php\rate_vehicle.php(36): mysqli->prepare('SELECT \r\n      ...')
+#1 {main}
+  thrown in C:\xampp\htdocs\project\User\Php\rate_vehicle.php on line 36
+[30-May-2025 07:28:51 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'v.vehicle_statu' in 'field list' in C:\xampp\htdocs\project\User\Php\rate_vehicle.php:36
+Stack trace:
+#0 C:\xampp\htdocs\project\User\Php\rate_vehicle.php(36): mysqli->prepare('SELECT \r\n      ...')
+#1 {main}
+  thrown in C:\xampp\htdocs\project\User\Php\rate_vehicle.php on line 36
+[30-May-2025 07:28:58 Europe/Berlin] PHP Warning:  Undefined array key "vehicle_statu" in C:\xampp\htdocs\project\User\Php\rate_vehicle.php on line 95
+[30-May-2025 07:28:58 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\project\User\Php\rate_vehicle.php on line 95
+[30-May-2025 07:29:40 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM booking b
+        JOIN vehicle v ON b.vehicle_id = v.vehicle_id
+      ...' at line 13 in C:\xampp\htdocs\project\User\Php\rate_vehicle.php:36
+Stack trace:
+#0 C:\xampp\htdocs\project\User\Php\rate_vehicle.php(36): mysqli->prepare('SELECT \r\n      ...')
+#1 {main}
+  thrown in C:\xampp\htdocs\project\User\Php\rate_vehicle.php on line 36

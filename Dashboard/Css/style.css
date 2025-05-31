@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css?family=Audiowide|Roboto|chiller");
+*{
+    margin:0;
+    padding:0;
+    font-family: Roboto;
+    color:none;
+    
+}
+body{
+    background-color: rgb(187, 185, 185);
+}
+a{
+  text-decoration: none;
+  color:black;
+}
+
+p{
+  font-size: 18px;
+}
+h1{
+  
+    text-transform: capitalize;
+      text-decoration-line: none;
+      font-weight: 400;
+      font-size: clamp(1.25rem, 0.9327rem + 1.4103vw, 2.625rem);
+      color:black;
+  
+}
+
+
+.main_body{
+
+    display:flex;
+    flex-direction:column;
+}
+
+.second_container{
+   
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+}
+.nav_menu{
+    width:20%;
+
+
+
+}
+.main_inside{
+ 
+    padding-top:20px;
+    
+}
+
+
+.label-group{
+  display:flex;
+  flex-direction:column;
+
+}
+.field-group{
+  display:flex;
+  flex-direction:column;
+
+}
+.main{
+  padding:20px 60px;
+  display:flex;
+  flex-direction:column;
+  row-gap: 20px;
+}
+form {
+  margin-bottom: 10px;
+  
+  width:100%;
+  display: flex;
+  flex-direction:row;
+  column-gap: 20px;
+
+  
+}
+
+form label {
+  display: block;
+  color: #333333;
+  
+  font-size: 18px;
+  padding:10px
+}
+
+form input , select {
+  width: 100%;
+  padding: 6px;
+  padding-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color:black;
+}
+input::placeholder{
+  color:black;
+}
+
+
+
+form input[type="file"]{
+  padding:6px;
+}
+
+.field-group{
+  width:50%;
+}
+
+input [type="submit"]{
+  width:20%;
+}
+table {
+  width: 100%;
+  border: 2px solid black;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid black;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+td {
+  background-color: #d6d2d2;
+
+}
+
+th:last-child, td:last-child {
+  border-right: none;
+}
+
+.search{
+  display: flex;
+  float: right;
+  width: 300px;   
+}
+
+
+
+
+ a {
+  position: relative;
+ 
+  font-size: 20px;
+  display: table;
+  
+  padding: 10px;
+  display: flex;
+  text-decoration: none;
+}
+
+a:hover {
+ 
+  color: royalblue;
+}
+
+a > div {
+  padding-left: 15px;
+}
+
+a.active {
+  background: #3d3d3d;
+  color:green;
+}
+
+.dashboard_container{
+  margin-bottom: 40px;
+}
+
+.btn{
+  padding:4px 8px;
+  font-size:16px;
+  margin:0px
+}
+
+ .main_body {
+            padding: 20px;
+        }
+
+        .second_container {
+            margin: 0 auto;
+        }
+
+        .main_inside h1 {
+            margin-bottom: 10px;
+        }
+
+        .green-btn,
+        .blue-btn,
+        .red-btn {
+            padding: 8px 14px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .green-btn {
+            background-color:green ;
+            color: white;
+        }
+
+        .blue-btn {
+            background-color: rgb(16, 43, 124);
+            color: white;
+        }
+
+        .red-btn {
+            background-color:  rgb(156, 43, 43);
+            color: white;
+        }
+
+        .category {
+            margin: 10px 0;
+        }
+
+        .search {
+            padding: 8px;
+            width: 250px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .vehicle_table_container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        .vehicle_table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f4f4f4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .vehicle_table th,
+        .vehicle_table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .vehicle_table th {
+            background-color: #333;
+            color: white;
+        }
+
+        .vehicle_table img {
+            max-height: 80px;
+            object-fit: contain;
+        }
