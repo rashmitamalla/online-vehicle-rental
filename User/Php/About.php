@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Self Drive Nepal</title>
+    <title>About Us</title>
     <link rel="stylesheet" href="../../User/Css/style.css">
     <style>
         .about_header {
@@ -32,19 +32,19 @@
     <?php include 'Header.php'; ?>
     <div class="about_header">
         <h1>ABOUT US</h1>
-        <p>We are The Nepal's Largest Self Drive Vehicle Rental Company, with 100s of fleets</p>
+        <p>We are The Nepal's  vehicle rental site with 100s of fleets</p>
     </div>
 
     <div class="description">
-        <h2 class="my-title-inner">About Self Drive Nepal</h2>
-        <p>Welcome to Self Drive Nepal, Nepal’s largest self-drive vehicle rental service provider! With over a decade of experience and the largest fleet of vehicles in the country, we are here to revolutionize your travel experience. Whether you need a car for a day, a week, a month, or even a year, we offer unparalleled flexibility, affordability, and quality to cater to all your vehicle rental needs.</p>
+        <h2 class="my-title-inner">About vehicle rental site Nepal</h2>
+        <p>Welcome to vehicle rental in Nepal, Nepal’s largest self-drive vehicle rental service provider! With over a decade of experience and the largest fleet of vehicles in the country, we are here to revolutionize your travel experience. Whether you need a car for a day, a week, a month, or even a year, we offer unparalleled flexibility, affordability, and quality to cater to all your vehicle rental needs.</p>
 
         <p>Our commitment to customer safety and satisfaction is at the core of everything we do. As an ISO 9001:2005-certified company, we ensure the highest safety, security, and technology standards. Our 24/7 support system guarantees peace of mind no matter where you are or when you need assistance.</p>
-        <p>From daily commutes to long-term rentals, Self Drive Nepal offers flexible pricing plans tailored to your needs. Whether you're exploring Nepal’s beautiful landscapes, attending business meetings, or running errands, we ensure you have access to the best vehicles at the best rates.</p>
+        <p>From daily commutes to long-term rentals, vehicle rental site Nepal offers flexible pricing plans tailored to your needs. Whether you're exploring Nepal’s beautiful landscapes, attending business meetings, or running errands, we ensure you have access to the best vehicles at the best rates.</p>
     </div>
     <div class="card-conatiner">
         <h2 class="my-title-inner text-center">
-            Self Drive Nepal: <br><span>Empowering</span> Your Journey
+            vehicle rental Nepal: <br><span>Empowering</span> Your Journey
         </h2>
         <div class="grid-container">
             <div class="card">
@@ -61,7 +61,7 @@
             </div>
             <div class="card">
                 <h3>Unlimited Kilometers</h3>
-                <p>Enjoy the freedom to travel far and wide with no limits on distance. Your adventure is limitless with Self Drive Nepal!</p>
+                <p>Enjoy the freedom to travel far and wide with no limits on distance. Your adventure is limitless with vehicle rental site Nepal!</p>
             </div>
             <div class="card">
                 <h3>Privacy & Freedom</h3>

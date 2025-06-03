@@ -41,3 +41,46 @@
 [30-May-2025 19:05:05 Europe/Berlin] ✅ Notification file loaded
 [30-May-2025 19:05:05 Europe/Berlin] 📨 POST Received: booking_id = 1, bstatus = cancelled
 [30-May-2025 19:05:05 Europe/Berlin] ⚠️ No rows updated for booking_id: 1
+[31-May-2025 14:50:07 Europe/Berlin] ✅ update_booking_status.php started
+[31-May-2025 14:50:07 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[31-May-2025 14:50:07 Europe/Berlin] ✅ Notification file loaded
+[31-May-2025 14:50:07 Europe/Berlin] 📨 POST Received: booking_id = 13, bstatus = approved
+[31-May-2025 14:50:07 Europe/Berlin] ⚠️ No rows updated for booking_id: 13
+[31-May-2025 14:50:54 Europe/Berlin] ✅ update_booking_status.php started
+[31-May-2025 14:50:54 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[31-May-2025 14:50:54 Europe/Berlin] ✅ Notification file loaded
+[31-May-2025 14:50:54 Europe/Berlin] 📨 POST Received: booking_id = 13, bstatus = completed
+[31-May-2025 14:50:54 Europe/Berlin] 👤 Username fetched: arju123
+[31-May-2025 14:50:54 Europe/Berlin] 📬 Notification sent to arju123
+[31-May-2025 15:12:01 Europe/Berlin] ✅ update_booking_status.php started
+[31-May-2025 15:12:01 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[31-May-2025 15:12:01 Europe/Berlin] ✅ Notification file loaded
+[31-May-2025 15:12:01 Europe/Berlin] 📨 POST Received: booking_id = 14, bstatus = completed
+[31-May-2025 15:12:01 Europe/Berlin] 👤 Username fetched: bipana123
+[31-May-2025 15:12:01 Europe/Berlin] 📬 Notification sent to bipana123
+[31-May-2025 15:14:27 Europe/Berlin] ✅ update_booking_status.php started
+[31-May-2025 15:14:27 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[31-May-2025 15:14:27 Europe/Berlin] ✅ Notification file loaded
+[31-May-2025 15:14:27 Europe/Berlin] 📨 POST Received: booking_id = 15, bstatus = completed
+[31-May-2025 15:14:27 Europe/Berlin] 👤 Username fetched: bipana123
+[31-May-2025 15:14:27 Europe/Berlin] 📬 Notification sent to bipana123
+[31-May-2025 16:42:59 Europe/Berlin] ✅ update_booking_status.php started
+[31-May-2025 16:42:59 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[31-May-2025 16:42:59 Europe/Berlin] ✅ Notification file loaded
+[31-May-2025 16:42:59 Europe/Berlin] 📨 POST Received: booking_id = 13, bstatus = completed
+[31-May-2025 16:42:59 Europe/Berlin] ⚠️ No rows updated for booking_id: 13
+[03-Jun-2025 07:21:20 Europe/Berlin] vehicle_id not set in URL.
+[03-Jun-2025 16:19:59 Europe/Berlin] ✅ update_booking_status.php started
+[03-Jun-2025 16:19:59 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[03-Jun-2025 16:19:59 Europe/Berlin] ✅ Notification file loaded
+[03-Jun-2025 16:19:59 Europe/Berlin] 📨 POST Received: booking_id = 17, bstatus = completed
+[03-Jun-2025 16:19:59 Europe/Berlin] 👤 Username fetched: 
+[03-Jun-2025 16:19:59 Europe/Berlin] User not found for username: 
+[03-Jun-2025 16:19:59 Europe/Berlin] 📬 Notification sent to 
+[03-Jun-2025 16:28:43 Europe/Berlin] ✅ update_booking_status.php started
+[03-Jun-2025 16:28:43 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[03-Jun-2025 16:28:43 Europe/Berlin] ✅ Notification file loaded
+[03-Jun-2025 16:28:43 Europe/Berlin] 📨 POST Received: booking_id = 18, bstatus = completed
+[03-Jun-2025 16:28:43 Europe/Berlin] 👤 Username fetched: 
+[03-Jun-2025 16:28:43 Europe/Berlin] User not found for username: 
+[03-Jun-2025 16:28:43 Europe/Berlin] 📬 Notification sent to 

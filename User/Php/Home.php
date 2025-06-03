@@ -1,120 +1,44 @@
-<?php
-if (session_status() === PHP_SESSION_NONE) {
-  session_start();
-}
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
+
+<?php
+session_start();
+include '../../Database/database.php';
+
+$vehicle_id = $_GET['vehicle_id'] ?? null;
+
+if ($vehicle_id) {
+    if (!isset($_SESSION['recent_vehicle_ids'])) {
+        $_SESSION['recent_vehicle_ids'] = [];
+    }
+
+    $_SESSION['recent_vehicle_ids'] = array_unique(array_merge([intval($vehicle_id)], $_SESSION['recent_vehicle_ids']));
+    $_SESSION['recent_vehicle_ids'] = array_slice($_SESSION['recent_vehicle_ids'], 0, 5);
+}
+?>
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>
-    Home | Vehicle Rental
-  </title>
-  <link rel="stylesheet" href="../../user/Css/style.css">
-
-
-
+  <title>Home | Vehicle Rental</title>
+  <link rel="stylesheet" href="../../user/Css/style.css" />
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer" />
-
 </head>
 
-<style>
-  .vehicle_container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-    color: #1d3557;
-  }
-
-  p.subtitle {
-    font-size: 18px;
-    margin-bottom: 40px;
-    color: #555;
-  }
-
-  .categories {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .category-card {
-    background-color: #fff;
-    border-radius: 10px;
-    width: 220px;
-    padding: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-
-  .category-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .category-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-
-  .category-card h3 {
-    margin-top: 15px;
-    font-size: 18px;
-    color: #1d3557;
-  }
-
-  .book-btn {
-    margin-top: 50px;
-    background-color: #e63946;
-    color: white;
-    border: none;
-    padding: 14px 30px;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-
-  .book-btn:hover {
-    background-color: #d62828;
-  }
-
-  @media (max-width: 768px) {
-    .categories {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-</style>
-
 <body>
-  <?php
-  include "Header.php";
-  ?>
-  <!-- container for the hero section  -->
-  <div class="slider-container">
+  <?php include "Header.php"; ?>
 
+  <div class="slider-container">
     <div class="slider">
-      <img src="../../Image/bus.webp" class="slide active" alt="Image 1">
-      <img src="../../Image/images.jpg" class="slide" alt="Image 2">
-      <img src="../../Image/jeep7.jpg" class="slide" alt="Image 3">
-      <img src="../../Image/image.png" class="slide" alt="Image 4">
+      <img src="../../Image/bus.webp" class="slide active" alt="Image 1" />
+      <img src="../../Image/images.jpg" class="slide" alt="Image 2" />
+      <img src="../../Image/jeep7.jpg" class="slide" alt="Image 3" />
+      <img src="../../Image/image.png" class="slide" alt="Image 4" />
     </div>
     <div class="overlay"></div>
     <div class="dots-container">
@@ -125,8 +49,19 @@ if (session_status() === PHP_SESSION_NONE) {
     </div>
   </div>
 
-  <div class="container">
+  <!-- Popular Vehicles Section -->
+  <div class="popular-section">
+    
+    <?php include '../../Database/popular_vehicles_backend.php'; ?>
+  </div>
 
+  <!-- Recommended Vehicles Section -->
+  <div class="recommended-section">
+   
+    <?php include '../../Database/recommend_vehicles_backend.php'; ?>
+  </div>
+
+  <div class="container">
     <h2>Discover the Nepal's largest car rental marketplace</h2>
 
     <div class="features">
@@ -151,10 +86,8 @@ if (session_status() === PHP_SESSION_NONE) {
 
     <div class="button-container">
       <button class="button" onclick="location.href='Contact.php';">Book the perfect car</button>
-
     </div>
   </div>
-
 
   <div class="vehicle_container">
     <h1>Categories</h1>
@@ -162,7 +95,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
     <div class="categories">
       <div class="category-card">
-        <a href="Listing.php?category=Car" class="vcard">
+        <a href="Listing.php?category=car" class="vcard">
           <img src="../../Image/car3.jpg" alt="Car" />
           <div class="vcard-d">
             <h3>Car</h3>
@@ -171,7 +104,7 @@ if (session_status() === PHP_SESSION_NONE) {
       </div>
 
       <div class="category-card">
-        <a href="Listing.php?category=Sumo" class="vcard">
+        <a href="Listing.php?category=sumo" class="vcard">
           <img src="../../Image/sumo1.jpg" alt="Sumo" />
           <div class="vcard-d">
             <h3>Sumo</h3>
@@ -180,7 +113,7 @@ if (session_status() === PHP_SESSION_NONE) {
       </div>
 
       <div class="category-card">
-        <a href="Listing.php?category=Hiace" class="vcard">
+        <a href="Listing.php?category=hiace" class="vcard">
           <img src="../../Image/hiace1.jpg" alt="Hiace" />
           <div class="vcard-d">
             <h3>Hiace</h3>
@@ -189,7 +122,7 @@ if (session_status() === PHP_SESSION_NONE) {
       </div>
 
       <div class="category-card">
-        <a href="Listing.php?category=Bus" class="vcard">
+        <a href="Listing.php?category=bus" class="vcard">
           <img src="../../Image/bus1.jpg" alt="Bus" />
           <div class="vcard-d">
             <h3>Bus</h3>
@@ -199,40 +132,7 @@ if (session_status() === PHP_SESSION_NONE) {
     </div>
   </div>
 
-
-
-  <?php
-  include "footer.php";
-  ?>
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) slide.classList.add('active');
-      });
-
-      dots.forEach(dot => dot.classList.remove('active-dot'));
-      dots[index].classList.add('active-dot');
-    }
-
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        const index = parseInt(dot.getAttribute('data-slide'));
-        currentSlide = index;
-        showSlide(currentSlide);
-      });
-    });
-
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }, 3000);
-  </script>
-
+<script src="../javascript/slide.js"></script>
 </body>
 
 </html>
