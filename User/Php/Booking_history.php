@@ -91,11 +91,10 @@ if (session_status() === PHP_SESSION_NONE) {
         </h1>
         <table id="myTable">
             <tr>
+                <th>Image</th>
                 <th>Full Name</th>
-                <th>Username</th>
-                <th>Email</th>
                 <th>Number</th>
-                <th>V-ID</th>
+                <th>vehicle Number</th>
                 <th>Pick-up Date</th>
                 <th>Pick-up Time</th>
                 <th>Return Date</th>
@@ -111,18 +110,21 @@ if (session_status() === PHP_SESSION_NONE) {
 
             include '../../Database/database.php';
             $username = mysqli_real_escape_string($conn, $_SESSION["username"]);
-            $sql = "SELECT * FROM booking WHERE `username`='$username'";
+            $sql = "SELECT booking.*, vehicle.vehicle_image 
+        FROM booking 
+        JOIN vehicle ON booking.vehicle_number = vehicle.vehicle_number 
+        WHERE booking.username = '$username'";
             $result = mysqli_query($conn, $sql);
 
             while ($row = mysqli_fetch_assoc($result)) {
             ?>
 
                 <tr>
+                    <td> <img src="../../Image/<?php echo $row['vehicle_image']; ?>" alt="Vehicle Image">
+                    </td>
                     <td><?php echo $row['fullname']; ?></td>
-                    <td><?php echo $row['username']; ?></td>
-                    <td><?php echo $row['email']; ?></td>
                     <td><?php echo $row['number']; ?></td>
-                    <td><?php echo $row['vehicle_id']; ?></td>
+                    <td><?php echo $row['vehicle_number']; ?></td>
                     <td><?php echo $row['pickup_date']; ?></td>
                     <td><?php echo $row['pickup_time']; ?></td>
                     <td><?php echo $row['return_date']; ?></td>
@@ -132,7 +134,14 @@ if (session_status() === PHP_SESSION_NONE) {
                     <td><?php echo $row['total_price']; ?></td>
                     <td><?php echo $row['bstatus']; ?></td>
                     <td>
-                        <button class="cancel-btn" onclick="openCancelPopup(<?= $row['booking_id'] ?>)">Cancel Booking</button>
+                        <!-- Inside your booking table row -->
+                        <form action="../../Database/cancellation_handle.php" method="POST">
+                            <input type="hidden" name="booking_id" value="<?php echo  $row['booking_id'] ?>">
+                            <textarea name="cancel_reason" required></textarea>
+                            <button type="submit">Cancel Booking</button>
+                            <!-- <?php echo 'Booking ID is: ' . $row['booking_id']; ?> -->
+
+                        </form>
                     </td>
 
                 </tr>
@@ -147,49 +156,16 @@ if (session_status() === PHP_SESSION_NONE) {
         </table>
 
         <!-- Cancel Popup Modal (only once in the page) -->
-        <div id="cancelPopup" class="popup-modal" style="display:none;">
-            <div class="popup-content">
-                <h3>Cancel Booking</h3>
-                <p>A fine charge of ₹500 applies for cancellation.</p>
-                <form id="cancelForm" method="POST" action="../../User/Php/book_vehicle_backend.php">
-                    <input type="hidden" name="booking_id" id="bookingIdInput" value="">
-                    <label for="cancel_reason">Reason for cancellation:</label><br />
-                    <textarea id="cancel_reason" name="cancel_reason" required rows="4" cols="40"></textarea><br />
+        <!-- Cancel Popup Modal (only once on the page) -->
 
-                    <button type="submit" id="confirmBtn">Confirm Cancellation</button>
-                    <button type="button" onclick="closeCancelPopup()" id="abortBtn">Abort</button>
-
-                    <p id="cancelMessage" style="display:none; color: green; margin-top:10px;">Cancellation is in process...</p>
-                </form>
-            </div>
-        </div>
 
     </div>
 
 
-    <script>
-        const cancelForm = document.getElementById('cancelForm');
-        cancelForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // stop default submit for now
 
-            // Show cancellation in process message (you can style this as you want)
-            let msgDiv = document.createElement('div');
-            msgDiv.innerText = 'Cancellation is in process...';
-            msgDiv.style.color = 'blue';
-            msgDiv.style.marginTop = '10px';
 
-            cancelForm.appendChild(msgDiv);
 
-            // Optionally disable form inputs to prevent double submit
-            [...cancelForm.elements].forEach(el => el.disabled = true);
 
-            // Now submit the form programmatically after short delay (optional)
-            setTimeout(() => {
-                cancelForm.submit();
-            }, 500); // half second delay to show message
-
-        });
-    </script>
 
 
 

@@ -98,3 +98,10 @@
 [04-Jun-2025 07:55:53 Europe/Berlin] 📨 POST Received: booking_id = 48, bstatus = completed
 [04-Jun-2025 07:55:53 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'completed'
 [04-Jun-2025 07:55:53 Europe/Berlin] 🚫 Invalid transition: pending ➝ completed
+[04-Jun-2025 10:09:20 Europe/Berlin] ✅ update_booking_status.php started
+[04-Jun-2025 10:09:20 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[04-Jun-2025 10:09:20 Europe/Berlin] ✅ Notification file loaded
+[04-Jun-2025 10:09:20 Europe/Berlin] 📨 POST Received: booking_id = 16, bstatus = cancelled
+[04-Jun-2025 10:09:20 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'cancelled'
+[04-Jun-2025 10:09:20 Europe/Berlin] ✅ Booking status updated to cancelled
+[04-Jun-2025 10:09:20 Europe/Berlin] 📬 Notification sent to bipana123

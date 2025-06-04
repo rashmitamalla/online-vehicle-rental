@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
   $vehicle_id = $_POST['vehicle_id'];
   // Redirect to GET version of Book.php to prevent resubmission on refresh
-  header('Location: Home.php?vehicle_id=' . urlencode($vehicle_id));
+  header('Location: Book.php?vehicle_id=' . urlencode($vehicle_id));
   exit();
 }
 
@@ -280,6 +280,8 @@ if ($vehicle_id) {
       <form action="../../Database/book_vehicle_backend.php" onsubmit="return validateForm()" method="post">
         <input type="hidden" name="booking_token" value="<?php echo $token; ?>">
         <input type="hidden" name="vehicle_id" value="<?php echo htmlspecialchars($vid); ?>">
+        <input type="hidden" name="vehicle_number" value="<?php echo htmlspecialchars($row['vehicle_number']); ?>">
+<input type="hidden" name="username" value="<?php echo htmlspecialchars($_SESSION['username']); ?>">
 
         <input type="text" name="fullname" id="fullname" placeholder="Full Name" required value="<?php echo htmlspecialchars($_SESSION['fullname'] ?? ''); ?>" pattern="[A-Z][a-z]+(?: [A-Z][a-z]+)*" title="Each name should start with a capital letter (e.g., John Doe)">
         <input type="email" name="email" placeholder="Email" required value="<?php echo htmlspecialchars($_SESSION['email'] ?? ''); ?>">
