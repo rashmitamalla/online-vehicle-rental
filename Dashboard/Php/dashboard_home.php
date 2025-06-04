@@ -98,8 +98,8 @@
   $weeklyData   = [];
   $weeklyLabels = [];
   for ($i = 5; $i >= 0; $i--) {
-    $start = date('Y-m-d', strtotime("last monday -$i week"));
-    $end   = date('Y-m-d', strtotime("next sunday -$i week"));
+    $start = date('Y-m-d', strtotime("last sunday -$i week"));
+    $end   = date('Y-m-d', strtotime("next saturday -$i week"));
     $row   = $conn->query("
           SELECT IFNULL(SUM(total_price),0) revenue
           FROM booking
