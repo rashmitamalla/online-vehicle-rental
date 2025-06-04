@@ -94,9 +94,6 @@
   /* ─────────────  MONEY  ───────────── */
   $total_income   = $conn->query("SELECT IFNULL(SUM(total_price),0) income FROM booking WHERE bstatus='completed'")
     ->fetch_assoc()['income'];
-  $total_expenses = 3000;               // change to dynamic if you need
-  $profit         = $total_income - $total_expenses;
-
   /* ─────────────  WEEKLY REVENUE (last 6 weeks)  ───────────── */
   $weeklyData   = [];
   $weeklyLabels = [];
@@ -194,14 +191,6 @@
         <h3>Total Income</h3>
         <p style="color:#76ff03;font-size:24px">Rs <?= number_format($total_income) ?></p>
       </div>
-      <div class="summary-card">
-        <h3>Total Expenses</h3>
-        <p style="color:#ff9800;font-size:24px">Rs <?= number_format($total_expenses) ?></p>
-      </div>
-      <div class="summary-card">
-        <h3>Net Profit</h3>
-        <p style="color:#00e5ff;font-size:24px">Rs <?= number_format($profit) ?></p>
-      </div>
     </div>
 
     <!-- ====== CHART + RECENT ACTIVITY ====== -->
@@ -219,6 +208,7 @@
               <th>Actor</th>
               <th>Action</th>
               <th>Amount</th>
+              <th>Event Time</th>
             </tr>
           </thead>
           <tbody>
@@ -227,8 +217,9 @@
                 <td><?= htmlspecialchars($a['actor']) ?></td>
                 <td><?= htmlspecialchars($a['action']) ?></td>
                 <td>
-                  <?= is_null($a['amount']) ? '-' : '$' . number_format($a['amount'], 2) ?>
+                  <?= is_null($a['amount']) ? '-' : 'Rs ' . number_format($a['amount'], 2) ?>
                 </td>
+                <td><?= date('Y-m-d H:i', strtotime($a['event_time'])) ?></td>
               </tr>
             <?php endwhile; ?>
           </tbody>
@@ -261,7 +252,7 @@
           },
           tooltip: {
             callbacks: {
-              label: c => `$${c.raw}`
+              label: c => `Rs ${c.raw}`
             }
           }
         },
