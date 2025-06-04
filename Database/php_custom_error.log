@@ -84,3 +84,17 @@
 [03-Jun-2025 16:28:43 Europe/Berlin] 👤 Username fetched: 
 [03-Jun-2025 16:28:43 Europe/Berlin] User not found for username: 
 [03-Jun-2025 16:28:43 Europe/Berlin] 📬 Notification sent to 
+[03-Jun-2025 17:57:48 Europe/Berlin] ✅ update_booking_status.php started
+[03-Jun-2025 17:57:48 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[03-Jun-2025 17:57:48 Europe/Berlin] ✅ Notification file loaded
+[03-Jun-2025 17:57:48 Europe/Berlin] 📨 POST Received: booking_id = 28, bstatus = completed
+[03-Jun-2025 17:57:48 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'completed'
+[03-Jun-2025 17:57:48 Europe/Berlin] ✅ Booking status updated to completed
+[03-Jun-2025 17:57:48 Europe/Berlin] User not found for username: 
+[03-Jun-2025 17:57:48 Europe/Berlin] 📬 Notification sent to 
+[04-Jun-2025 07:55:53 Europe/Berlin] ✅ update_booking_status.php started
+[04-Jun-2025 07:55:53 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[04-Jun-2025 07:55:53 Europe/Berlin] ✅ Notification file loaded
+[04-Jun-2025 07:55:53 Europe/Berlin] 📨 POST Received: booking_id = 48, bstatus = completed
+[04-Jun-2025 07:55:53 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'completed'
+[04-Jun-2025 07:55:53 Europe/Berlin] 🚫 Invalid transition: pending ➝ completed

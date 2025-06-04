@@ -1,9 +1,9 @@
 <?php
-session_start();
+session_start(); // Required for $_SESSION to work
 include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Sanitize inputs
+    // Sanitize and validate inputs
     $fullname = trim($_POST["fullname"]);
     $username = trim($_POST["username"]);
     $email = trim($_POST["email"]);
@@ -16,19 +16,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $return_time = $_POST["return_time"];
     $pickup_location = trim($_POST["pickup_location"]);
     $vehicle_price = floatval($_POST["vehicle_price"]);
-$total_price = floatval($_POST["total_price"] ?? $_POST["hidden_total_price"]);
-    $bstatus = "Pending";  // Changed from "Approved" to "Pending"
+    $bstatus = "pending";
 
-    // Check if vehicle is already booked (overlapping dates, and only if status is 'Approved')
+
+    // Combine pickup and return into datetime strings
+    $new_pickup = $pickup_date . ' ' . $pickup_time;
+    $new_return = $return_date . ' ' . $return_time;
+    // Check if vehicle is already booked (Approved status only)
     $stmt = $conn->prepare("
-        SELECT * FROM booking
-        WHERE vehicle_id = ?
-        AND (
-            DATE_SUB(pickup_date, INTERVAL 1 DAY) <= ?
-            AND DATE_ADD(return_date, INTERVAL 1 DAY) >= ?
-        )
-        AND bstatus = 'Approved'
-    ");
+    SELECT * FROM booking
+    WHERE vehicle_id = ?
+    AND bstatus = 'approved'
+    AND CONCAT(pickup_date, ' ', pickup_time) < ?
+    AND CONCAT(return_date, ' ', return_time) > ?
+");
     $stmt->bind_param("sss", $vid, $return_date, $pickup_date);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -44,48 +45,49 @@ $total_price = floatval($_POST["total_price"] ?? $_POST["hidden_total_price"]);
         exit;
     }
 
-    // Validate and compare pickup/return dates
+    // Convert to DateTime
     $pickup_dt = DateTime::createFromFormat('Y-m-d H:i', $pickup_date . ' ' . $pickup_time);
     $return_dt = DateTime::createFromFormat('Y-m-d H:i', $return_date . ' ' . $return_time);
 
+    // Check validity
     if (!$pickup_dt || !$return_dt || $return_dt <= $pickup_dt) {
         echo "<script>alert('Invalid pickup or return date/time'); window.history.back();</script>";
         exit;
     }
 
-    // Block same-day or past-day bookings
+    // Check if booking is at least 1 day ahead
     $today = new DateTime();
     $today->setTime(0, 0);
     $pickup_check = clone $pickup_dt;
     $pickup_check->setTime(0, 0);
+
     if ($pickup_check <= $today) {
         $_SESSION['booking_error'] = "Booking must be made at least 1 day in advance due to maintenance.";
         header("Location: ../../User/Php/book.php?vehicle_id=" . urlencode($vid));
         exit;
     }
 
-    // Enforce minimum duration of 2 hours
+    // Duration in hours
     $diff_hours = ($return_dt->getTimestamp() - $pickup_dt->getTimestamp()) / 3600;
     if ($diff_hours < 2) {
         echo "<script>alert('Minimum booking time is 2 hours'); window.history.back();</script>";
         exit;
     }
 
-    // Price calculation: full days + remaining hours
+    // Price Calculation
     $full_days = floor($diff_hours / 24);
     $remaining_hours = $diff_hours % 24;
     $hourly_rate = $vehicle_price / 24;
     $total_price = ($full_days * $vehicle_price) + ($remaining_hours * $hourly_rate);
-    $booking_type = $full_days > 0 ? "daily+hourly" : "hourly";
 
-    // Insert booking with status 'Pending'
+    // Insert booking
     $stmt = $conn->prepare("INSERT INTO booking
         (fullname, username, email, number, vehicle_id, pickup_date, pickup_time, return_date, return_time, pickup_location, bstatus, vehicle_price, total_price, vehicle_number)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssssssssssss", $fullname, $username, $email, $number, $vid, $pickup_date, $pickup_time, $return_date, $return_time, $pickup_location, $bstatus, $vehicle_price, $total_price, $vehicle_number);
 
     if ($stmt->execute()) {
-        $_SESSION['booking_success'] = "Booking submitted successfully and is now pending approval.";
+        $_SESSION['booking_success'] = "Booking successful!";
         header("Location: ../../User/Php/book.php?vehicle_id=" . urlencode($vid));
         exit;
     } else {

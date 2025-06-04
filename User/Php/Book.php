@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
   $vehicle_id = $_POST['vehicle_id'];
   // Redirect to GET version of Book.php to prevent resubmission on refresh
-  header('Location: Book.php?vehicle_id=' . urlencode($vehicle_id));
+  header('Location: Home.php?vehicle_id=' . urlencode($vehicle_id));
   exit();
 }
 
@@ -204,6 +204,7 @@ if ($vehicle_id) {
           <hr style="margin: 15px 0; border-color: #444;" />
 
         </div>
+
         <style>
           .vehicle-details {
             max-width: 450px;
@@ -276,22 +277,18 @@ if ($vehicle_id) {
 
     <!-- Right side: Booking Form -->
     <div class="right-panel">
-      <form action="../../Database/book_vehicle_backend.php" method="POST" onsubmit="return validateForm()">
+      <form action="../../Database/book_vehicle_backend.php" onsubmit="return validateForm()" method="post">
         <input type="hidden" name="booking_token" value="<?php echo $token; ?>">
         <input type="hidden" name="vehicle_id" value="<?php echo htmlspecialchars($vid); ?>">
-        <input type="hidden" name="booking_type_hidden" id="hidden_booking_type">
-
 
         <input type="text" name="fullname" id="fullname" placeholder="Full Name" required value="<?php echo htmlspecialchars($_SESSION['fullname'] ?? ''); ?>" pattern="[A-Z][a-z]+(?: [A-Z][a-z]+)*" title="Each name should start with a capital letter (e.g., John Doe)">
         <input type="email" name="email" placeholder="Email" required value="<?php echo htmlspecialchars($_SESSION['email'] ?? ''); ?>">
         <input type="tel" name="number" id="number" placeholder="Phone Number" required value="<?php echo htmlspecialchars($_SESSION['number'] ?? ''); ?>" pattern="^(97|98)\d{8}$" title="Phone number must start with '97' or '98' and be exactly 10 digits long">
 
-
         <input type="date" name="pickup_date" id="pickup_date"
           min="<?php echo date('Y-m-d', strtotime('+1 day')); ?>" required
           onchange="calculateTotal(); updateReturnDateMin()" />
         <input type="time" name="pickup_time" id="pickup_time" required onchange="calculateTotal()" />
-
 
         <input type="date" name="return_date" id="return_date"
           min="<?php echo date('Y-m-d', strtotime('+1 day')); ?>" required
@@ -299,9 +296,12 @@ if ($vehicle_id) {
         <input type="time" name="return_time" id="return_time" required onchange="calculateTotal()" />
         <input type="text" name="pickup_location" id="pickup_location" placeholder="Pickup Location" required value="<?php echo htmlspecialchars($_SESSION['pickup_location'] ?? ''); ?>">
 
-        <input type="text" id="vehicle_price" class="readonly-input" value="<?php echo $row['vehicle_price']; ?>" readonly>
-        <input type="text" id="total_price" placeholder="Total Price" class="readonly-input" readonly>
-        <input type="hidden" name="total_price" id="total_price_hidden">
+        <input type="text" id="vehicle_price" name="vehicle_price" 
+          value="<?php echo htmlspecialchars($row['vehicle_price']); ?>" readonly />
+        <!-- Change name so it doesn't conflict with actual booking_type select -->
+        <input type="hidden" name="booking_type_hidden" id="hidden_booking_type">
+        <input type="text" id="total_price" name="total_price" value="0" readonly />
+
 
         <button type="submit" class="blue-btn">Book Now</button>
       </form>
@@ -371,131 +371,80 @@ if ($vehicle_id) {
 
 
 
+<script>
+    function calculateTotal() {
+      const pickupDateStr = document.getElementById("pickup_date").value;
+      const pickupTimeStr = document.getElementById("pickup_time").value;
+      const returnDateStr = document.getElementById("return_date").value;
+      const returnTimeStr = document.getElementById("return_time").value;
+      const vehiclePrice = parseFloat(document.getElementById("vehicle_price").value);
 
-
-
-
-  <?php // Fetch similar vehicles based on price range (+/- $50) or same type
-  $price = $row['vehicle_price'];
-  $type = $row['vehicle_type']; // You must have a type column, or remove this line
-
-  $similar_sql = "SELECT * FROM vehicle 
-                WHERE vehicle_id != ? 
-                AND ABS(vehicle_price - ?) <= 50 
-                LIMIT 4";
-  $similar_stmt = $conn->prepare($similar_sql);
-  $similar_stmt->bind_param("sd", $vid, $price);
-  $similar_stmt->execute();
-  $similar_result = $similar_stmt->get_result();
-  $similar_vehicles = [];
-
-  while ($sim_row = $similar_result->fetch_assoc()) {
-    $similar_vehicles[] = $sim_row;
-  }
-  $similar_stmt->close();
-  ?>
-  <hr style="margin: 40px 0; border: 0.5px solid #444;" />
-  <h3>Similar Cars</h3>
-
-  <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-    <?php foreach ($similar_vehicles as $sim): ?>
-      <div style="background-color: #1e1f26; border-radius: 12px; width: 250px; padding: 15px; color: #fff;">
-        <img src="../../Admin/<?php echo htmlspecialchars($sim['vehicle_image']); ?>" alt="Car Image" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;" />
-        <h4 style="margin: 10px 0;"><?php echo htmlspecialchars($sim['vehicle_number']); ?></h4>
-        <p style="color: #0ff;">Rs <?php echo htmlspecialchars($sim['vehicle_price']); ?>/day</p>
-        <a href="Book.php?vehicle_id=<?php echo urlencode($sim['vehicle_id']); ?>" style="display: inline-block; margin-top: 10px; background-color: #ff5252; color: white; padding: 8px 12px; border-radius: 8px; text-decoration: none;">Book Now</a>
-      </div>
-    <?php endforeach; ?>
-  </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      function calculateTotal() {
-        const pickupDateStr = document.getElementById("pickup_date").value;
-        const pickupTimeStr = document.getElementById("pickup_time").value;
-        const returnDateStr = document.getElementById("return_date").value;
-        const returnTimeStr = document.getElementById("return_time").value;
-        const vehiclePrice = parseFloat(document.getElementById("vehicle_price").value);
-
-        if (!pickupDateStr || !pickupTimeStr || !returnDateStr || !returnTimeStr || isNaN(vehiclePrice)) {
-          return;
-        }
-
-        const pickup = new Date(`${pickupDateStr}T${pickupTimeStr}`);
-        const ret = new Date(`${returnDateStr}T${returnTimeStr}`);
-
-        if (ret <= pickup) {
-          document.getElementById("total_price").value = "0.00";
-          document.getElementById("hidden_total_price").value = "0.00"; // also reset hidden
-          return;
-        }
-
-        const diffMs = ret - pickup;
-        const diffHours = diffMs / (1000 * 60 * 60);
-
-        if (diffHours < 2) {
-          document.getElementById("total_price").value = "0.00";
-          document.getElementById("hidden_total_price").value = "0.00"; // also reset hidden
-          return;
-        }
-
-        // Calculate full days and remaining hours
-        const fullDays = Math.floor(diffHours / 24);
-        const remainingHours = diffHours % 24;
-
-        const hourlyRate = vehiclePrice / 24;
-        const total = (fullDays * vehiclePrice) + (remainingHours * hourlyRate);
-
-        // 🔽 Update both visible and hidden input fields
-        document.getElementById("total_price").value = total.toFixed(2);
-        document.getElementById("hidden_total_price").value = total.toFixed(2);
-
-        document.getElementById("hidden_booking_type").value = fullDays > 0 ? "daily+hourly" : "hourly";
+      if (!pickupDateStr || !pickupTimeStr || !returnDateStr || !returnTimeStr || isNaN(vehiclePrice)) {
+        return;
       }
 
-      function validateForm() {
-        const pickup = new Date(document.getElementById("pickup_date").value + 'T' + document.getElementById("pickup_time").value);
-        const ret = new Date(document.getElementById("return_date").value + 'T' + document.getElementById("return_time").value);
-        const diffHours = (ret - pickup) / (1000 * 60 * 60);
+      const pickup = new Date(`${pickupDateStr}T${pickupTimeStr}`);
+      const ret = new Date(`${returnDateStr}T${returnTimeStr}`);
 
-        if (ret <= pickup) {
-          alert("Return date and time must be after pickup.");
-          return false;
-        }
-
-        if (diffHours < 2) {
-          alert("Minimum booking time is 2 hours.");
-          return false;
-        }
-
-        var phoneNumber = document.getElementById("number").value;
-        var phoneNumberPattern = /^(97|98)\d{8}$/;
-
-        const fullName = document.getElementById("fullname").value;
-        const namePattern = /^[A-Z][a-z]+(?: [A-Z][a-z]+)*$/;
-        if (!namePattern.test(fullName)) {
-          alert("Invalid full name. Each name should start with a capital letter (e.g., John Doe).");
-          return false;
-        }
-
-        if (!phoneNumberPattern.test(phoneNumber)) {
-          alert("Phone number must start with '97' or '98' and be exactly 10 digits long.");
-          return false;
-        }
-
-        return true;
+      if (ret <= pickup) {
+        document.getElementById("total_price").value = "0.00";
+        return;
       }
 
-      // Attach to global scope to work with onsubmit
-      window.calculateTotal = calculateTotal;
-      window.validateForm = validateForm;
-    });
+      const diffMs = ret - pickup;
+      const diffHours = diffMs / (1000 * 60 * 60);
+
+      if (diffHours < 2) {
+        document.getElementById("total_price").value = "0.00";
+        return;
+      }
+
+      // Calculate full days and remaining hours
+      const fullDays = Math.floor(diffHours / 24);
+      const remainingHours = diffHours % 24;
+
+      const hourlyRate = vehiclePrice / 24;
+      const total = (fullDays * vehiclePrice) + (remainingHours * hourlyRate);
+
+      document.getElementById("total_price").value = total.toFixed(2);
+      document.getElementById("hidden_booking_type").value = fullDays > 0 ? "daily+hourly" : "hourly";
+    }
+
+    function validateForm() {
+      const pickup = new Date(document.getElementById("pickup_date").value + 'T' + document.getElementById("pickup_time").value);
+      const ret = new Date(document.getElementById("return_date").value + 'T' + document.getElementById("return_time").value);
+      const diffHours = (ret - pickup) / (1000 * 60 * 60);
+
+      if (ret <= pickup) {
+        alert("Return date and time must be after pickup.");
+        return false;
+      }
+
+      if (diffHours < 2) {
+        alert("Minimum booking time is 2 hours.");
+        return false;
+      }
+
+      var phoneNumber = document.getElementById("number").value;
+      var phoneNumberPattern = /^(97|98)\d{8}$/;
+
+      const fullName = document.getElementById("fullname").value;
+      const namePattern = /^[A-Z][a-z]+(?: [A-Z][a-z]+)*$/;
+      if (!namePattern.test(fullName)) {
+        alert("Invalid full name. Each name should start with a capital letter (e.g., John Doe).");
+        return false; // Prevent form submission
+      }
+
+
+      if (!phoneNumberPattern.test(phoneNumber)) {
+        alert("Phone number must start with '97' and '98' and be exactly 10 digits long.");
+        return false; // Prevent form submission
+      }
+
+      return true;
+
+    }
   </script>
-
-
-
-
-
-
 </body>
 
 </html>
