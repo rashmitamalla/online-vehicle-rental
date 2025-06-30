@@ -481,6 +481,7 @@ Vehicle 16: intersection(1) / union(4) = 0.25
 Vehicle 17: intersection(1) / union(4) = 0.25
 Top recommended vehicle IDs: 15, 16, 17
 
+<<<<<<< Updated upstream
 ========== Also Booked This [2025-06-30 12:47:26] ==========
 Current vehicle users: ganesh123
 Vehicle 14: intersection(1) / union(1) = 1
@@ -497,12 +498,121 @@ Vehicle 14: intersection(2) / union(2) = 1
 Top recommended vehicle IDs: 14
 
 ========== Also Booked This [2025-06-30 13:01:04] ==========
+=======
+========== Also Booked This [2025-06-30 10:55:57] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:10:46] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:15:45] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:15:47] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:16:29] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:17:11] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:28:50] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:28:51] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:28:51] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:28:51] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:28:51] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:28:51] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:28:52] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:29:16] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:32:49] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:33:18] ==========
+>>>>>>> Stashed changes
 Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
 Vehicle 15: intersection(2) / union(5) = 0.4
 Vehicle 16: intersection(1) / union(5) = 0.2
 Vehicle 17: intersection(1) / union(5) = 0.2
 Top recommended vehicle IDs: 15, 16, 17
 
+<<<<<<< Updated upstream
 ========== Also Booked This [2025-06-30 13:01:36] ==========
 Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123, bishal123
 Vehicle 15: intersection(2) / union(6) = 0.333
@@ -657,4 +767,233 @@ Current vehicle users: arju123, bishal123
 Vehicle 14: intersection(2) / union(2) = 1
 Vehicle 0: intersection(1) / union(2) = 0.5
 Top recommended vehicle IDs: 14, 0
+=======
+========== Also Booked This [2025-06-30 11:37:41] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:37:41] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:37:42] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:37:42] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:37:59] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:43:36] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:43:36] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:43:36] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 11:43:57] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+[2025-06-30 11:47:48] Checking booking conflict for vehicle_id=14 between 2025-07-01 15:33:00 and 2025-07-04 16:33:00
+[2025-06-30 11:47:48] No conflict found, booking allowed.
+[2025-06-30 11:47:48] Booking inserted successfully for vehicle_id=14, user=sneha123
+========== Also Booked This [2025-06-30 11:47:48] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 12:00:35] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+[2025-06-30 12:26:30] ✅ book.php started
+[2025-06-30 12:26:30] ✅ No conflict. Proceeding to booking.
+[2025-06-30 12:26:30] ✅ Booking successful for vehicle_id=14, user=sneha123
+========== Also Booked This [2025-06-30 12:26:30] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 12:34:39] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 12:34:39] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+[2025-06-30 12:35:13] ✅ book.php started
+[30-Jun-2025 12:35:13 Europe/Berlin] PHP Deprecated:  Implicit conversion from float 24.016666666666666 to int loses precision in C:\xampp\htdocs\project\Database\book_vehicle_backend.php on line 123
+[2025-06-30 12:35:13] ✅ Booking successful for vehicle_id=14, user=sneha123
+========== Also Booked This [2025-06-30 12:35:13] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 12:45:55] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 12:45:55] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 12:45:55] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 12:45:55] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 12:45:56] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 12:45:56] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 12:45:56] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 12:45:56] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+[2025-06-30 12:46:14] ✅ book.php started
+[30-Jun-2025 12:46:14 Europe/Berlin] PHP Deprecated:  Implicit conversion from float 96.98333333333333 to int loses precision in C:\xampp\htdocs\project\Database\book_vehicle_backend.php on line 123
+[2025-06-30 12:46:14] ✅ Booking successful for vehicle_id=14, user=sneha123
+========== Also Booked This [2025-06-30 12:46:14] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 12:59:18] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 12:59:19] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 12:59:50] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+[2025-06-30 13:00:17] ✅ book.php started
+[30-Jun-2025 13:00:17 Europe/Berlin] PHP Warning:  Undefined variable $pickup_dt in C:\xampp\htdocs\project\Database\book_vehicle_backend.php on line 81
+[30-Jun-2025 13:00:17 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function format() on null in C:\xampp\htdocs\project\Database\book_vehicle_backend.php:81
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\project\Database\book_vehicle_backend.php on line 81
+[2025-06-30 13:00:35] ✅ book.php started
+[30-Jun-2025 13:00:35 Europe/Berlin] PHP Warning:  Undefined array key "booking_token" in C:\xampp\htdocs\project\Database\book_vehicle_backend.php on line 46
+[2025-06-30 13:00:35] ❌ Invalid or duplicate booking submission.
+========== Also Booked This [2025-06-30 13:00:35] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+
+[2025-06-30 13:00:38] ✅ book.php started
+[2025-06-30 13:07:03] ✅ book.php started
+[30-Jun-2025 13:07:03 Europe/Berlin] PHP Deprecated:  Implicit conversion from float 264.96666666666664 to int loses precision in C:\xampp\htdocs\project\Database\book_vehicle_backend.php on line 122
+[2025-06-30 13:07:03] ✅ Booking successful for vehicle_id=14, user=sneha123
+========== Also Booked This [2025-06-30 13:07:03] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
+Vehicle 15: intersection(2) / union(5) = 0.4
+Vehicle 16: intersection(1) / union(5) = 0.2
+Vehicle 17: intersection(1) / union(5) = 0.2
+Top recommended vehicle IDs: 15, 16, 17
+>>>>>>> Stashed changes
 

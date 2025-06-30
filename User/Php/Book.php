@@ -150,66 +150,7 @@ if (isset($_SESSION['username']) && isset($_GET['vehicle_id'])) {
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
-    .container {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      padding: 40px;
-    }
-
-    .left-panel {
-      flex: 1;
-    }
-
-    .left-panel img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .details {
-      margin-top: 20px;
-    }
-
-    .details h2 {
-      margin: 10px 0;
-    }
-
-    .features {
-      display: flex;
-      gap: 20px;
-      margin-top: 10px;
-      color: #ccc;
-    }
-
-    .right-panel {
-      background-color: #1c1f26;
-      padding: 30px;
-      border-radius: 12px;
-      flex: 1;
-    }
-
-    .right-panel form {
-      display: flex;
-      flex-direction: column;
-
-    }
-
-    .right-panel input {
-
-      padding: 10px;
-      border: 1px solid #444;
-      border-radius: 8px;
-      background-color: #2c2f38;
-      color: #fff;
-    }
-
-    .price-tag {
-      color: #00c2c2;
-      font-size: 20px;
-      font-weight: bold;
-    }
-  </style>
+  
 </head>
 
 <body>
@@ -272,109 +213,10 @@ if (isset($_SESSION['username']) && isset($_GET['vehicle_id'])) {
               <i class="fas fa-heart"></i> Remove from Favorites
             </button>
           </div>
-
-          <script>
-            document.addEventListener("DOMContentLoaded", () => {
-              const addBtn = document.getElementById("add-to-favorite");
-              const removeBtn = document.getElementById("remove-from-favorite");
-
-              // Add to Favorites
-              addBtn?.addEventListener("click", function () {
-                const vehicleId = this.dataset.vehicleId;
-                fetch("add_to_favorite.php", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                  body: "vehicle_id=" + encodeURIComponent(vehicleId)
-                })
-                  .then(res => res.json())
-                  .then(data => {
-                    alert(data.message);
-                    if (data.status === "success") {
-                      addBtn.style.display = "none";
-                      removeBtn.style.display = "inline-block";
-                    }
-                  })
-                  .catch(error => {
-                    console.error("Fetch error (add):", error);
-                    alert("Error: Could not contact server.");
-                  });
-              });
-
-              // Remove from Favorites ✅ this part was missing!
-              removeBtn?.addEventListener("click", function () {
-                const vehicleId = this.dataset.vehicleId;
-                fetch("remove_from_favorite.php", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                  body: "vehicle_id=" + encodeURIComponent(vehicleId)
-                })
-                  .then(res => res.json())
-                  .then(data => {
-                    alert(data.message);
-                    if (data.status === "success") {
-                      removeBtn.style.display = "none";
-                      addBtn.style.display = "inline-block";
-                    }
-                  })
-                  .catch(error => {
-                    console.error("Fetch error (remove):", error);
-                    alert("Error: Could not contact server.");
-                  });
-              });
-            });
-          </script>
-
-
-
-
-
-
-
-
-
-
           <hr style="margin: 15px 0; border-color: #444;" />
 
         </div>
 
-        <style>
-          .vehicle-details {
-            max-width: 450px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            padding: 25px 30px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 18px 30px;
-            transition: box-shadow 0.3s ease;
-          }
-
-          .vehicle-details:hover {
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-          }
-
-          .detail-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 16px;
-          }
-
-          .detail-icon {
-            font-size: 20px;
-            color: #007BFF;
-            /* bright blue accent */
-            min-width: 24px;
-            text-align: center;
-          }
-
-          .detail-label {
-            font-weight: 600;
-          }
-        </style>
 
         <div class="vehicle-details">
           <div class="detail-item">
@@ -510,6 +352,8 @@ if (isset($_SESSION['username']) && isset($_GET['vehicle_id'])) {
     </p>
 
   </div>
+
+
 <div class="also-booked-this">
   <h1>Users who booked this also booked</h1>
  <div class="vehicle-card-container" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px;">
@@ -521,84 +365,7 @@ if (isset($_SESSION['username']) && isset($_GET['vehicle_id'])) {
 </div>
 
 
-
-
-  <script>
-    function calculateTotal() {
-      const pickupDateStr = document.getElementById("pickup_date").value;
-      const pickupTimeStr = document.getElementById("pickup_time").value;
-      const returnDateStr = document.getElementById("return_date").value;
-      const returnTimeStr = document.getElementById("return_time").value;
-      const vehiclePrice = parseFloat(document.getElementById("vehicle_price").value);
-
-      if (!pickupDateStr || !pickupTimeStr || !returnDateStr || !returnTimeStr || isNaN(vehiclePrice)) {
-        return;
-      }
-
-      const pickup = new Date(`${pickupDateStr}T${pickupTimeStr}`);
-      const ret = new Date(`${returnDateStr}T${returnTimeStr}`);
-
-      if (ret <= pickup) {
-        document.getElementById("total_price").value = "0.00";
-        return;
-      }
-
-      const diffMs = ret - pickup;
-      const diffHours = diffMs / (1000 * 60 * 60);
-
-      if (diffHours < 2) {
-        document.getElementById("total_price").value = "0.00";
-        return;
-      }
-
-      // Calculate full days and remaining hours
-      const fullDays = Math.floor(diffHours / 24);
-      const remainingHours = diffHours % 24;
-
-      const hourlyRate = vehiclePrice / 24;
-      const total = (fullDays * vehiclePrice) + (remainingHours * hourlyRate);
-
-      document.getElementById("total_price").value = total.toFixed(2);
-      document.getElementById("hidden_booking_type").value = fullDays > 0 ? "daily+hourly" : "hourly";
-    }
-
-    function validateForm() {
-      const pickup = new Date(document.getElementById("pickup_date").value + 'T' + document.getElementById("pickup_time").value);
-      const ret = new Date(document.getElementById("return_date").value + 'T' + document.getElementById("return_time").value);
-      const diffHours = (ret - pickup) / (1000 * 60 * 60);
-
-      if (ret <= pickup) {
-        alert("Return date and time must be after pickup.");
-        return false;
-      }
-
-      if (diffHours < 2) {
-        alert("Minimum booking time is 2 hours.");
-        return false;
-      }
-
-      var phoneNumber = document.getElementById("number").value;
-      var phoneNumberPattern = /^(97|98)\d{8}$/;
-
-      const fullName = document.getElementById("fullname").value;
-      const namePattern = /^[A-Z][a-z]+(?: [A-Z][a-z]+)*$/;
-      if (!namePattern.test(fullName)) {
-        alert("Invalid full name. Each name should start with a capital letter (e.g., John Doe).");
-        return false; // Prevent form submission
-      }
-
-
-      if (!phoneNumberPattern.test(phoneNumber)) {
-        alert("Phone number must start with '97' and '98' and be exactly 10 digits long.");
-        return false; // Prevent form submission
-      }
-
-      return true;
-
-    }
-
-
-  </script>
+<script src="../../User/Javascript/book_vehicle.js"></script>
 
 
 </html>
