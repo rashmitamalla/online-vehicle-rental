@@ -47,7 +47,7 @@ ob_end_flush();
     <div class="dashboard_container"><?php include 'dashboard.php'; ?></div>
 
     <div class="main">
-        <h1>
+        <h1 style="margin-top:60px">
             Booking Details
         </h1>
 
@@ -80,7 +80,7 @@ ob_end_flush();
                     <?php
 
                     include '../../Database/database.php';
-                    $sql = "SELECT * FROM booking ";
+                    $sql = "SELECT * FROM booking ORDER BY booking_id DESC";
                     $result = mysqli_query($conn, $sql);
                     while ($row = mysqli_fetch_assoc($result)) {
                     ?>
@@ -101,17 +101,19 @@ ob_end_flush();
                             <td><?php echo $row['vehicle_price']; ?></td>
                             <td><?php echo $row['total_price']; ?></td>
                             <td>
-                                <form method="post" action="../../Database/update_booking_status.php">
+                                <form method="post" action="../../Database/update_booking_status.php" style="display: flex; flex-direction: column; align-items: flex-start; ">
                                     <input type="hidden" name="booking_id" value="<?php echo $row['booking_id']; ?>">
-                                    <select id="bstatus" name="bstatus" onchange="confirmCancellation(this)">
+                                    <select style="font-size: 14px;" id="bstatus" name="bstatus" onchange="confirmCancellation(this)">
                                         <option value="pending" <?php if ($row['bstatus'] == "pending") echo 'selected'; ?>>Pending</option>
                                         <option value="approved" <?php if ($row['bstatus'] == "approved") echo 'selected'; ?>>Approved</option>
                                         <option value="denied" <?php if ($row['bstatus'] == "denied") echo 'selected'; ?>>Denied</option>
                                         <option value="completed" <?php if ($row['bstatus'] == "completed") echo 'selected'; ?>>Completed</option>
                                         <option value="cancelled" <?php if ($row['bstatus'] == "cancelled") echo 'selected'; ?>>Cancelled</option>
                                     </select>
+                                                                        <input  style="font-size: 14px;" type="submit" class="update" value="update">
 
-                                    <input type="submit" class="update" value="Save Changes">
+
+                                    
                                 </form>
                             </td>
 

@@ -72,10 +72,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             // Send notification if function exists
             $msg = match ($newStatusLower) {
-                'approved' => "Your booking #$bid has been approved.",
-                'denied' => "Your booking #$bid has been denied.",
-                'cancelled' => "Your booking #$bid was cancelled.",
-                'completed' => "Your booking #$bid is completed. Please <a href='rate_vehicle.php?booking_id=$bid'>rate vehicle</a>",
+                'approved' => "Your booking has been approved.Plaese select payment method.",
+                'denied' => "Your booking  has been denied.",
+                'cancelled' => "Your booking was cancelled.",
+                'completed' => "Your booking  is completed. Please <a  href='rate_vehicle.php?booking_id=$bid'>rate vehicle</a>",
                 default => "Your booking #$bid status changed to $bstatus.",
             };
 
@@ -100,3 +100,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     http_response_code(405);
     echo "Method Not Allowed";
 }
+?>
+
+<Style>
+a{
+    color:black !important;
+}
+</Style>

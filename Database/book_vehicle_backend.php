@@ -98,11 +98,31 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
-    // Price Calculation
-    $full_days = floor($diff_hours / 24);
-    $remaining_hours = $diff_hours % 24;
-    $hourly_rate = $vehicle_price / 24;
-    $total_price = ($full_days * $vehicle_price) + ($remaining_hours * $hourly_rate);
+    // // Price Calculation
+    // $full_days = floor($diff_hours / 24);
+    // $remaining_hours = $diff_hours % 24;
+    // $hourly_rate = $vehicle_price / 24;
+    // $total_price = ($full_days * $vehicle_price) + ($remaining_hours * $hourly_rate);
+
+
+
+    if ($diff_hours < 2) {
+        $total_price = 0;
+        $booking_type = "invalid";
+    } elseif ($diff_hours <= 24) {
+        $total_price = $vehicle_price; // minimum 1 day charge
+        $booking_type = "hourly(min-1day)";
+    } else {
+        $full_days = floor($diff_hours / 24);
+        $remaining_hours = $diff_hours % 24;
+        $hourly_rate = $vehicle_price / 24;
+        $total_price = ($full_days * $vehicle_price) + ($remaining_hours * $hourly_rate);
+        $total_price = round($total_price / 10) * 10;
+        $booking_type = ($remaining_hours > 0) ? "daily+hourly" : "daily";
+    }
+
+
+
 
     // Insert booking
     $stmt = $conn->prepare("INSERT INTO booking

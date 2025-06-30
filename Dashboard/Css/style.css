@@ -64,7 +64,7 @@ h1{
 
 }
 .main{
-  padding:20px 60px;
+  padding:20px 10px;
   display:flex;
   flex-direction:column;
   row-gap: 20px;
@@ -109,6 +109,17 @@ form input[type="file"]{
   padding:6px;
 }
 
+table th, table td {
+  font-size: 14px;
+  color: black;
+  margin: 0;
+}
+table a{
+  color: rgb(28, 6, 88);
+  font-size: 14px;
+  text-decoration: none;
+}
+
 .field-group{
   width:50%;
 }
@@ -122,7 +133,7 @@ table {
 }
 
 th, td {
-  padding: 8px;
+  padding: 4px;
   text-align: left;
   border-bottom: 1px solid #ddd;
   border-right: 1px solid black;

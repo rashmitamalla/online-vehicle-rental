@@ -30,3 +30,47 @@ Current vehicle users:
 Current vehicle users: 
 ❌ No users found who booked this vehicle.
 
+========== Also Booked This [2025-06-30 15:34:22] ==========
+Current vehicle users: 
+❌ No users found who booked this vehicle.
+
+========== Also Booked This [2025-06-30 15:55:50] ==========
+Current vehicle users: 
+❌ No users found who booked this vehicle.
+
+========== Also Booked This [2025-06-30 17:55:22] ==========
+Current vehicle users: 
+❌ No users found who booked this vehicle.
+
+========== Also Booked This [2025-06-30 18:04:55] ==========
+Current vehicle users: 
+❌ No users found who booked this vehicle.
+
+========== Also Booked This [2025-06-30 18:07:41] ==========
+Current vehicle users: 
+❌ No users found who booked this vehicle.
+
+========== Also Booked This [2025-06-30 18:08:21] ==========
+Current vehicle users: 
+❌ No users found who booked this vehicle.
+
+========== Also Booked This [2025-06-30 18:08:46] ==========
+Current vehicle users: 
+❌ No users found who booked this vehicle.
+
+========== Also Booked This [2025-06-30 19:06:44] ==========
+Current vehicle users: 
+❌ No users found who booked this vehicle.
+
+========== Also Booked This [2025-06-30 19:07:59] ==========
+Current vehicle users: ujjwal123
+❌ No other vehicles booked by the same users.
+
+========== Also Booked This [2025-06-30 19:08:19] ==========
+Current vehicle users: 
+❌ No users found who booked this vehicle.
+
+========== Also Booked This [2025-06-30 19:12:34] ==========
+Current vehicle users: 
+❌ No users found who booked this vehicle.
+

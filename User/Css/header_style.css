@@ -139,3 +139,10 @@ a {
   text-decoration: none;
   color: white;
 }
+
+
+.notification-container a{
+  text-decoration: underline;
+  color: rgb(34, 13, 13) !important;
+  font-size: 15px;
+}

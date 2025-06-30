@@ -51,7 +51,7 @@ if ($row_rating = $result_rating->fetch_assoc()) {
 
 <body>
 
-    <h2>Rate Your Booking #<?= htmlspecialchars($booking_id) ?></h2>
+    <h2>Rate Your Booking </h2>
 
     <div class="vehicle-card">
         <img src="../../uploads/<?= htmlspecialchars($row['vehicle_image']) ?>" alt="Vehicle" style="width:100px;height:100px;object-fit:cover;">

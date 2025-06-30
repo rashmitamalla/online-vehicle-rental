@@ -50,7 +50,7 @@ function calculateTotal() {
   const pickupTimeStr = document.getElementById("pickup_time").value;
   const returnDateStr = document.getElementById("return_date").value;
   const returnTimeStr = document.getElementById("return_time").value;
-  const vehiclePrice = parseFloat(document.getElementById("vehicle_price").value);
+  const vehiclePrice = parseFloat(document.getElementById("vehicle_price").value); // daily price
 
   if (!pickupDateStr || !pickupTimeStr || !returnDateStr || !returnTimeStr || isNaN(vehiclePrice)) {
     return;
@@ -72,17 +72,26 @@ function calculateTotal() {
     return;
   }
 
-  const fullDays = Math.floor(diffHours / 24);
-  const remainingHours = diffHours % 24;
+  let total;
+  if (diffHours <= 24) {
+    total = vehiclePrice; // minimum charge = 1 day
+    document.getElementById("hidden_booking_type").value = "hourly(min-1day)";
+  } else {
+    const fullDays = Math.floor(diffHours / 24);
+    const remainingHours = diffHours % 24;
+    const hourlyRate = vehiclePrice / 24;
+    total = (fullDays * vehiclePrice) + (remainingHours * hourlyRate);
+    document.getElementById("hidden_booking_type").value = remainingHours > 0 ? "daily+hourly" : "daily";
+  }
 
-  const hourlyRate = vehiclePrice / 24;
-  const total = (fullDays * vehiclePrice) + (remainingHours * hourlyRate);
-
-  document.getElementById("total_price").value = total.toFixed(2);
-  document.getElementById("hidden_booking_type").value = fullDays > 0 ? "daily+hourly" : "hourly";
+  const roundedTotal = Math.round(total / 10) * 10;
+document.getElementById("total_price").value = roundedTotal.toFixed(2);
 }
 
+
 function validateForm() {
+
+ 
   const pickup = new Date(document.getElementById("pickup_date").value + 'T' + document.getElementById("pickup_time").value);
   const ret = new Date(document.getElementById("return_date").value + 'T' + document.getElementById("return_time").value);
   const diffHours = (ret - pickup) / (1000 * 60 * 60);
@@ -112,6 +121,7 @@ function validateForm() {
     return false;
   }
 
+ 
   return true;
 }
 
@@ -121,3 +131,6 @@ function updateReturnDateMin() {
     document.getElementById("return_date").setAttribute("min", pickupDate);
   }
 }
+
+
+ 
