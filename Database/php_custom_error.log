@@ -482,6 +482,7 @@ Vehicle 17: intersection(1) / union(4) = 0.25
 Top recommended vehicle IDs: 15, 16, 17
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ========== Also Booked This [2025-06-30 12:47:26] ==========
 Current vehicle users: ganesh123
 Vehicle 14: intersection(1) / union(1) = 1
@@ -499,6 +500,8 @@ Top recommended vehicle IDs: 14
 
 ========== Also Booked This [2025-06-30 13:01:04] ==========
 =======
+=======
+>>>>>>> Stashed changes
 ========== Also Booked This [2025-06-30 10:55:57] ==========
 Current vehicle users: bipana123, arju123, ganesh123, sana123
 Vehicle 15: intersection(2) / union(4) = 0.5
@@ -605,6 +608,9 @@ Vehicle 17: intersection(1) / union(4) = 0.25
 Top recommended vehicle IDs: 15, 16, 17
 
 ========== Also Booked This [2025-06-30 11:33:18] ==========
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
 Vehicle 15: intersection(2) / union(5) = 0.4
@@ -612,6 +618,7 @@ Vehicle 16: intersection(1) / union(5) = 0.2
 Vehicle 17: intersection(1) / union(5) = 0.2
 Top recommended vehicle IDs: 15, 16, 17
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 ========== Also Booked This [2025-06-30 13:01:36] ==========
 Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123, bishal123
@@ -768,6 +775,8 @@ Vehicle 14: intersection(2) / union(2) = 1
 Vehicle 0: intersection(1) / union(2) = 0.5
 Top recommended vehicle IDs: 14, 0
 =======
+=======
+>>>>>>> Stashed changes
 ========== Also Booked This [2025-06-30 11:37:41] ==========
 Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
 Vehicle 15: intersection(2) / union(5) = 0.4
@@ -995,5 +1004,8 @@ Vehicle 15: intersection(2) / union(5) = 0.4
 Vehicle 16: intersection(1) / union(5) = 0.2
 Vehicle 17: intersection(1) / union(5) = 0.2
 Top recommended vehicle IDs: 15, 16, 17
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
