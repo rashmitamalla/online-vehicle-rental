@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fuel = $_POST["oil"];
     $type = $_POST["type"];
     $model = $_POST["model"];
+    $brand = $_POST["brand"];
     $color = $_POST["color"];
     $status = $_POST["status"];
 
@@ -33,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $relativePath = '../Image/' . $filename;
 
     if (move_uploaded_file($_FILES["pic"]["tmp_name"], $targetPath)) {
-        $sql = "INSERT INTO `vehicle`(`vehicle_number`, `vehicle_condition`, `vehicle_image`, `vehicle_price`, `vehicle_people`, `vehicle_oil`, `vehicle_type`, `vehicle_model`, `vehicle_color`, `vehicle_status`) 
-                VALUES ('$number','$condition','$relativePath','$price','$people','$fuel','$type','$model','$color','$status')";
+        $sql = "INSERT INTO `vehicle`(`vehicle_number`, `vehicle_condition`, `vehicle_image`, `vehicle_price`, `vehicle_people`, `vehicle_oil`, `vehicle_type`, `vehicle_model`,`brand`, `vehicle_color`, `vehicle_status`) 
+                VALUES ('$number','$condition','$relativePath','$price','$people','$fuel','$type','$model','$brand','$color','$status')";
 
         $query = mysqli_query($conn, $sql);
 

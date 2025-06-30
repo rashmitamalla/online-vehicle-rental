@@ -38,12 +38,18 @@ if (session_status() === PHP_SESSION_NONE) {
                     <option value="Car">Car</option>
                     <option value="Hiace">Hiace</option>
                     <option value="Sumo">Sumo</option>
+                    <option value="Truck">Mini-Truck</option>
+                    <option value="Scorpio">Scorpio</option>
+                    <option value="Hilux">Hilux</option>
+
 
                 </select>
                 <select id="oil" name="oil">
                     <option value="">--select fuel type--</option>
                     <option value="Petrol">Petrol</option>
                     <option value="Diesel">Diesel</option>
+                                        <option value="Electric">Electric</option>
+
                 </select>
                 <input type="text" name="color" id="color" placeholder="Enter vehicle color" required />
                 <input type="text" name="price" id="price" placeholder="Enter price per day" required />
@@ -64,6 +70,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
                 <input type="text" name="people" id="people" placeholder="Enter the number of people" required />
                 <input type="text" name="number" id="number" placeholder="Enter Vehicle plate number" required />
+                <input type="text" name="brand" id="brand" placeholder="Enter brand Name" required />
                 <input type="text" name="model" id="model" placeholder="Enter Model Number" required />
 
 

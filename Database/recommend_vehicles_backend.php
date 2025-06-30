@@ -1,129 +1,183 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
+if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
-
-include 'database.php';
-
-$vehicles = [];
-
-// Get vehicle_id from URL or set to 0 if missing
-$vehicle_id = isset($_GET['vehicle_id']) ? intval($_GET['vehicle_id']) : 0;
-
-if ($vehicle_id > 0) {
-  $sql = "SELECT * FROM vehicle WHERE vehicle_id = $vehicle_id";
-} else {
-  $sql = "SELECT * FROM vehicle";
-}
-
-$result = mysqli_query($conn, $sql);
-if ($result && mysqli_num_rows($result) > 0) {
-  while ($row = mysqli_fetch_assoc($result)) {
-    $vehicles[] = $row;
-  }
-}
+include_once 'database.php';
 
 $recommendedVehicles = [];
 
 if (isset($_SESSION['username'])) {
   $username = $_SESSION['username'];
 
-  // Step 1: Get vehicle details for viewed and booked vehicles
-  $history_sql = "SELECT DISTINCT v.* 
-                  FROM vehicle v
-                  LEFT JOIN vehicle_views vv ON vv.vehicle_id = v.vehicle_id AND vv.username = ?
-                  LEFT JOIN booking b ON b.vehicle_id = v.vehicle_id AND b.username = ?
-                  WHERE vv.username IS NOT NULL OR b.username IS NOT NULL";
-  $stmt = $conn->prepare($history_sql);
-  $stmt->bind_param("ss", $username, $username);
+  // Get latest viewed vehicle by this user
+  $stmt = $conn->prepare("SELECT vehicle_id FROM vehicle_views WHERE username = ? ORDER BY viewed_at DESC LIMIT 1");
+  $stmt->bind_param("s", $username);
   $stmt->execute();
-  $history_result = $stmt->get_result();
+  $res = $stmt->get_result();
 
-  $user_history = [];
-  while ($row = $history_result->fetch_assoc()) {
-    $user_history[] = $row;
-  }
-  $stmt->close();
+  if ($res->num_rows > 0) {
+    $row = $res->fetch_assoc();
+    $vehicle_id = intval($row['vehicle_id']);
 
-  // Step 2: Get all candidate vehicles excluding current vehicle_id
-  $exclude_id_clause = ($vehicle_id > 0) ? "WHERE vehicle_id != $vehicle_id" : "";
-  $all_sql = "SELECT * FROM vehicle $exclude_id_clause";
-  $all_result = $conn->query($all_sql);
-  $candidates = [];
-  while ($row = $all_result->fetch_assoc()) {
-    $candidates[] = $row;
-  }
+    // Get details of the viewed vehicle
+    $stmt = $conn->prepare("SELECT * FROM vehicle WHERE vehicle_id = ?");
+    $stmt->bind_param("i", $vehicle_id);
+    $stmt->execute();
+    $vehicleResult = $stmt->get_result();
+    $stmt->close();
 
-  // Step 3: Jaccard similarity between each candidate and user history
-  $scored = [];
-  foreach ($candidates as $candidate) {
-    $best_similarity = 0;
+    if ($vehicleResult->num_rows > 0) {
+      $current_vehicle = $vehicleResult->fetch_assoc();
 
-    foreach ($user_history as $history_vehicle) {
-      $candidate_features = [
-        strtolower(trim($candidate['vehicle_type'])),
-        strtolower(trim($candidate['vehicle_model'])),
-        strtolower(trim($candidate['vehicle_color'])),
-      ];
+      function getFeaturesSet($v)
+      {
+        return [
+          strtolower($v['brand']),
+          strtolower($v['vehicle_type']),
+          strtolower($v['vehicle_color']),
+          strtolower($v['vehicle_oil']),
+          getPriceRangeCategory((int) $v['vehicle_price'])
+        ];
+      }
 
-      $history_features = [
-        strtolower(trim($history_vehicle['vehicle_type'])),
-        strtolower(trim($history_vehicle['vehicle_model'])),
-        strtolower(trim($history_vehicle['vehicle_color'])),
-      ];
+      function getPriceRangeCategory($price)
+      {
+        if ($price < 10000)
+          return 'low';
+        elseif ($price < 30000)
+          return 'mid';
+        else
+          return 'high';
+      }
 
-      $weights = ['vehicle_type' => 0.3, 'vehicle_model' => 0.3, 'vehicle_color' => 0.4];
+      function jaccardSimilarity($a, $b)
+      {
+        $inter = array_intersect($a, $b);
+        $union = array_unique(array_merge($a, $b));
+        return (count($union) > 0) ? count($inter) / count($union) : 0;
+      }
 
-      $similarity = 0;
-      $similarity += ($candidate_features[0] === $history_features[0]) ? $weights['vehicle_type'] : 0;
-      $similarity += ($candidate_features[1] === $history_features[1]) ? $weights['vehicle_model'] : 0;
-      $similarity += ($candidate_features[2] === $history_features[2]) ? $weights['vehicle_color'] : 0;
+      // Fetch other vehicles
+      $stmt = $conn->prepare("SELECT * FROM vehicle WHERE vehicle_id != ?");
+      $stmt->bind_param("i", $vehicle_id);
+      $stmt->execute();
+      $allResult = $stmt->get_result();
+      $stmt->close();
+
+      $scored = [];
+      $current_features = getFeaturesSet($current_vehicle);
+
+      while ($v = $allResult->fetch_assoc()) {
+        $features = getFeaturesSet($v);
+        $similarity = jaccardSimilarity($current_features, $features);
+        $scored[] = ['vehicle' => $v, 'score' => $similarity];
+      }
+
+      usort($scored, fn($a, $b) => $b['score'] <=> $a['score']);
+
+      // Top 8 similar
+      foreach ($scored as $entry) {
+        if ($entry['score'] > 0) {
+          $recommendedVehicles[] = $entry['vehicle'];
+          if (count($recommendedVehicles) >= 8)
+            break;
+        }
+      }
+
+      // Fallback: random if needed
+      if (count($recommendedVehicles) < 8) {
+        $excluded = array_column($recommendedVehicles, 'vehicle_id');
+        $excluded[] = $vehicle_id;
+        $excludeStr = implode(',', $excluded);
+
+        $left = 8 - count($recommendedVehicles);
 
 
+        $user_id = null;
+$stmt = $conn->prepare("SELECT userid FROM user WHERE username = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+if ($row = $result->fetch_assoc()) {
+    $user_id = $row['userid'];
+}
+$stmt->close();
 
-      $intersection = array_intersect($candidate_features, $history_features);
-      $union = array_unique(array_merge($candidate_features, $history_features));
+        // 1. Try to add vehicles from wishlist
+        $queryWishlist = "SELECT v.* 
+                      FROM vehicle v
+                      INNER JOIN wishlist w ON v.vehicle_id = w.vehicle_id
+                      WHERE w.userid = $user_id
+                      AND v.vehicle_id NOT IN ($excludeStr)
+                      LIMIT $left";
 
-      $similarity = count($intersection) / count($union);
-      $best_similarity = max($best_similarity, $similarity);
+        $wishlistResult = $conn->query($queryWishlist);
+        while ($row = $wishlistResult->fetch_assoc()) {
+          $recommendedVehicles[] = $row;
+          $excluded[] = $row['vehicle_id']; // track added ones
+        }
+
+        // 2. If still less than 8, add random vehicles
+        if (count($recommendedVehicles) < 8) {
+          $excludeStr = implode(',', $excluded);
+          $left = 8 - count($recommendedVehicles);
+
+          $queryRandom = "SELECT * FROM vehicle 
+                        WHERE vehicle_id NOT IN ($excludeStr) 
+                        ORDER BY RAND() 
+                        LIMIT $left";
+
+          $randomResult = $conn->query($queryRandom);
+          while ($row = $randomResult->fetch_assoc()) {
+            $recommendedVehicles[] = $row;
+          }
+        }
+      }
+
     }
-
-    $scored[] = ['vehicle' => $candidate, 'score' => $best_similarity];
   }
+}
 
-  // Step 4: Sort by similarity score and pick top 4
-  usort($scored, function ($a, $b) {
-    return $b['score'] <=> $a['score'];
-  });
-
-  $top = array_slice($scored, 0, 4);
-  foreach ($top as $item) {
-    $recommendedVehicles[] = $item['vehicle'];
-  }
-
-  // Step 5: Fallback if less than 4
-  if (count($recommendedVehicles) < 4) {
-    $excludeIds = array_column($recommendedVehicles, 'vehicle_id');
-    $excludeStr = implode(',', array_map('intval', $excludeIds));
-    $remaining = 4 - count($recommendedVehicles);
-
-    $random_sql = "SELECT * FROM vehicle" .
-      (count($excludeIds) > 0 ? " WHERE vehicle_id NOT IN ($excludeStr)" : "") .
-      " ORDER BY RAND() LIMIT $remaining";
-    $random_result = $conn->query($random_sql);
-    while ($row = $random_result->fetch_assoc()) {
-      $recommendedVehicles[] = $row;
-    }
+if (empty($recommendedVehicles)) {
+  // Show vehicles based on most favorited (wishlist count)
+  $popular = $conn->query("SELECT v.*, COUNT(w.id) as fav_count
+                           FROM vehicle v
+                           LEFT JOIN wishlist w ON v.vehicle_id = w.vehicle_id
+                           GROUP BY v.vehicle_id
+                           ORDER BY fav_count DESC
+                           LIMIT 8");
+  while ($row = $popular->fetch_assoc()) {
+    $recommendedVehicles[] = $row;
   }
 }
 
 ?>
 
+
+
 <style>
+  .carousel-container {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+    gap: 20px;
+    width: fit-content;
+    /* Let content decide width */
+  }
+
+  .vehicle-card-wrapper {
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+  }
+
   .vehicle-card {
     border: 1px solid #ccc;
     padding: 10px;
-    box-sizing: border-box;
     transition: transform 0.3s, box-shadow 0.3s;
   }
 
@@ -131,33 +185,119 @@ if (isset($_SESSION['username'])) {
     transform: translateY(-5px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
+
+  h2 {
+    font-size: 0.9em;
+    font-weight: 600;
+    margin: 10px 0 5px 0;
+    color: #333;
+    min-height: 2.5em;
+  }
+
+  p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #555;
+  }
+
+  button#leftArrow,
+  button#rightArrow {
+    background-color: white;
+    border: 1px solid #ccc;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
 </style>
 
-<h1 style="padding:0px 60px">Recommended For You</h1>
 
-<div class="recommended-vehicles" style="display: flex; gap: 20px; flex-wrap: nowrap; margin-top: 20px; overflow-x: auto; padding:0px 60px">
-  <?php if (!empty($recommendedVehicles)): ?>
-    <?php
-    // Limit to 4 vehicles max
-    $vehiclesToShow = array_slice($recommendedVehicles, 0, 4);
-    ?>
+<h1 style="padding: 0 60px">Recommended For You</h1>
 
-    <?php foreach ($vehiclesToShow as $vehicle): ?>
-      <a href="Book.php?vehicle_id=<?php echo $vehicle['vehicle_id']; ?>"
-        style="text-decoration: none; color: inherit; width: 23%; box-sizing: border-box;">
+<div style="position: relative; padding: 0 60px;">
+  <!-- Left Arrow -->
+  <button id="leftArrow" style="position: absolute; left: 10px; top: 40%; z-index: 10;">&#10094;</button>
 
-        <div class="vehicle-card">
-          <img src="../../Admin/<?php echo htmlspecialchars($vehicle['vehicle_image']); ?>" style="width: 100%; height: auto;">
-          <h3><?php echo htmlspecialchars($vehicle['vehicle_number']); ?></h3>
-          <p>Type: <?php echo htmlspecialchars($vehicle['vehicle_type']); ?></p>
-          <p>Model: <?php echo htmlspecialchars($vehicle['vehicle_model']); ?></p>
-          <p>Price: Rs <?php echo htmlspecialchars($vehicle['vehicle_price']); ?>/day</p>
-        </div>
+  <!-- Right Arrow -->
+  <button id="rightArrow" style="position: absolute; right: 10px; top: 40%; z-index: 10;">&#10095;</button>
 
-      </a>
-    <?php endforeach; ?>
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <?php if (!empty($recommendedVehicles)): ?>
+        <?php foreach ($recommendedVehicles as $vehicle): ?>
+          <?php
+          // Count how many users have favorited this vehicle
+          $vid = $vehicle['vehicle_id'];
+          $favQuery = "SELECT COUNT(*) AS total FROM wishlist WHERE vehicle_id = $vid";
+          $favResult = $conn->query($favQuery);
+          $favRow = $favResult->fetch_assoc();
+          $favoriteCount = $favRow['total'];
+          ?>
 
-  <?php else: ?>
-    <p>No recommendations available at this time.</p>
-  <?php endif; ?>
+          <a href="Book.php?vehicle_id=<?php echo $vehicle['vehicle_id']; ?>" class="vehicle-card-wrapper">
+            <div class="vehicle-card">
+              <img src="../../Admin/<?php echo htmlspecialchars($vehicle['vehicle_image']); ?>"
+                style="width: 100%; height: auto;">
+              <h2><?php echo htmlspecialchars($vehicle['vehicle_model']); ?></h2>
+              <p>Brand: <?php echo $vehicle['brand']; ?></p>
+              <p>Rs <?php echo intval($vehicle['vehicle_price']); ?>/day</p>
+                            <p>❤️ <?php echo $favoriteCount; ?></p>
+
+            </div>
+            
+          </a>
+        <?php endforeach; ?>
+      <?php else: ?>
+        <p>No recommendations available at this time.</p>
+      <?php endif; ?>
+    </div>
+  </div>
+
 </div>
+<script>
+  const track = document.querySelector('.carousel-track');
+  const leftArrow = document.getElementById('leftArrow');
+  const rightArrow = document.getElementById('rightArrow');
+  const items = document.querySelectorAll('.vehicle-card-wrapper');
+
+  const visibleItems = 4;
+  const totalItems = items.length;
+  const maxIndex = Math.ceil(totalItems / visibleItems) - 1;
+  let currentIndex = 0;
+
+  // Ensure each item has fixed width in pixels based on container
+  const container = document.querySelector('.carousel-container');
+  const containerWidth = container.offsetWidth;
+  const itemWidth = containerWidth / visibleItems;
+
+  items.forEach(item => {
+    item.style.minWidth = `${itemWidth}px`;
+    item.style.maxWidth = `${itemWidth}px`;
+    item.style.flex = `0 0 ${itemWidth}px`;
+  });
+
+  const gap = 20; // Must match CSS gap
+
+  function updateCarousel() {
+    const offset = currentIndex * (itemWidth * visibleItems + gap * visibleItems);
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+
+  leftArrow.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+
+  rightArrow.addEventListener('click', () => {
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+
+  // Optional: update layout if window resizes
+  window.addEventListener('resize', () => {
+    location.reload(); // or recalculate itemWidth, etc. for dynamic resizing
+  });
+</script>

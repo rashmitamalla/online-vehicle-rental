@@ -1,3 +1,9 @@
+body {
+   
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
 .vehicle-list {
     display: flex;
     flex-direction: column;
@@ -130,14 +136,6 @@
 }
 
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-}
-
-.main-body-list {
-    padding: 20px 60px;
-}
 
 /* Top Filter Bar */
 .top-filter-bar {
@@ -320,16 +318,20 @@ body {
 
 /* Layout */
 .content-wrapper {
+     align-items: flex-start;
     display: flex;
     gap: 20px;
 }
 
 .sidebar-filter {
-    flex: 1;
-    max-width: 250px;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
+     position: sticky;
+  top: 20px; /* distance from top of viewport */
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: #fff; /* optional: background to avoid content behind */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
@@ -415,3 +417,52 @@ body {
 .red-btn:hover {
     background-color: #c82333;
 }
+
+
+.slider-container {
+        position: relative;
+        height: 20px;
+    }
+
+    .price-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .price-labels span {
+        background-color: #1e2a55;
+        color: #fff;
+        padding: 4px 8px;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 14px;;
+    }
+
+   
+    input[type=range] {
+        position: absolute;
+        width: 100%;
+    
+        pointer-events: none;
+        background: transparent;
+       
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        pointer-events: all;
+        width: 20px;
+        height: 20px;
+        margin-top: -5px;
+
+        border-radius: 50%;
+        background: #fff;
+        border: 3px solid #ccc;
+        
+      
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+        height: 5px;
+        background: transparent;
+    }

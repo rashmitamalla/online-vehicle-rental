@@ -16,54 +16,123 @@ $sql = "
 $result = $conn->query($sql);
 ?>
 
+<style>
+    .car-card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.car-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.car-details {
+  padding: 16px;
+}
+
+.car-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car-title h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.likes {
+  font-size: 14px;
+  color: #666;
+}
+
+.car-icons {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 10px 0;
+  color: #444;
+}
+
+.car-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price small {
+  color: #888;
+  font-size: 12px;
+}
+
+.price strong {
+  font-size: 18px;
+  color: #000;
+}
+
+.rent-button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.rent-button:hover {
+  background-color: #219150;
+}
+</style>
+
 <h1 style="padding: 0px 60px;">Popular Vehicles Based on Rating</h1>
 
-<div class="popular-vehicles" style="display: flex; gap: 20px; flex-wrap: nowrap; padding: 0px 60px;">
-    <?php while ($row = $result->fetch_assoc()): ?>
-        <a href="Book.php?vehicle_id=<?php echo $row['vehicle_id']; ?>"
-            style="text-decoration: none; color: inherit; width: 23%; box-sizing: border-box;">
-            <div class="vehicle-card" style="border: 1px solid #ccc; padding: 10px;">
-                <img src="../../Admin/<?php echo htmlspecialchars($row['vehicle_image']); ?>" style="width: 100%; height: auto;">
-                <h3><?php echo htmlspecialchars($row['vehicle_number']); ?></h3>
-                <p>Type: <?php echo htmlspecialchars($row['vehicle_type']); ?></p>
-                <p>Model: <?php echo htmlspecialchars($row['vehicle_model']); ?></p>
-                <p>Rating:
-                    <?php
-                    $rating = floatval($row['avg_rating']);
-                    $fullStars = floor($rating);
-                    $hasHalfStar = ($rating - $fullStars) >= 0.25 && ($rating - $fullStars) < 0.75;
-                    $extraFull = ($rating - $fullStars) >= 0.75 ? 1 : 0;
-                    $emptyStars = 5 - $fullStars - ($hasHalfStar ? 1 : 0) - $extraFull;
+<div class="popular-vehicles" style="display: flex; gap: 20px; flex-wrap: nowrap; overflow-x: auto; padding: 0px 60px;">
+    <?php 
+    function renderStarRating($rating) {
+        $fullStars = floor($rating);
+        $halfStar = ($rating - $fullStars) >= 0.5 ? 1 : 0;
+        $emptyStars = 5 - $fullStars - $halfStar;
 
-                    // Full stars
-                    for ($i = 0; $i < $fullStars + $extraFull; $i++) {
-                        echo '<svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2L14.94 8.63L22 9.24L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.24L9.06 8.63L12 2Z"/>
-      </svg>';
-                    }
+        // Output full stars
+        for ($i = 0; $i < $fullStars; $i++) {
+            echo '<i class="fa-solid fa-star" style="color: gold;"></i>';
+        }
 
-                    // Half star
-                    if ($hasHalfStar) {
-                        echo '<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="half">
-            <stop offset="50%" stop-color="#FFD700"/>
-            <stop offset="50%" stop-color="#ccc"/>
-          </linearGradient>
-        </defs>
-        <path fill="url(#half)" d="M12 2L14.94 8.63L22 9.24L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.24L9.06 8.63L12 2Z"/>
-      </svg>';
-                    }
+        // Output half star
+        if ($halfStar) {
+            echo '<i class="fa-solid fa-star-half-stroke" style="color: gold;"></i>';
+        }
 
-                    // Empty stars
-                    for ($i = 0; $i < $emptyStars; $i++) {
-                        echo '<svg width="16" height="16" viewBox="0 0 24 24" fill="#ccc" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2L14.94 8.63L22 9.24L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.24L9.06 8.63L12 2Z"/>
-      </svg>';
-                    }
-                    ?>
-                </p>
-                <p>Price: Rs <?php echo htmlspecialchars($row['vehicle_price']); ?>/day</p>
+        // Output empty stars
+        for ($i = 0; $i < $emptyStars; $i++) {
+            echo '<i class="fa-regular fa-star" style="color: gold;"></i>';
+        }
+    }
+
+    while ($row = $result->fetch_assoc()):
+    ?>
+        <a href="Book.php?vehicle_id=<?php echo $row['vehicle_id']; ?>" class="vehicle-card-link" style="text-decoration: none; color: inherit; width: 23%; box-sizing: border-box;">
+            <div class="vehicle-card" style="border: 1px solid #ccc; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                <img src="../../Admin/<?php echo htmlspecialchars($row['vehicle_image']); ?>" alt="Vehicle Image" class="vehicle-img" style="width: 100%; height: 180px; object-fit: cover;">
+                <div class="vehicle-info" style="padding: 12px 14px;">
+                    <h3 style="margin: 0 0 6px 0;"><?php echo htmlspecialchars($row['vehicle_model']); ?></h3>
+                    
+                    <p class="price" style="margin-top: 8px; font-weight: bold;">Price: <strong>Rs <?php echo htmlspecialchars($row['vehicle_price']); ?></strong>/day</p>
+
+                    <p style="margin: 4px 0;">
+                        Rating:
+                        <?php renderStarRating(floatval($row['avg_rating'])); ?>
+                    </p>
+                </div>
             </div>
         </a>
     <?php endwhile; ?>

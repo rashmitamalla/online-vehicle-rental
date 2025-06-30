@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <?php
 session_start();
 include '../../Database/database.php';
 
-$vehicle_id = $_GET['vehicle_id'] ?? null;
 
-if ($vehicle_id) {
-    if (!isset($_SESSION['recent_vehicle_ids'])) {
-        $_SESSION['recent_vehicle_ids'] = [];
-    }
-
-    $_SESSION['recent_vehicle_ids'] = array_unique(array_merge([intval($vehicle_id)], $_SESSION['recent_vehicle_ids']));
-    $_SESSION['recent_vehicle_ids'] = array_slice($_SESSION['recent_vehicle_ids'], 0, 5);
-}
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
 
 <head>
   <meta charset="UTF-8" />
@@ -28,6 +19,9 @@ if ($vehicle_id) {
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
 </head>
 
 <body>
@@ -51,15 +45,19 @@ if ($vehicle_id) {
 
   <!-- Popular Vehicles Section -->
   <div class="popular-section">
-    
+
     <?php include '../../Database/popular_vehicles_backend.php'; ?>
   </div>
 
   <!-- Recommended Vehicles Section -->
   <div class="recommended-section">
-   
-    <?php include '../../Database/recommend_vehicles_backend.php'; ?>
+
+
+    <?php
+    include '../../Database/recommend_vehicles_backend.php';
+    ?>
   </div>
+
 
   <div class="container">
     <h2>Discover the Nepal's largest car rental marketplace</h2>
@@ -132,7 +130,7 @@ if ($vehicle_id) {
     </div>
   </div>
 
-<script src="../javascript/slide.js"></script>
+  <script src="../javascript/slide.js"></script>
 </body>
 
 </html>

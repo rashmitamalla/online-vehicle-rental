@@ -61,27 +61,23 @@ a {
 .red-btn,
 .green-btn,
 .blue-btn {
+ color: white;
   text-align: center;
-  padding: 10px 30px;
-  border-radius: 4px;
+  padding: 6px 30px;
+  border-radius: 4px; 
   border-style: none;
-  margin-bottom: 10px;
+  
 }
 .black-btn,
 .red-btn,
 .green-btn,
 .blue-btn a {
   color: white;
-  font-size: 20px;
+  
 }
 .blue-btn {
   background-color: royalblue;
-  color: white;
-  text-align: center;
-  padding: 10px 30px;
-  border-radius: 4px;
-  border-style: none;
-  margin-bottom: 10px;
+ 
 }
 .green-btn {
   background-color: green;
@@ -420,6 +416,64 @@ li img {
 .notification-item:last-child {
   border-bottom: none;
 }
+
+
+.favorite-dropdown-container {
+ display: inline-block;
+  z-index: 10000;
+}
+
+.favorite-dropdown {
+  top: 30px;
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  z-index: 9999;
+  color: #333333; /* increased */
+ 
+  
+}
+
+.favorite-dropdown .dropdown-header {
+  font-weight: bold;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+   z-index: 10000 important;
+ 
+}
+
+.favorite-dropdown .dropdown-content {
+  padding: 10px;
+}
+
+.favorite-dropdown .dropdown-content p {
+  margin: 0;
+  padding: 5px 0;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.favorite-dropdown .dropdown-content a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  padding: 5px 0;
+}
+
+.favorite-dropdown .dropdown-content a:hover {
+  text-decoration: underline;
+}
+
+
+
+
 
 .slider-container {
   position: relative;
@@ -834,3 +888,6 @@ p.subtitle {
     align-items: center;
   }
 }
+
+
+

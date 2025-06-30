@@ -34,6 +34,18 @@ $displayProfile = $loggedIn ? 'block' : 'none';
     </div>
 
     <div class="sec">
+      <div class="favorite-dropdown-container">
+        <i class="fa-solid fa-heart" id="favoriteIcon" title="Show Favorite" style="color: red; font-size: 1.5em; cursor: pointer;"></i>
+        <div class="favorite-dropdown" id="favoriteDropdown">
+          <div class="dropdown-header">Favorites</div>
+          <div class="dropdown-content" id="favoriteContent">
+            <!-- Dynamically load favorites here -->
+            <p>Loading...</p>
+          </div>
+        </div>
+      </div>
+
+
       <!-- Notification Bell -->
       <div class="notification-container">
         <i class="fa fa-bell" id="notificationBell"></i>
@@ -75,11 +87,18 @@ $displayProfile = $loggedIn ? 'block' : 'none';
     </div>
   </div>
 
+
+
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      const isLoggedIn = <?php echo isset($_SESSION['username']) ? 'true' : 'false'; ?>;
+
       const submenu = document.getElementById("sub-menu-wrap");
       const bell = document.getElementById("notificationBell");
       const dropdown = document.getElementById("notificationDropdown");
+      const favoriteIcon = document.getElementById("favoriteIcon");
+      const favoriteDropdown = document.getElementById("favoriteDropdown");
+      const favoriteContent = document.getElementById("favoriteContent");
 
       // Toggle profile submenu
       window.togglemenu = function() {
@@ -89,35 +108,84 @@ $displayProfile = $loggedIn ? 'block' : 'none';
       // Toggle and load notifications
       bell.addEventListener("click", function(event) {
         event.stopPropagation();
-        if (dropdown.style.display === "block") {
-          dropdown.style.display = "none";
-        } else {
-          dropdown.style.display = "block";
-          dropdown.innerHTML = "<div class='notification-item'>Loading...</div>";
+        dropdown.style.display =
+          dropdown.style.display === "block" ? "none" : "block";
 
+        if (dropdown.style.display === "block") {
+          dropdown.innerHTML = "<div class='notification-item'>Loading...</div>";
           const xhr = new XMLHttpRequest();
           xhr.open("GET", "../../User/Php/get_notifications.php", true);
           xhr.onload = function() {
-            dropdown.innerHTML = xhr.status === 200 ? xhr.responseText : "<div class='notification-item'>Error loading notifications</div>";
+            dropdown.innerHTML =
+              xhr.status === 200 ?
+              xhr.responseText :
+              "<div class='notification-item'>Error loading notifications</div>";
           };
           xhr.onerror = function() {
-            dropdown.innerHTML = "<div class='notification-item'>Network error</div>";
+            dropdown.innerHTML =
+              "<div class='notification-item'>Network error</div>";
           };
           xhr.send();
         }
       });
 
+      // Toggle and load favorites (wishlist) with login check
+      favoriteIcon.addEventListener("click", function(e) {
+        e.stopPropagation();
+
+        if (!isLoggedIn) {
+          alert("User not logged in. Please log in to view favorites.");
+          return;
+        }
+
+        favoriteDropdown.style.display =
+          favoriteDropdown.style.display === "block" ? "none" : "block";
+
+        if (favoriteDropdown.style.display === "block") {
+          favoriteContent.innerHTML = "<div class='notification-item'>Loading...</div>";
+          fetch("fetch_wishlist.php")
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.length > 0) {
+                favoriteContent.innerHTML = "";
+                data.forEach((item) => {
+                  favoriteContent.innerHTML += `
+  <a href="Book.php?vehicle_id=${item.vehicle_id}" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit; margin-bottom:8px; font-size:14px;">
+    <img src="../../Image/${item.vehicle_image}" alt="${item.vehicle_model}" style="width:40px; height:30px; object-fit:cover; border-radius:4px;">
+    <div>
+      ${item.vehicle_model} - Rs ${item.vehicle_price}/day
+    </div>
+  </a>
+`;
+                });
+              } else {
+                favoriteContent.innerHTML = "<p>No favorites yet.</p>";
+              }
+            })
+            .catch(() => {
+              favoriteContent.innerHTML = "<p>Failed to load favorites.</p>";
+            });
+        }
+      });
+
       // Hide dropdowns when clicking outside
-      window.addEventListener("click", function(event) {
-        if (!event.target.closest(".notification-container")) {
-          dropdown.style.display = "none";
-        }
-        if (!event.target.closest(".profile-icon")) {
-          submenu.classList.remove("open-class");
-        }
+      document.addEventListener("click", function() {
+        dropdown.style.display = "none";
+        favoriteDropdown.style.display = "none";
+      });
+
+      // Prevent closing when clicking inside the dropdowns
+      dropdown.addEventListener("click", function(e) {
+        e.stopPropagation();
+      });
+
+      favoriteDropdown.addEventListener("click", function(e) {
+        e.stopPropagation();
       });
     });
   </script>
+
+
 </body>
 
 </html>

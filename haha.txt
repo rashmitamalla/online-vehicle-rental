@@ -1,0 +1,272 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+include_once 'database.php';
+
+$vehicle_id = 0;
+$recommendedVehicles = [];
+
+// Step 1: Determine current vehicle_id
+if (isset($_GET['vehicle_id'])) {
+    $vehicle_id = intval($_GET['vehicle_id']);
+    $_SESSION['last_viewed_vehicle_id'] = $vehicle_id; // update session
+} elseif (isset($_SESSION['last_viewed_vehicle_id'])) {
+    $vehicle_id = intval($_SESSION['last_viewed_vehicle_id']);
+} else {
+    $vehicle_id = 0;
+}
+
+echo "Current Vehicle ID: " . $vehicle_id . "<br>";
+echo "Session last_viewed_vehicle_id: ";
+print_r($_SESSION['last_viewed_vehicle_id']);
+echo "<br>";
+
+// Step 2: Check if user is logged in
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+
+    // Step 3: If cached recommendations match current vehicle, reuse them
+    if (
+        isset($_SESSION['last_recommended_vehicles']) &&
+        isset($_SESSION['last_viewed_vehicle_id']) &&
+        intval($_SESSION['last_viewed_vehicle_id']) == $vehicle_id  // loose compare by casting to int
+    ) {
+        echo "<pre>Using cached recommended vehicles for vehicle ID $vehicle_id:\n";
+        print_r($_SESSION['last_recommended_vehicles']);
+        echo "</pre>";
+
+        $recommendedVehicles = $_SESSION['last_recommended_vehicles'];
+    } else {
+        // No cached recommendations, generate new ones
+        $current_vehicle = null;
+        if ($vehicle_id > 0) {
+            $stmt = $conn->prepare("SELECT * FROM vehicle WHERE vehicle_id = ?");
+            $stmt->bind_param("i", $vehicle_id);
+            $stmt->execute();
+            $res = $stmt->get_result();
+            if ($res->num_rows > 0) {
+                $current_vehicle = $res->fetch_assoc();
+            }
+            $stmt->close();
+        }
+
+        if ($current_vehicle) {
+            // === Helper Functions ===
+            function getPriceRangeCategory($price) {
+                if ($price < 10000) return 'low';
+                elseif ($price < 30000) return 'mid';
+                else return 'high';
+            }
+
+            function getFeaturesSet($vehicle) {
+                return [
+                    strtolower(trim($vehicle['brand'] ?? '')),
+                    strtolower(trim($vehicle['vehicle_type'] ?? '')),
+                    strtolower(trim($vehicle['vehicle_color'] ?? '')),
+                    strtolower(trim($vehicle['vehicle_oil'] ?? '')),
+                    getPriceRangeCategory(intval($vehicle['vehicle_price'] ?? 0))
+                ];
+            }
+
+            function jaccardSimilarity($setA, $setB) {
+                $intersection = array_intersect($setA, $setB);
+                $union = array_unique(array_merge($setA, $setB));
+                return (count($union) > 0) ? count($intersection) / count($union) : 0;
+            }
+
+            // === Get candidate vehicles ===
+            $stmt = $conn->prepare("SELECT * FROM vehicle WHERE vehicle_id != ?");
+            $stmt->bind_param("i", $vehicle_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            $candidates = [];
+            while ($row = $result->fetch_assoc()) {
+                $candidates[] = $row;
+            }
+            $stmt->close();
+
+            // === Score similarity ===
+            $current_features = getFeaturesSet($current_vehicle);
+            $scored = [];
+            foreach ($candidates as $veh) {
+                $veh_features = getFeaturesSet($veh);
+                $sim = jaccardSimilarity($current_features, $veh_features);
+                $scored[] = ['vehicle' => $veh, 'score' => $sim];
+            }
+
+            usort($scored, function ($a, $b) {
+                return $b['score'] <=> $a['score'];
+            });
+
+            // === Pick top 8 similar vehicles ===
+            $top_similar = [];
+            foreach ($scored as $item) {
+                if ($item['score'] > 0) {
+                    $top_similar[] = $item['vehicle'];
+                    if (count($top_similar) >= 8) break;
+                }
+            }
+
+            $recommendedVehicles = $top_similar;
+
+            // === Fallback: random vehicles if fewer than 8 ===
+            if (count($recommendedVehicles) < 8) {
+                $excludeIds = array_column($recommendedVehicles, 'vehicle_id');
+                $excludeIds[] = $vehicle_id;
+                $excludeStr = implode(',', array_map('intval', $excludeIds));
+                $remaining = 8 - count($recommendedVehicles);
+
+                $random_sql = "SELECT * FROM vehicle WHERE vehicle_id NOT IN ($excludeStr) ORDER BY RAND() LIMIT $remaining";
+                $random_result = $conn->query($random_sql);
+                while ($row = $random_result->fetch_assoc()) {
+                    $recommendedVehicles[] = $row;
+                }
+            }
+
+            // === Cache in session ===
+            $_SESSION['last_recommended_vehicles'] = $recommendedVehicles;
+
+            echo "<pre>Generated new recommended vehicles for vehicle ID $vehicle_id:\n";
+            print_r($recommendedVehicles);
+            echo "</pre>";
+        }
+    }
+}
+?>
+
+
+
+<style>
+  .carousel-container {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+    gap: 20px;
+    width: fit-content;
+    /* Let content decide width */
+  }
+
+  .vehicle-card-wrapper {
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+  }
+
+  .vehicle-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .vehicle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  h2 {
+    font-size: 0.9em;
+    font-weight: 600;
+    margin: 10px 0 5px 0;
+    color: #333;
+    min-height: 2.5em;
+  }
+
+  p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #555;
+  }
+
+  button#leftArrow,
+  button#rightArrow {
+    background-color: white;
+    border: 1px solid #ccc;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+</style>
+
+
+<h1 style="padding: 0 60px">Recommended For You</h1>
+
+<div style="position: relative; padding: 0 60px;">
+  <!-- Left Arrow -->
+  <button id="leftArrow" style="position: absolute; left: 10px; top: 40%; z-index: 10;">&#10094;</button>
+
+  <!-- Right Arrow -->
+  <button id="rightArrow" style="position: absolute; right: 10px; top: 40%; z-index: 10;">&#10095;</button>
+
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <?php if (!empty($recommendedVehicles)): ?>
+        <?php foreach ($recommendedVehicles as $vehicle): ?>
+          <a href="Book.php?vehicle_id=<?php echo $vehicle['vehicle_id']; ?>" class="vehicle-card-wrapper">
+            <div class="vehicle-card">
+              <img src="../../Admin/<?php echo htmlspecialchars($vehicle['vehicle_image']); ?>" style="width: 100%; height: auto;">
+              <h2><?php echo htmlspecialchars($vehicle['vehicle_model']); ?></h2>
+              <p>Brand: <?php echo $vehicle['brand']; ?></p>
+              <p>Rs <?php echo intval($vehicle['vehicle_price']); ?>/day</p>
+            </div>
+          </a>
+        <?php endforeach; ?>
+      <?php else: ?>
+        <p>No recommendations available at this time.</p>
+      <?php endif; ?>
+    </div>
+  </div>
+</div>
+<script>
+  const track = document.querySelector('.carousel-track');
+  const leftArrow = document.getElementById('leftArrow');
+  const rightArrow = document.getElementById('rightArrow');
+  const items = document.querySelectorAll('.vehicle-card-wrapper');
+
+  const visibleItems = 4;
+  const totalItems = items.length;
+  const maxIndex = Math.ceil(totalItems / visibleItems) - 1;
+  let currentIndex = 0;
+
+  // Ensure each item has fixed width in pixels based on container
+  const container = document.querySelector('.carousel-container');
+  const containerWidth = container.offsetWidth;
+  const itemWidth = containerWidth / visibleItems;
+
+  items.forEach(item => {
+    item.style.minWidth = `${itemWidth}px`;
+    item.style.maxWidth = `${itemWidth}px`;
+    item.style.flex = `0 0 ${itemWidth}px`;
+  });
+
+  const gap = 20; // Must match CSS gap
+
+  function updateCarousel() {
+    const offset = currentIndex * (itemWidth * visibleItems + gap * visibleItems);
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+
+  leftArrow.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+
+  rightArrow.addEventListener('click', () => {
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+
+  // Optional: update layout if window resizes
+  window.addEventListener('resize', () => {
+    location.reload(); // or recalculate itemWidth, etc. for dynamic resizing
+  });
+</script>

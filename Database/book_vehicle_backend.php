@@ -1,6 +1,6 @@
 <?php
-session_start();
-include '../../Database/database.php';
+
+include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cancel_reason']) && isset($_POST['booking_id'])) {
     $booking_id = mysqli_real_escape_string($conn, $_POST['booking_id']);
@@ -41,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $pickup_location = trim($_POST["pickup_location"]);
     $vehicle_price = floatval($_POST["vehicle_price"]);
     $bstatus = "pending";
-    
 
 
     // Combine pickup and return into datetime strings
@@ -113,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($stmt->execute()) {
         $_SESSION['booking_success'] = "Booking successful!";
-        header("Location: ../../User/Php/Booking_history.php?vehicle_id=" . urlencode($vid));
+        header("Location: ../../User/Php/Book.php?vehicle_id=" . urlencode($vid));
         exit;
     } else {
         $_SESSION['booking_error'] = "Database error: " . htmlspecialchars($stmt->error);

@@ -105,3 +105,379 @@
 [04-Jun-2025 10:09:20 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'cancelled'
 [04-Jun-2025 10:09:20 Europe/Berlin] ✅ Booking status updated to cancelled
 [04-Jun-2025 10:09:20 Europe/Berlin] 📬 Notification sent to bipana123
+[27-Jun-2025 15:35:02 Europe/Berlin] ✅ update_booking_status.php started
+[27-Jun-2025 15:35:02 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[27-Jun-2025 15:35:02 Europe/Berlin] ✅ Notification file loaded
+[27-Jun-2025 15:35:02 Europe/Berlin] 📨 POST Received: booking_id = 53, bstatus = approved
+[27-Jun-2025 15:35:02 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
+[27-Jun-2025 15:35:02 Europe/Berlin] ✅ Booking status updated to approved
+[27-Jun-2025 15:35:02 Europe/Berlin] 📬 Notification sent to ganesh123
+========== Also Booked This [2025-06-27 19:50:36] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:22:20] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:22:27] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:23:40] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:27:04] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:31:14] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:35:07] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:35:45] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:36:41] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:38:13] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:38:40] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:39:50] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:40:05] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:40:14] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:40:19] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:40:52] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:41:03] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:41:43] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:42:09] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:42:16] ==========
+Current vehicle users: bipana123
+Vehicle 14: intersection(1) / union(1) = 1
+Vehicle 20: intersection(1) / union(1) = 1
+Top recommended vehicle IDs: 14, 20
+
+========== Also Booked This [2025-06-30 08:42:22] ==========
+Current vehicle users: bipana123
+Vehicle 14: intersection(1) / union(1) = 1
+Vehicle 16: intersection(1) / union(1) = 1
+Top recommended vehicle IDs: 14, 16
+
+========== Also Booked This [2025-06-30 08:43:46] ==========
+Current vehicle users: bipana123
+Vehicle 14: intersection(1) / union(1) = 1
+Vehicle 20: intersection(1) / union(1) = 1
+Top recommended vehicle IDs: 14, 20
+
+========== Also Booked This [2025-06-30 08:43:52] ==========
+Current vehicle users: arju123, bipana123, ganesh123
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 20: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 16, 20
+
+========== Also Booked This [2025-06-30 08:43:55] ==========
+Current vehicle users: bipana123
+Vehicle 14: intersection(1) / union(1) = 1
+Vehicle 16: intersection(1) / union(1) = 1
+Top recommended vehicle IDs: 14, 16
+
+[30-Jun-2025 08:51:29 Europe/Berlin] ✅ update_booking_status.php started
+[30-Jun-2025 08:51:29 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[30-Jun-2025 08:51:29 Europe/Berlin] ✅ Notification file loaded
+[30-Jun-2025 08:51:29 Europe/Berlin] 📨 POST Received: booking_id = 54, bstatus = completed
+[30-Jun-2025 08:51:29 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'completed'
+[30-Jun-2025 08:51:29 Europe/Berlin] 🚫 Invalid transition: pending ➝ completed
+========== Also Booked This [2025-06-30 08:53:47] ==========
+Current vehicle users: bipana123
+Vehicle 15: intersection(1) / union(1) = 1
+Top recommended vehicle IDs: 15
+
+[30-Jun-2025 08:54:27 Europe/Berlin] ✅ update_booking_status.php started
+[30-Jun-2025 08:54:27 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[30-Jun-2025 08:54:27 Europe/Berlin] ✅ Notification file loaded
+[30-Jun-2025 08:54:27 Europe/Berlin] 📨 POST Received: booking_id = 55, bstatus = approved
+[30-Jun-2025 08:54:27 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
+[30-Jun-2025 08:54:27 Europe/Berlin] ✅ Booking status updated to approved
+[30-Jun-2025 08:54:27 Europe/Berlin] 📬 Notification sent to bipana123
+[30-Jun-2025 08:54:32 Europe/Berlin] ✅ update_booking_status.php started
+[30-Jun-2025 08:54:32 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[30-Jun-2025 08:54:32 Europe/Berlin] ✅ Notification file loaded
+[30-Jun-2025 08:54:32 Europe/Berlin] 📨 POST Received: booking_id = 56, bstatus = completed
+[30-Jun-2025 08:54:32 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'completed'
+[30-Jun-2025 08:54:32 Europe/Berlin] 🚫 Invalid transition: pending ➝ completed
+[30-Jun-2025 08:55:45 Europe/Berlin] ✅ update_booking_status.php started
+[30-Jun-2025 08:55:45 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[30-Jun-2025 08:55:45 Europe/Berlin] ✅ Notification file loaded
+[30-Jun-2025 08:55:45 Europe/Berlin] 📨 POST Received: booking_id = 57, bstatus = completed
+[30-Jun-2025 08:55:45 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'completed'
+[30-Jun-2025 08:55:45 Europe/Berlin] 🚫 Invalid transition: pending ➝ completed
+========== Also Booked This [2025-06-30 08:56:29] ==========
+Current vehicle users: bipana123, arju123
+Vehicle 15: intersection(1) / union(2) = 0.5
+Vehicle 16: intersection(1) / union(2) = 0.5
+Top recommended vehicle IDs: 15, 16
+
+[30-Jun-2025 08:57:27 Europe/Berlin] ✅ update_booking_status.php started
+[30-Jun-2025 08:57:27 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[30-Jun-2025 08:57:27 Europe/Berlin] ✅ Notification file loaded
+[30-Jun-2025 08:57:27 Europe/Berlin] 📨 POST Received: booking_id = 58, bstatus = completed
+[30-Jun-2025 08:57:27 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'completed'
+[30-Jun-2025 08:57:27 Europe/Berlin] 🚫 Invalid transition: pending ➝ completed
+[30-Jun-2025 08:59:02 Europe/Berlin] ✅ update_booking_status.php started
+[30-Jun-2025 08:59:02 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[30-Jun-2025 08:59:02 Europe/Berlin] ✅ Notification file loaded
+[30-Jun-2025 08:59:02 Europe/Berlin] 📨 POST Received: booking_id = 58, bstatus = completed
+[30-Jun-2025 08:59:02 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'completed'
+[30-Jun-2025 08:59:02 Europe/Berlin] 🚫 Invalid transition: pending ➝ completed
+[30-Jun-2025 08:59:08 Europe/Berlin] ✅ update_booking_status.php started
+[30-Jun-2025 08:59:08 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[30-Jun-2025 08:59:08 Europe/Berlin] ✅ Notification file loaded
+[30-Jun-2025 08:59:08 Europe/Berlin] 📨 POST Received: booking_id = 59, bstatus = completed
+[30-Jun-2025 08:59:08 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'completed'
+[30-Jun-2025 08:59:08 Europe/Berlin] 🚫 Invalid transition: pending ➝ completed
+========== Also Booked This [2025-06-30 09:00:06] ==========
+Current vehicle users: bipana123
+Vehicle 14: intersection(1) / union(1) = 1
+Top recommended vehicle IDs: 14
+
+[30-Jun-2025 09:01:46 Europe/Berlin] ✅ update_booking_status.php started
+[30-Jun-2025 09:01:46 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[30-Jun-2025 09:01:46 Europe/Berlin] ✅ Notification file loaded
+[30-Jun-2025 09:01:46 Europe/Berlin] 📨 POST Received: booking_id = 59, bstatus = approved
+[30-Jun-2025 09:01:46 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
+[30-Jun-2025 09:01:46 Europe/Berlin] ✅ Booking status updated to approved
+[30-Jun-2025 09:01:46 Europe/Berlin] 📬 Notification sent to ganesh123
+========== Also Booked This [2025-06-30 09:03:45] ==========
+Current vehicle users: bipana123, sana123
+Vehicle 14: intersection(1) / union(2) = 0.5
+Top recommended vehicle IDs: 14
+
+========== Also Booked This [2025-06-30 09:11:08] ==========
+Current vehicle users: bipana123, arju123, ganesh123
+Vehicle 15: intersection(1) / union(3) = 0.333
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 17: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:11:32] ==========
+Current vehicle users: bipana123, arju123, ganesh123
+Vehicle 15: intersection(1) / union(3) = 0.333
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 17: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:17:16] ==========
+Current vehicle users: bipana123, arju123, ganesh123
+Vehicle 15: intersection(1) / union(3) = 0.333
+Vehicle 16: intersection(1) / union(3) = 0.333
+Vehicle 17: intersection(1) / union(3) = 0.333
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:22:12] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:23:02] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:28:49] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:33:46] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:35:43] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:36:23] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:36:55] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:37:56] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:39:59] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:42:41] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:47:13] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:47:41] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:48:01] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:49:17] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:49:46] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 09:54:05] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 10:08:35] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 10:08:37] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+
+========== Also Booked This [2025-06-30 10:09:03] ==========
+Current vehicle users: bipana123, arju123, ganesh123, sana123
+Vehicle 15: intersection(2) / union(4) = 0.5
+Vehicle 16: intersection(1) / union(4) = 0.25
+Vehicle 17: intersection(1) / union(4) = 0.25
+Top recommended vehicle IDs: 15, 16, 17
+

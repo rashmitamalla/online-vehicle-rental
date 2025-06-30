@@ -2,8 +2,12 @@
 if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
-// Include your database connection here:
-include '../../Database/database.php';  // Adjust path as needed
+include '../../Database/database.php';
+
+if (isset($_GET['vehicle_id'])) {
+  $_SESSION['last_viewed_vehicle_id'] = intval($_GET['vehicle_id']);
+}
+// Adjust path as needed
 
 if (!isset($_SESSION['username'])) {
   header("Location: ../../Auth/Php/login.php");
@@ -11,14 +15,9 @@ if (!isset($_SESSION['username'])) {
 }
 
 $username = $_SESSION['username'];
-$vehicle_id = isset($_GET['vehicle_id']) ? (int)$_GET['vehicle_id'] : 0;
+$vehicle_id = isset($_GET['vehicle_id']) ? (int) $_GET['vehicle_id'] : 0;
 
-if ($vehicle_id > 0) {
-  $stmt = $conn->prepare("INSERT INTO vehicle_views (username, vehicle_id, viewed_at) VALUES (?, ?, NOW())");
-  $stmt->bind_param("si", $username, $vehicle_id);
-  $stmt->execute();
-  $stmt->close();
-}
+
 // ✅ Show alert if there's a success or error message in session
 if (isset($_SESSION['booking_success'])) {
   echo "<script>alert('" . $_SESSION['booking_success'] . "');</script>";
@@ -30,58 +29,116 @@ if (isset($_SESSION['booking_error'])) {
   unset($_SESSION['booking_error']);
 }
 
-include '../../Database/database.php';
-
-// Handle POST from Listing.php (Book Now button)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  if (empty($_POST['vehicle_id'])) {
-    header('Location: Listing.php'); // no vehicle chosen, back to listing
+  if (empty($_POST['vehicle_id']) || !$username) {
+    header('Location: Listing.php');
     exit();
   }
-  $vehicle_id = $_POST['vehicle_id'];
-  // Redirect to GET version of Book.php to prevent resubmission on refresh
+
+  $vehicle_id = (int) $_POST['vehicle_id'];
+
+  // Fetch vehicle_number for this vehicle_id
+  $stmt = $conn->prepare("SELECT vehicle_number FROM vehicle WHERE vehicle_id = ?");
+  $stmt->bind_param("i", $vehicle_id);
+  $stmt->execute();
+  $stmt->bind_result($vehicle_number);
+
+  if (!$stmt->fetch()) {
+    // Vehicle not found
+    $stmt->close();
+    header('Location: Listing.php');
+    exit();
+  }
+  $stmt->close();
+
+  // Check if the view record exists
+  $stmt = $conn->prepare("SELECT view_id FROM vehicle_views WHERE username = ? AND vehicle_id = ? AND vehicle_number = ?");
+  $stmt->bind_param("sis", $username, $vehicle_id, $vehicle_number);
+  $stmt->execute();
+  $stmt->store_result();
+
+  if ($stmt->num_rows > 0) {
+    // Update timestamp if record exists
+    $stmt->close();
+    $stmt = $conn->prepare("UPDATE vehicle_views SET viewed_at = NOW() WHERE username = ? AND vehicle_id = ? AND vehicle_number = ?");
+    $stmt->bind_param("sis", $username, $vehicle_id, $vehicle_number);
+    $stmt->execute();
+    $stmt->close();
+  } else {
+    // Insert new view record
+    $stmt->close();
+    $stmt = $conn->prepare("INSERT INTO vehicle_views (username, vehicle_id, vehicle_number, viewed_at) VALUES (?, ?, ?, NOW())");
+    $stmt->bind_param("sis", $username, $vehicle_id, $vehicle_number);
+    $stmt->execute();
+    $stmt->close();
+  }
+
+  // Keep only the latest 4 views per user
+  $conn->query("
+        DELETE FROM vehicle_views
+        WHERE view_id NOT IN (
+            SELECT view_id FROM (
+                SELECT view_id FROM vehicle_views
+                WHERE username = '" . $conn->real_escape_string($username) . "'
+                ORDER BY viewed_at DESC
+                LIMIT 4
+            ) AS recent
+        )
+        AND username = '" . $conn->real_escape_string($username) . "'
+    ");
+
+  // Redirect to GET version of Book.php
   header('Location: Book.php?vehicle_id=' . urlencode($vehicle_id));
   exit();
 }
 
-// Handle GET - show booking form
-if (!isset($_GET['vehicle_id'])) {
-  header('Location: Listing.php'); // no vehicle selected, redirect back
-  exit();
-}
 
-$vid = $_GET['vehicle_id'];
+
+
 
 // Fetch vehicle data from DB (important!)
 $sql = "SELECT * FROM vehicle WHERE vehicle_id = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $vid);
+$stmt->bind_param("s", $vehicle_id);
 $stmt->execute();
 $result = $stmt->get_result();
 
 if (!$result || $result->num_rows === 0) {
-  die('No vehicle found with ID: ' . htmlspecialchars($vid));
+  die('No vehicle found with ID: ' . htmlspecialchars($vehicle_id));
 }
 
 $row = $result->fetch_assoc();
 $stmt->close();
 
+// end of fetching vehicle data
+
 // Generate a booking token to protect from duplicate submissions
 $token = bin2hex(random_bytes(32));
 $_SESSION['booking_token'] = $token;
 
-$vehicle_id = $_GET['vehicle_id'] ?? null;
-if ($vehicle_id) {
-  if (!isset($_SESSION['recent_views'])) {
-    $_SESSION['recent_views'] = [];
-  }
+$is_favorite = false;
 
-  // Remove if already exists to reinsert at front
-  $_SESSION['recent_views'] = array_diff($_SESSION['recent_views'], [$vehicle_id]);
-  array_unshift($_SESSION['recent_views'], $vehicle_id);
-  $_SESSION['recent_views'] = array_slice($_SESSION['recent_views'], 0, 5);
+if (isset($_SESSION['username']) && isset($_GET['vehicle_id'])) {
+  $username = $_SESSION['username'];
+  $vehicle_id = intval($_GET['vehicle_id']); // or from DB directly
+
+  $stmt = $conn->prepare("SELECT userid FROM user WHERE username = ?");
+  $stmt->bind_param("s", $username);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  if ($result->num_rows > 0) {
+    $userid = $result->fetch_assoc()['userid'];
+
+    $stmt = $conn->prepare("SELECT 1 FROM wishlist WHERE userid = ? AND vehicle_id = ?");
+    $stmt->bind_param("ii", $userid, $vehicle_id);
+    $stmt->execute();
+    $stmt->store_result();
+
+    $is_favorite = $stmt->num_rows > 0;
+  }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,6 +147,7 @@ if ($vehicle_id) {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Book Vehicle</title>
   <link rel="stylesheet" href="../../User/Css/style.css" />
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -160,7 +218,7 @@ if ($vehicle_id) {
   <div class="container">
     <!-- Left side: Image & Car info -->
     <div class="left-panel">
-      <img src="../../Admin/<?php echo htmlspecialchars($row['vehicle_image']); ?>" alt="<?php echo htmlspecialchars($row['vehicle_number']); ?>" />
+      <img src="../../Image/<?php echo htmlspecialchars($row['vehicle_image']); ?>" alt="Vehicle Image" />
 
       <div class="details">
         <div class="rating">
@@ -168,7 +226,7 @@ if ($vehicle_id) {
           // Fetch reviews for this vehicle
           $reviews_sql = "SELECT * FROM ratings WHERE vehicle_id = ? ORDER BY rated_at DESC";
           $reviews_stmt = $conn->prepare($reviews_sql);
-          $reviews_stmt->bind_param("s", $vid);
+          $reviews_stmt->bind_param("s", $vehicle_id);
           $reviews_stmt->execute();
           $reviews_result = $reviews_stmt->get_result();
           $reviews = [];
@@ -200,7 +258,81 @@ if ($vehicle_id) {
             ?>
           </span>
           <h2><?php echo htmlspecialchars($row['vehicle_model']); ?></h2>
-          <div class="price-tag">$<?php echo htmlspecialchars($row['vehicle_price']); ?> / Day</div>
+          <div class="price-tag">Rs <?php echo htmlspecialchars($row['vehicle_price']); ?> / Day</div>
+
+          <!-- HTML button -->
+          <div class="fevorite">
+            <button class="blue-btn" id="add-to-favorite" style="<?php echo $is_favorite ? 'display:none;' : ''; ?>"
+              data-vehicle-id="<?php echo htmlspecialchars($vehicle_id); ?>">
+              <i class="fas fa-heart"></i> Add to Favorites
+            </button>
+
+            <button class="red-btn" id="remove-from-favorite" style="<?php echo $is_favorite ? '' : 'display:none;'; ?>"
+              data-vehicle-id="<?php echo htmlspecialchars($vehicle_id); ?>">
+              <i class="fas fa-heart"></i> Remove from Favorites
+            </button>
+          </div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const addBtn = document.getElementById("add-to-favorite");
+              const removeBtn = document.getElementById("remove-from-favorite");
+
+              // Add to Favorites
+              addBtn?.addEventListener("click", function () {
+                const vehicleId = this.dataset.vehicleId;
+                fetch("add_to_favorite.php", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body: "vehicle_id=" + encodeURIComponent(vehicleId)
+                })
+                  .then(res => res.json())
+                  .then(data => {
+                    alert(data.message);
+                    if (data.status === "success") {
+                      addBtn.style.display = "none";
+                      removeBtn.style.display = "inline-block";
+                    }
+                  })
+                  .catch(error => {
+                    console.error("Fetch error (add):", error);
+                    alert("Error: Could not contact server.");
+                  });
+              });
+
+              // Remove from Favorites ✅ this part was missing!
+              removeBtn?.addEventListener("click", function () {
+                const vehicleId = this.dataset.vehicleId;
+                fetch("remove_from_favorite.php", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body: "vehicle_id=" + encodeURIComponent(vehicleId)
+                })
+                  .then(res => res.json())
+                  .then(data => {
+                    alert(data.message);
+                    if (data.status === "success") {
+                      removeBtn.style.display = "none";
+                      addBtn.style.display = "inline-block";
+                    }
+                  })
+                  .catch(error => {
+                    console.error("Fetch error (remove):", error);
+                    alert("Error: Could not contact server.");
+                  });
+              });
+            });
+          </script>
+
+
+
+
+
+
+
+
+
+
           <hr style="margin: 15px 0; border-color: #444;" />
 
         </div>
@@ -247,7 +379,8 @@ if ($vehicle_id) {
         <div class="vehicle-details">
           <div class="detail-item">
             <span class="detail-icon">🚗</span>
-            <span><span class="detail-label">Condition:</span> <?php echo htmlspecialchars($row['vehicle_condition']); ?></span>
+            <span><span class="detail-label">Condition:</span>
+              <?php echo htmlspecialchars($row['vehicle_condition']); ?></span>
           </div>
           <div class="detail-item">
             <span class="detail-icon">⛽</span>
@@ -259,7 +392,8 @@ if ($vehicle_id) {
           </div>
           <div class="detail-item">
             <span class="detail-icon">📅</span>
-            <span><span class="detail-label">Number:</span> <?php echo htmlspecialchars($row['vehicle_number']); ?></span>
+            <span><span class="detail-label">Number:</span>
+              <?php echo htmlspecialchars($row['vehicle_number']); ?></span>
           </div>
           <div class="detail-item">
             <span class="detail-icon">🎨</span>
@@ -267,7 +401,8 @@ if ($vehicle_id) {
           </div>
           <div class="detail-item">
             <span class="detail-icon">👥</span>
-            <span><span class="detail-label">Seats:</span> <?php echo htmlspecialchars($row['vehicle_people']); ?></span>
+            <span><span class="detail-label">Seats:</span>
+              <?php echo htmlspecialchars($row['vehicle_people']); ?></span>
           </div>
         </div>
 
@@ -276,13 +411,12 @@ if ($vehicle_id) {
 
 
     <!-- Right side: Booking Form -->
-    <div class="right-panel">
+   <div class="right-panel">
       <form action="../../Database/book_vehicle_backend.php" onsubmit="return validateForm()" method="post">
+        <input type="hidden" name="vehicle_number" value="<?php echo htmlspecialchars($row['vehicle_number']); ?>">
+        <input type="hidden" name="username" value="<?php echo htmlspecialchars($_SESSION['username']); ?>">
         <input type="hidden" name="booking_token" value="<?php echo $token; ?>">
         <input type="hidden" name="vehicle_id" value="<?php echo htmlspecialchars($vid); ?>">
-        <input type="hidden" name="vehicle_number" value="<?php echo htmlspecialchars($row['vehicle_number']); ?>">
-<input type="hidden" name="username" value="<?php echo htmlspecialchars($_SESSION['username']); ?>">
-
         <input type="text" name="fullname" id="fullname" placeholder="Full Name" required value="<?php echo htmlspecialchars($_SESSION['fullname'] ?? ''); ?>" pattern="[A-Z][a-z]+(?: [A-Z][a-z]+)*" title="Each name should start with a capital letter (e.g., John Doe)">
         <input type="email" name="email" placeholder="Email" required value="<?php echo htmlspecialchars($_SESSION['email'] ?? ''); ?>">
         <input type="tel" name="number" id="number" placeholder="Phone Number" required value="<?php echo htmlspecialchars($_SESSION['number'] ?? ''); ?>" pattern="^(97|98)\d{8}$" title="Phone number must start with '97' or '98' and be exactly 10 digits long">
@@ -318,15 +452,16 @@ if ($vehicle_id) {
   <h3 style="align-items: center; gap: 10px;  padding: 0px 40px;">Customer Reviews</h3>
 
   <!-- Reviews Display -->
-  <div
-    style="align-items: center; gap: 10px;  padding: 0px 40px;">
+  <div style="align-items: center; gap: 10px;  padding: 0px 40px;">
     <?php if (empty($reviews)): ?>
       <p style="color: #aaa;">No reviews yet.</p>
     <?php else: ?>
       <?php foreach ($reviews as $review): ?>
-        <div style="background-color: white; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); padding: 15px; color: black;">
+        <div
+          style="background-color: white; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); padding: 15px; color: black;">
           <strong><?php echo htmlspecialchars($review['username']); ?></strong>
-          <span style="color: #f5b301;"> <?php echo str_repeat("★", $review['rating']) . str_repeat("☆", 5 - $review['rating']); ?></span>
+          <span style="color: #f5b301;">
+            <?php echo str_repeat("★", $review['rating']) . str_repeat("☆", 5 - $review['rating']); ?></span>
           <p style="margin: 5px 0;"><?php echo nl2br(htmlspecialchars($review['feedback'])); ?></p>
           <small style="color: #888;"><?php echo date("F j, Y, g:i a", strtotime($review['rated_at'])); ?></small>
         </div>
@@ -340,7 +475,8 @@ if ($vehicle_id) {
 
     <h3 style="color: #555;">✅ Cancellation Policy</h3>
     <p style="font-size: 16px;">
-      <b>Instant Confirmation:</b> Cancellations are processed immediately. <b>Rs500</b> cancellation fee applies to all cancellations.
+      <b>Instant Confirmation:</b> Cancellations are processed immediately. <b>Rs500</b> cancellation fee applies to all
+      cancellations.
       Cancellations must be done via the <b>cancel button from booking history.</b>
     </p>
     <br>
@@ -348,32 +484,46 @@ if ($vehicle_id) {
     <h3 style="color: #555;">📅 Booking Policy</h3>
     <p style="font-size: 16px;">
       <b>Valid ID Required:</b> Renter must provide a valid government-issued ID at the time of pickup.
-      Bookings are subject to <b>vehicle availability</b> and must follow the <b>minimum booking duration of 2 hours</b>.
+      Bookings are subject to <b>vehicle availability</b> and must follow the <b>minimum booking duration of 2
+        hours</b>.
     </p>
     <br>
 
     <h3 style="color: #555;">⛽ Fuel Policy</h3>
     <p style="font-size: 16px;">
-      <b>Same Level Return:</b> The vehicle must be returned with the same fuel level as at pickup. <b>Fuel charges</b> will apply if returned with less fuel.
+      <b>Same Level Return:</b> The vehicle must be returned with the same fuel level as at pickup. <b>Fuel charges</b>
+      will apply if returned with less fuel.
     </p>
     <br>
 
     <h3 style="color: #555;">⏰ Late Return Policy</h3>
     <p style="font-size: 16px;">
-      <b>Hourly Charges:</b> If the vehicle is returned late, hourly rates will be applied. In case of a delay beyond the return time, additional <b>fines</b> may apply.
+      <b>Hourly Charges:</b> If the vehicle is returned late, hourly rates will be applied. In case of a delay beyond
+      the return time, additional <b>fines</b> may apply.
     </p>
     <br>
 
     <h3 style="color: #555;">🔧 Damage Policy</h3>
     <p style="font-size: 16px;">
-      <b>Renter Responsibility:</b> Any damage caused to the vehicle during the rental period is the responsibility of the renter. <b>Repair costs</b> will be charged accordingly.
+      <b>Renter Responsibility:</b> Any damage caused to the vehicle during the rental period is the responsibility of
+      the renter. <b>Repair costs</b> will be charged accordingly.
     </p>
 
   </div>
+<div class="also-booked-this">
+  <h1>Users who booked this also booked</h1>
+ <div class="vehicle-card-container" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px;">
+   <?php
+  $_GET['vehicle_id'] = $row['vehicle_id']; // if inside loop
+  include 'also_booked.php';
+  ?>
+ </div>
+</div>
 
 
 
-<script>
+
+  <script>
     function calculateTotal() {
       const pickupDateStr = document.getElementById("pickup_date").value;
       const pickupTimeStr = document.getElementById("pickup_time").value;
@@ -446,7 +596,9 @@ if ($vehicle_id) {
       return true;
 
     }
+
+
   </script>
-</body>
+
 
 </html>

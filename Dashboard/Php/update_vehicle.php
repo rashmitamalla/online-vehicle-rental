@@ -48,6 +48,7 @@
                         <select id="vehicle_oil" name="vehicle_oil">
                             <option value="Petrol" <?php if ($row['vehicle_oil'] == 'Petrol') echo 'selected'; ?>>Petrol</option>
                             <option value="Diesel" <?php if ($row['vehicle_oil'] == 'Diesel') echo 'selected'; ?>>Diesel</option>
+                            <option value="Electric" <?php if ($row['vehicle_oil'] == 'Electric') echo 'selected'; ?>>Electric</option>
                         </select>
 
                         <label for="vehicle_people">vehicle_People:</label>
@@ -67,7 +68,8 @@
                         <input type="text" id="vehicle_price" name="vehicle_price" value="<?php echo $row['vehicle_price']; ?>">
 
 
-
+                        <label for="brand">brand:</label>
+                        <input type="text" id="brand" name="brand" value="<?php echo $row['brand']; ?>">
                         <label for="vehicle_model">vehicle_Model:</label>
                         <input type="text" id="vehicle_model" name="vehicle_model" value="<?php echo $row['vehicle_model']; ?>">
 
