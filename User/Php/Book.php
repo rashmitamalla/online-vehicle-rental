@@ -416,7 +416,7 @@ if (isset($_SESSION['username']) && isset($_GET['vehicle_id'])) {
         <input type="hidden" name="vehicle_number" value="<?php echo htmlspecialchars($row['vehicle_number']); ?>">
         <input type="hidden" name="username" value="<?php echo htmlspecialchars($_SESSION['username']); ?>">
         <input type="hidden" name="booking_token" value="<?php echo $token; ?>">
-        <input type="hidden" name="vehicle_id" value="<?php echo htmlspecialchars($vid); ?>">
+        <input type="hidden" name="vehicle_id" value="<?php echo htmlspecialchars($vehicle_id); ?>">
         <input type="text" name="fullname" id="fullname" placeholder="Full Name" required value="<?php echo htmlspecialchars($_SESSION['fullname'] ?? ''); ?>" pattern="[A-Z][a-z]+(?: [A-Z][a-z]+)*" title="Each name should start with a capital letter (e.g., John Doe)">
         <input type="email" name="email" placeholder="Email" required value="<?php echo htmlspecialchars($_SESSION['email'] ?? ''); ?>">
         <input type="tel" name="number" id="number" placeholder="Phone Number" required value="<?php echo htmlspecialchars($_SESSION['number'] ?? ''); ?>" pattern="^(97|98)\d{8}$" title="Phone number must start with '97' or '98' and be exactly 10 digits long">
