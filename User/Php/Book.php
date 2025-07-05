@@ -294,6 +294,14 @@ if (isset($_SESSION['username']) && isset($_GET['vehicle_id'])) {
     </div>
 
   </div>
+    <!-- Recommended Vehicles Section -->
+  <div class="recommended-section">
+
+
+    <?php
+    include '../../Database/recommend_vehicles_backend.php';
+    ?>
+  </div>
 
 
 
@@ -362,15 +370,10 @@ if (isset($_SESSION['username']) && isset($_GET['vehicle_id'])) {
   </div>
 
 
-  <div class="also-booked-this">
-    <h1>Users who booked this also booked</h1>
-    <div class="vehicle-card-container" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px;">
-      <?php
-      $_GET['vehicle_id'] = $row['vehicle_id']; // if inside loop
-      include 'also_booked.php';
-      ?>
-    </div>
-  </div>
+ 
+
+
+
 
 
   <script src="../../User/Javascript/book_vehicle.js"></script>

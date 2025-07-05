@@ -13,12 +13,10 @@ include '../../Database/database.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | Vehicle Rental</title>
   <link rel="stylesheet" href="../../user/Css/style.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
@@ -49,14 +47,16 @@ include '../../Database/database.php';
     <?php include '../../Database/popular_vehicles_backend.php'; ?>
   </div>
 
-  <!-- Recommended Vehicles Section -->
-  <div class="recommended-section">
-
-
-    <?php
-    include '../../Database/recommend_vehicles_backend.php';
-    ?>
+  <div class="recommendation-section">
+    <?php include 'also_booked.php'; ?>
   </div>
+
+
+ 
+
+
+
+
 
 
   <div class="container">
@@ -66,19 +66,22 @@ include '../../Database/database.php';
       <div class="feature">
         <div class="feature-icon">∞</div>
         <h3>Endless options</h3>
-        <p>Choose from thousands of vehicles you won’t find anywhere else. Choose it and get picked up where you want it.</p>
+        <p>Choose from thousands of vehicles you won’t find anywhere else. Choose it and get picked up where you want
+          it.</p>
       </div>
 
       <div class="feature">
         <div class="feature-icon">🎧</div>
         <h3>24/7 customer support</h3>
-        <p>Rest easy knowing that everyone in the Sajilo rental community is screened, and 24/7 customer support and roadside assistance are just a click away.</p>
+        <p>Rest easy knowing that everyone in the Sajilo rental community is screened, and 24/7 customer support and
+          roadside assistance are just a click away.</p>
       </div>
 
       <div class="feature">
         <div class="feature-icon">🛡️</div>
         <h3>Go for trip confidently</h3>
-        <p>Go for trip confidently with your choice of protection plans — all plans include varying levels of liability insurance provided through Sajilo Rental's Insurance Agency.</p>
+        <p>Go for trip confidently with your choice of protection plans — all plans include varying levels of liability
+          insurance provided through Sajilo Rental's Insurance Agency.</p>
       </div>
     </div>
 

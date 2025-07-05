@@ -211,7 +211,7 @@ if (empty($recommendedVehicles)) {
 </style>
 
 
-<h1 style="padding: 0 60px">Recommended For You</h1>
+<h1 style="padding: 0 60px">Similar Vehicles</h1>
 
 <div style="position: relative; padding: 0 60px;">
   <!-- Left Arrow -->

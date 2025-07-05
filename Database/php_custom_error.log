@@ -1406,3 +1406,30 @@ Vehicle 21: intersection(1) / union(4) = 0.25
 Vehicle 24: intersection(1) / union(4) = 0.25
 Top recommended vehicle IDs: 15, 16, 17, 30
 
+========== Also Booked This [2025-06-30 19:48:04] ==========
+Current vehicle users: anusha123
+Vehicle 25: intersection(1) / union(1) = 1
+Top recommended vehicle IDs: 25
+
+========== Also Booked This [2025-06-30 19:49:00] ==========
+Current vehicle users: anusha123
+Vehicle 25: intersection(1) / union(1) = 1
+Top recommended vehicle IDs: 25
+
+========== Also Booked This [2025-06-30 19:49:32] ==========
+Current vehicle users: anusha123
+Vehicle 25: intersection(1) / union(1) = 1
+Top recommended vehicle IDs: 25
+
+========== Also Booked This [2025-06-30 19:49:34] ==========
+Current vehicle users: anusha123
+Vehicle 25: intersection(1) / union(1) = 1
+Top recommended vehicle IDs: 25
+
+========== Also Booked This [2025-06-30 19:52:37] ==========
+Current vehicle users: ganesh123
+Vehicle 14: intersection(1) / union(1) = 1
+Vehicle 21: intersection(1) / union(1) = 1
+Vehicle 24: intersection(1) / union(1) = 1
+Top recommended vehicle IDs: 14, 21, 24
+
