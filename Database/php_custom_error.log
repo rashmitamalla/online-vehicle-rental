@@ -1,1435 +1,179 @@
-[29-May-2025 20:50:16 Europe/Berlin] PHP Notice:  🚨 This is a test error from test_error_log.php in C:\xampp\htdocs\project\Database\test_error_log.php on line 10
-[29-May-2025 20:52:17 Europe/Berlin] ✅ update_booking_status.php started
-[29-May-2025 20:52:17 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[29-May-2025 20:52:17 Europe/Berlin] ✅ Notification file loaded
-[29-May-2025 20:52:17 Europe/Berlin] ❌ Invalid request method: GET
-[29-May-2025 20:56:30 Europe/Berlin] ✅ update_booking_status.php started
-[29-May-2025 20:56:30 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[29-May-2025 20:56:30 Europe/Berlin] ✅ Notification file loaded
-[29-May-2025 20:56:30 Europe/Berlin] 📨 POST Received: booking_id = , bstatus = completed
-[29-May-2025 20:56:30 Europe/Berlin] ❌ Missing booking_id or bstatus in POST
-[29-May-2025 20:57:11 Europe/Berlin] ✅ update_booking_status.php started
-[29-May-2025 20:57:11 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[29-May-2025 20:57:11 Europe/Berlin] ✅ Notification file loaded
-[29-May-2025 20:57:11 Europe/Berlin] 📨 POST Received: booking_id = 12, bstatus = completed
-[29-May-2025 20:57:11 Europe/Berlin] 👤 Username fetched: sneha123
-[29-May-2025 20:57:11 Europe/Berlin] 📬 Notification sent to sneha123
-[29-May-2025 20:59:42 Europe/Berlin] ✅ update_booking_status.php started
-[29-May-2025 20:59:42 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[29-May-2025 20:59:42 Europe/Berlin] ✅ Notification file loaded
-[29-May-2025 20:59:42 Europe/Berlin] ❌ Invalid request method: GET
-[29-May-2025 20:59:43 Europe/Berlin] PHP Notice:  🚨 This is a test error from test_error_log.php in C:\xampp\htdocs\project\Database\test_error_log.php on line 10
-[29-May-2025 20:59:52 Europe/Berlin] ✅ update_booking_status.php started
-[29-May-2025 20:59:52 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[29-May-2025 20:59:52 Europe/Berlin] ✅ Notification file loaded
-[29-May-2025 20:59:52 Europe/Berlin] 📨 POST Received: booking_id = 12, bstatus = denied
-[29-May-2025 20:59:53 Europe/Berlin] 👤 Username fetched: sneha123
-[29-May-2025 20:59:53 Europe/Berlin] 📬 Notification sent to sneha123
-[30-May-2025 07:06:55 Europe/Berlin] ✅ update_booking_status.php started
-[30-May-2025 07:06:55 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-May-2025 07:06:55 Europe/Berlin] ✅ Notification file loaded
-[30-May-2025 07:06:55 Europe/Berlin] ❌ Invalid request method: GET
-[30-May-2025 07:07:04 Europe/Berlin] PHP Notice:  🚨 This is a test error from test_error_log.php in C:\xampp\htdocs\project\Database\test_error_log.php on line 10
-[30-May-2025 07:13:06 Europe/Berlin] ✅ update_booking_status.php started
-[30-May-2025 07:13:06 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-May-2025 07:13:06 Europe/Berlin] ✅ Notification file loaded
-[30-May-2025 07:13:06 Europe/Berlin] 📨 POST Received: booking_id = 12, bstatus = completed
-[30-May-2025 07:13:06 Europe/Berlin] 👤 Username fetched: sneha123
-[30-May-2025 07:13:06 Europe/Berlin] 📬 Notification sent to sneha123
-[30-May-2025 19:05:05 Europe/Berlin] ✅ update_booking_status.php started
-[30-May-2025 19:05:05 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-May-2025 19:05:05 Europe/Berlin] ✅ Notification file loaded
-[30-May-2025 19:05:05 Europe/Berlin] 📨 POST Received: booking_id = 1, bstatus = cancelled
-[30-May-2025 19:05:05 Europe/Berlin] ⚠️ No rows updated for booking_id: 1
-[31-May-2025 14:50:07 Europe/Berlin] ✅ update_booking_status.php started
-[31-May-2025 14:50:07 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[31-May-2025 14:50:07 Europe/Berlin] ✅ Notification file loaded
-[31-May-2025 14:50:07 Europe/Berlin] 📨 POST Received: booking_id = 13, bstatus = approved
-[31-May-2025 14:50:07 Europe/Berlin] ⚠️ No rows updated for booking_id: 13
-[31-May-2025 14:50:54 Europe/Berlin] ✅ update_booking_status.php started
-[31-May-2025 14:50:54 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[31-May-2025 14:50:54 Europe/Berlin] ✅ Notification file loaded
-[31-May-2025 14:50:54 Europe/Berlin] 📨 POST Received: booking_id = 13, bstatus = completed
-[31-May-2025 14:50:54 Europe/Berlin] 👤 Username fetched: arju123
-[31-May-2025 14:50:54 Europe/Berlin] 📬 Notification sent to arju123
-[31-May-2025 15:12:01 Europe/Berlin] ✅ update_booking_status.php started
-[31-May-2025 15:12:01 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[31-May-2025 15:12:01 Europe/Berlin] ✅ Notification file loaded
-[31-May-2025 15:12:01 Europe/Berlin] 📨 POST Received: booking_id = 14, bstatus = completed
-[31-May-2025 15:12:01 Europe/Berlin] 👤 Username fetched: bipana123
-[31-May-2025 15:12:01 Europe/Berlin] 📬 Notification sent to bipana123
-[31-May-2025 15:14:27 Europe/Berlin] ✅ update_booking_status.php started
-[31-May-2025 15:14:27 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[31-May-2025 15:14:27 Europe/Berlin] ✅ Notification file loaded
-[31-May-2025 15:14:27 Europe/Berlin] 📨 POST Received: booking_id = 15, bstatus = completed
-[31-May-2025 15:14:27 Europe/Berlin] 👤 Username fetched: bipana123
-[31-May-2025 15:14:27 Europe/Berlin] 📬 Notification sent to bipana123
-[31-May-2025 16:42:59 Europe/Berlin] ✅ update_booking_status.php started
-[31-May-2025 16:42:59 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[31-May-2025 16:42:59 Europe/Berlin] ✅ Notification file loaded
-[31-May-2025 16:42:59 Europe/Berlin] 📨 POST Received: booking_id = 13, bstatus = completed
-[31-May-2025 16:42:59 Europe/Berlin] ⚠️ No rows updated for booking_id: 13
-[03-Jun-2025 07:21:20 Europe/Berlin] vehicle_id not set in URL.
-[03-Jun-2025 16:19:59 Europe/Berlin] ✅ update_booking_status.php started
-[03-Jun-2025 16:19:59 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[03-Jun-2025 16:19:59 Europe/Berlin] ✅ Notification file loaded
-[03-Jun-2025 16:19:59 Europe/Berlin] 📨 POST Received: booking_id = 17, bstatus = completed
-[03-Jun-2025 16:19:59 Europe/Berlin] 👤 Username fetched: 
-[03-Jun-2025 16:19:59 Europe/Berlin] User not found for username: 
-[03-Jun-2025 16:19:59 Europe/Berlin] 📬 Notification sent to 
-[03-Jun-2025 16:28:43 Europe/Berlin] ✅ update_booking_status.php started
-[03-Jun-2025 16:28:43 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[03-Jun-2025 16:28:43 Europe/Berlin] ✅ Notification file loaded
-[03-Jun-2025 16:28:43 Europe/Berlin] 📨 POST Received: booking_id = 18, bstatus = completed
-[03-Jun-2025 16:28:43 Europe/Berlin] 👤 Username fetched: 
-[03-Jun-2025 16:28:43 Europe/Berlin] User not found for username: 
-[03-Jun-2025 16:28:43 Europe/Berlin] 📬 Notification sent to 
-[03-Jun-2025 17:57:48 Europe/Berlin] ✅ update_booking_status.php started
-[03-Jun-2025 17:57:48 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[03-Jun-2025 17:57:48 Europe/Berlin] ✅ Notification file loaded
-[03-Jun-2025 17:57:48 Europe/Berlin] 📨 POST Received: booking_id = 28, bstatus = completed
-[03-Jun-2025 17:57:48 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'completed'
-[03-Jun-2025 17:57:48 Europe/Berlin] ✅ Booking status updated to completed
-[03-Jun-2025 17:57:48 Europe/Berlin] User not found for username: 
-[03-Jun-2025 17:57:48 Europe/Berlin] 📬 Notification sent to 
-[04-Jun-2025 07:55:53 Europe/Berlin] ✅ update_booking_status.php started
-[04-Jun-2025 07:55:53 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[04-Jun-2025 07:55:53 Europe/Berlin] ✅ Notification file loaded
-[04-Jun-2025 07:55:53 Europe/Berlin] 📨 POST Received: booking_id = 48, bstatus = completed
-[04-Jun-2025 07:55:53 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'completed'
-[04-Jun-2025 07:55:53 Europe/Berlin] 🚫 Invalid transition: pending ➝ completed
-[04-Jun-2025 10:09:20 Europe/Berlin] ✅ update_booking_status.php started
-[04-Jun-2025 10:09:20 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[04-Jun-2025 10:09:20 Europe/Berlin] ✅ Notification file loaded
-[04-Jun-2025 10:09:20 Europe/Berlin] 📨 POST Received: booking_id = 16, bstatus = cancelled
-[04-Jun-2025 10:09:20 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'cancelled'
-[04-Jun-2025 10:09:20 Europe/Berlin] ✅ Booking status updated to cancelled
-[04-Jun-2025 10:09:20 Europe/Berlin] 📬 Notification sent to bipana123
-[27-Jun-2025 15:35:02 Europe/Berlin] ✅ update_booking_status.php started
-[27-Jun-2025 15:35:02 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[27-Jun-2025 15:35:02 Europe/Berlin] ✅ Notification file loaded
-[27-Jun-2025 15:35:02 Europe/Berlin] 📨 POST Received: booking_id = 53, bstatus = approved
-[27-Jun-2025 15:35:02 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[27-Jun-2025 15:35:02 Europe/Berlin] ✅ Booking status updated to approved
-[27-Jun-2025 15:35:02 Europe/Berlin] 📬 Notification sent to ganesh123
-========== Also Booked This [2025-06-27 19:50:36] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:22:20] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:22:27] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:23:40] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:27:04] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:31:14] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:35:07] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:35:45] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:36:41] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:38:13] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:38:40] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:39:50] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:40:05] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:40:14] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:40:19] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:40:52] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:41:03] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:41:43] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:42:09] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:42:16] ==========
-Current vehicle users: bipana123
-Vehicle 14: intersection(1) / union(1) = 1
-Vehicle 20: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14, 20
-
-========== Also Booked This [2025-06-30 08:42:22] ==========
-Current vehicle users: bipana123
-Vehicle 14: intersection(1) / union(1) = 1
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14, 16
-
-========== Also Booked This [2025-06-30 08:43:46] ==========
-Current vehicle users: bipana123
-Vehicle 14: intersection(1) / union(1) = 1
-Vehicle 20: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14, 20
-
-========== Also Booked This [2025-06-30 08:43:52] ==========
-Current vehicle users: arju123, bipana123, ganesh123
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 20: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 16, 20
-
-========== Also Booked This [2025-06-30 08:43:55] ==========
-Current vehicle users: bipana123
-Vehicle 14: intersection(1) / union(1) = 1
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14, 16
-
-[30-Jun-2025 08:51:29 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 08:51:29 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 08:51:29 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 08:51:29 Europe/Berlin] 📨 POST Received: booking_id = 54, bstatus = completed
-[30-Jun-2025 08:51:29 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'completed'
-[30-Jun-2025 08:51:29 Europe/Berlin] 🚫 Invalid transition: pending ➝ completed
-========== Also Booked This [2025-06-30 08:53:47] ==========
-Current vehicle users: bipana123
-Vehicle 15: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 15
-
-[30-Jun-2025 08:54:27 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 08:54:27 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 08:54:27 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 08:54:27 Europe/Berlin] 📨 POST Received: booking_id = 55, bstatus = approved
-[30-Jun-2025 08:54:27 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 08:54:27 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 08:54:27 Europe/Berlin] 📬 Notification sent to bipana123
-[30-Jun-2025 08:54:32 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 08:54:32 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 08:54:32 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 08:54:32 Europe/Berlin] 📨 POST Received: booking_id = 56, bstatus = completed
-[30-Jun-2025 08:54:32 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'completed'
-[30-Jun-2025 08:54:32 Europe/Berlin] 🚫 Invalid transition: pending ➝ completed
-[30-Jun-2025 08:55:45 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 08:55:45 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 08:55:45 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 08:55:45 Europe/Berlin] 📨 POST Received: booking_id = 57, bstatus = completed
-[30-Jun-2025 08:55:45 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'completed'
-[30-Jun-2025 08:55:45 Europe/Berlin] 🚫 Invalid transition: pending ➝ completed
-========== Also Booked This [2025-06-30 08:56:29] ==========
-Current vehicle users: bipana123, arju123
-Vehicle 15: intersection(1) / union(2) = 0.5
-Vehicle 16: intersection(1) / union(2) = 0.5
-Top recommended vehicle IDs: 15, 16
-
-[30-Jun-2025 08:57:27 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 08:57:27 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 08:57:27 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 08:57:27 Europe/Berlin] 📨 POST Received: booking_id = 58, bstatus = completed
-[30-Jun-2025 08:57:27 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'completed'
-[30-Jun-2025 08:57:27 Europe/Berlin] 🚫 Invalid transition: pending ➝ completed
-[30-Jun-2025 08:59:02 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 08:59:02 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 08:59:02 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 08:59:02 Europe/Berlin] 📨 POST Received: booking_id = 58, bstatus = completed
-[30-Jun-2025 08:59:02 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'completed'
-[30-Jun-2025 08:59:02 Europe/Berlin] 🚫 Invalid transition: pending ➝ completed
-[30-Jun-2025 08:59:08 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 08:59:08 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 08:59:08 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 08:59:08 Europe/Berlin] 📨 POST Received: booking_id = 59, bstatus = completed
-[30-Jun-2025 08:59:08 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'completed'
-[30-Jun-2025 08:59:08 Europe/Berlin] 🚫 Invalid transition: pending ➝ completed
-========== Also Booked This [2025-06-30 09:00:06] ==========
-Current vehicle users: bipana123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-[30-Jun-2025 09:01:46 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 09:01:46 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 09:01:46 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 09:01:46 Europe/Berlin] 📨 POST Received: booking_id = 59, bstatus = approved
-[30-Jun-2025 09:01:46 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 09:01:46 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 09:01:46 Europe/Berlin] 📬 Notification sent to ganesh123
-========== Also Booked This [2025-06-30 09:03:45] ==========
-Current vehicle users: bipana123, sana123
-Vehicle 14: intersection(1) / union(2) = 0.5
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 09:11:08] ==========
-Current vehicle users: bipana123, arju123, ganesh123
-Vehicle 15: intersection(1) / union(3) = 0.333
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 17: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:11:32] ==========
-Current vehicle users: bipana123, arju123, ganesh123
-Vehicle 15: intersection(1) / union(3) = 0.333
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 17: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:17:16] ==========
-Current vehicle users: bipana123, arju123, ganesh123
-Vehicle 15: intersection(1) / union(3) = 0.333
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 17: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:22:12] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:23:02] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:28:49] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:33:46] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:35:43] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:36:23] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:36:55] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:37:56] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:39:59] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:42:41] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:47:13] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:47:41] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:48:01] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:49:17] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:49:46] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 09:54:05] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 10:08:35] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 10:08:37] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 10:09:03] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123
-Vehicle 15: intersection(2) / union(4) = 0.5
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 12:47:26] ==========
-Current vehicle users: ganesh123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 12:47:39] ==========
-Current vehicle users: ganesh123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 13:00:56] ==========
-Current vehicle users: bipana123, sana123
-Vehicle 14: intersection(2) / union(2) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 13:01:04] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
-Vehicle 15: intersection(2) / union(5) = 0.4
-Vehicle 16: intersection(1) / union(5) = 0.2
-Vehicle 17: intersection(1) / union(5) = 0.2
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 13:01:36] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123, bishal123
-Vehicle 15: intersection(2) / union(6) = 0.333
-Vehicle 16: intersection(1) / union(6) = 0.167
-Vehicle 17: intersection(1) / union(6) = 0.167
-Vehicle 0: intersection(1) / union(6) = 0.167
-Top recommended vehicle IDs: 15, 16, 17, 0
-
-========== Also Booked This [2025-06-30 13:07:09] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123, bishal123
-Vehicle 15: intersection(2) / union(6) = 0.333
-Vehicle 16: intersection(1) / union(6) = 0.167
-Vehicle 17: intersection(1) / union(6) = 0.167
-Vehicle 0: intersection(1) / union(6) = 0.167
-Top recommended vehicle IDs: 15, 16, 17, 0
-
-========== Also Booked This [2025-06-30 13:07:13] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123, bishal123
-Vehicle 15: intersection(2) / union(6) = 0.333
-Vehicle 16: intersection(1) / union(6) = 0.167
-Vehicle 17: intersection(1) / union(6) = 0.167
-Vehicle 0: intersection(1) / union(6) = 0.167
-Top recommended vehicle IDs: 15, 16, 17, 0
-
-========== Also Booked This [2025-06-30 13:11:29] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123, bishal123
-Vehicle 15: intersection(2) / union(6) = 0.333
-Vehicle 16: intersection(1) / union(6) = 0.167
-Vehicle 17: intersection(1) / union(6) = 0.167
-Vehicle 0: intersection(1) / union(6) = 0.167
-Top recommended vehicle IDs: 15, 16, 17, 0
-
-[30-Jun-2025 14:00:58 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 14:00:58 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 14:00:58 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 14:00:58 Europe/Berlin] 📨 POST Received: booking_id = 100, bstatus = approved
-[30-Jun-2025 14:00:58 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 14:00:58 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 14:00:58 Europe/Berlin] 📬 Notification sent to bishal123
-[30-Jun-2025 14:01:04 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 14:01:04 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 14:01:04 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 14:01:04 Europe/Berlin] 📨 POST Received: booking_id = 100, bstatus = approved
-[30-Jun-2025 14:01:04 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'approved'
-[30-Jun-2025 14:01:04 Europe/Berlin] 🚫 Invalid transition: approved ➝ approved
-[30-Jun-2025 14:03:39 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 14:03:39 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 14:03:39 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 14:03:39 Europe/Berlin] 📨 POST Received: booking_id = 100, bstatus = approved
-[30-Jun-2025 14:03:39 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'approved'
-[30-Jun-2025 14:03:39 Europe/Berlin] 🚫 Invalid transition: approved ➝ approved
-[30-Jun-2025 14:04:34 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 14:04:34 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 14:04:34 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 14:04:34 Europe/Berlin] 📨 POST Received: booking_id = 100, bstatus = approved
-[30-Jun-2025 14:04:34 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'approved'
-[30-Jun-2025 14:04:34 Europe/Berlin] 🚫 Invalid transition: approved ➝ approved
-[30-Jun-2025 14:04:45 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 14:04:45 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 14:04:45 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 14:04:45 Europe/Berlin] 📨 POST Received: booking_id = 100, bstatus = approved
-[30-Jun-2025 14:04:45 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'approved'
-[30-Jun-2025 14:04:45 Europe/Berlin] 🚫 Invalid transition: approved ➝ approved
-[30-Jun-2025 14:05:16 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 14:05:16 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 14:05:16 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 14:05:16 Europe/Berlin] 📨 POST Received: booking_id = 100, bstatus = approved
-[30-Jun-2025 14:05:16 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'approved'
-[30-Jun-2025 14:05:16 Europe/Berlin] 🚫 Invalid transition: approved ➝ approved
-[30-Jun-2025 14:06:44 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 14:06:44 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 14:06:44 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 14:06:44 Europe/Berlin] 📨 POST Received: booking_id = 100, bstatus = completed
-[30-Jun-2025 14:06:44 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'completed'
-[30-Jun-2025 14:06:44 Europe/Berlin] ✅ Booking status updated to completed
-[30-Jun-2025 14:06:44 Europe/Berlin] 📬 Notification sent to bishal123
-========== Also Booked This [2025-06-30 14:12:42] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123, bishal123
-Vehicle 15: intersection(2) / union(6) = 0.333
-Vehicle 16: intersection(1) / union(6) = 0.167
-Vehicle 17: intersection(1) / union(6) = 0.167
-Vehicle 0: intersection(1) / union(6) = 0.167
-Top recommended vehicle IDs: 15, 16, 17, 0
-
-========== Also Booked This [2025-06-30 14:18:37] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123, bishal123
-Vehicle 15: intersection(2) / union(6) = 0.333
-Vehicle 16: intersection(1) / union(6) = 0.167
-Vehicle 17: intersection(1) / union(6) = 0.167
-Vehicle 0: intersection(1) / union(6) = 0.167
-Top recommended vehicle IDs: 15, 16, 17, 0
-
-========== Also Booked This [2025-06-30 14:19:01] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123, bishal123
-Vehicle 15: intersection(2) / union(6) = 0.333
-Vehicle 16: intersection(1) / union(6) = 0.167
-Vehicle 17: intersection(1) / union(6) = 0.167
-Vehicle 0: intersection(1) / union(6) = 0.167
-Top recommended vehicle IDs: 15, 16, 17, 0
-
-========== Also Booked This [2025-06-30 14:21:48] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123, bishal123
-Vehicle 15: intersection(2) / union(6) = 0.333
-Vehicle 16: intersection(1) / union(6) = 0.167
-Vehicle 17: intersection(1) / union(6) = 0.167
-Vehicle 0: intersection(1) / union(6) = 0.167
-Top recommended vehicle IDs: 15, 16, 17, 0
-
-========== Also Booked This [2025-06-30 14:24:55] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123, bishal123
-Vehicle 15: intersection(2) / union(6) = 0.333
-Vehicle 16: intersection(1) / union(6) = 0.167
-Vehicle 17: intersection(1) / union(6) = 0.167
-Vehicle 0: intersection(1) / union(6) = 0.167
-Top recommended vehicle IDs: 15, 16, 17, 0
-
-========== Also Booked This [2025-06-30 14:25:10] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123, bishal123
-Vehicle 15: intersection(2) / union(6) = 0.333
-Vehicle 16: intersection(1) / union(6) = 0.167
-Vehicle 17: intersection(1) / union(6) = 0.167
-Vehicle 0: intersection(1) / union(6) = 0.167
-Top recommended vehicle IDs: 15, 16, 17, 0
-
-========== Also Booked This [2025-06-30 14:25:15] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123, bishal123
-Vehicle 15: intersection(2) / union(6) = 0.333
-Vehicle 16: intersection(1) / union(6) = 0.167
-Vehicle 17: intersection(1) / union(6) = 0.167
-Vehicle 0: intersection(1) / union(6) = 0.167
-Top recommended vehicle IDs: 15, 16, 17, 0
-
-========== Also Booked This [2025-06-30 14:46:58] ==========
-Current vehicle users: arju123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 14:48:53] ==========
-Current vehicle users: arju123, bishal123
-Vehicle 14: intersection(2) / union(2) = 1
-Vehicle 0: intersection(1) / union(2) = 0.5
-Top recommended vehicle IDs: 14, 0
-
-========== Also Booked This [2025-06-30 14:50:15] ==========
-Current vehicle users: arju123, bishal123
-Vehicle 14: intersection(2) / union(2) = 1
-Vehicle 0: intersection(1) / union(2) = 0.5
-Top recommended vehicle IDs: 14, 0
-
-========== Also Booked This [2025-06-30 14:50:56] ==========
-Current vehicle users: arju123, bishal123
-Vehicle 14: intersection(2) / union(2) = 1
-Vehicle 0: intersection(1) / union(2) = 0.5
-Top recommended vehicle IDs: 14, 0
-
-========== Also Booked This [2025-06-30 15:13:57] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
-Vehicle 15: intersection(2) / union(5) = 0.4
-Vehicle 16: intersection(1) / union(5) = 0.2
-Vehicle 17: intersection(1) / union(5) = 0.2
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 15:14:37] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
-Vehicle 15: intersection(2) / union(5) = 0.4
-Vehicle 16: intersection(1) / union(5) = 0.2
-Vehicle 17: intersection(1) / union(5) = 0.2
-Top recommended vehicle IDs: 15, 16, 17
-
-[30-Jun-2025 15:15:36 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 15:15:36 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 15:15:36 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 15:15:36 Europe/Berlin] 📨 POST Received: booking_id = 99, bstatus = approved
-[30-Jun-2025 15:15:36 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 15:15:36 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 15:15:36 Europe/Berlin] 📬 Notification sent to bipana123
-========== Also Booked This [2025-06-30 15:15:40] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
-Vehicle 15: intersection(2) / union(5) = 0.4
-Vehicle 16: intersection(1) / union(5) = 0.2
-Vehicle 17: intersection(1) / union(5) = 0.2
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 15:16:02] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
-Vehicle 15: intersection(2) / union(5) = 0.4
-Vehicle 16: intersection(1) / union(5) = 0.2
-Vehicle 17: intersection(1) / union(5) = 0.2
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 15:16:40] ==========
-Current vehicle users: bipana123, arju123, ganesh123, sana123, sneha123
-Vehicle 15: intersection(2) / union(5) = 0.4
-Vehicle 16: intersection(1) / union(5) = 0.2
-Vehicle 17: intersection(1) / union(5) = 0.2
-Top recommended vehicle IDs: 15, 16, 17
-
-[30-Jun-2025 15:17:43 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 15:17:43 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 15:17:43 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 15:17:43 Europe/Berlin] 📨 POST Received: booking_id = 99, bstatus = completed
-[30-Jun-2025 15:17:43 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'completed'
-[30-Jun-2025 15:17:43 Europe/Berlin] ✅ Booking status updated to completed
-[30-Jun-2025 15:17:43 Europe/Berlin] 📬 Notification sent to bipana123
-========== Also Booked This [2025-06-30 15:28:53] ==========
-Current vehicle users: bipana123, arju123, ganesh123
-Vehicle 15: intersection(1) / union(3) = 0.333
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 17: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 15:33:25] ==========
-Current vehicle users: bipana123, arju123, ganesh123
-Vehicle 15: intersection(1) / union(3) = 0.333
-Vehicle 16: intersection(1) / union(3) = 0.333
-Vehicle 17: intersection(1) / union(3) = 0.333
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 15:33:57] ==========
-Current vehicle users: bipana123, arju123, ganesh123, bishal123
-Vehicle 15: intersection(1) / union(4) = 0.25
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 15:34:06] ==========
-Current vehicle users: bipana123, arju123, ganesh123, bishal123
-Vehicle 15: intersection(1) / union(4) = 0.25
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17
-
-========== Also Booked This [2025-06-30 15:34:08] ==========
-Current vehicle users: bipana123, sana123
-Vehicle 14: intersection(1) / union(2) = 0.5
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 15:34:50] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-[30-Jun-2025 15:35:13 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 15:35:13 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 15:35:13 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 15:35:13 Europe/Berlin] 📨 POST Received: booking_id = 101, bstatus = approved
-[30-Jun-2025 15:35:13 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 15:35:13 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 15:35:13 Europe/Berlin] 📬 Notification sent to bishal123
-[30-Jun-2025 15:35:18 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 15:35:18 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 15:35:18 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 15:35:18 Europe/Berlin] 📨 POST Received: booking_id = 100, bstatus = approved
-[30-Jun-2025 15:35:18 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 15:35:18 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 15:35:18 Europe/Berlin] 📬 Notification sent to bishal123
-[30-Jun-2025 15:46:48 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 15:46:48 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 15:46:48 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 15:46:48 Europe/Berlin] 📨 POST Received: booking_id = 58, bstatus = approved
-[30-Jun-2025 15:46:48 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 15:46:48 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 15:46:48 Europe/Berlin] 📬 Notification sent to ganesh123
-[30-Jun-2025 15:46:55 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 15:46:55 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 15:46:55 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 15:46:55 Europe/Berlin] 📨 POST Received: booking_id = 54, bstatus = approved
-[30-Jun-2025 15:46:55 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 15:46:55 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 15:46:55 Europe/Berlin] 📬 Notification sent to bipana123
-[30-Jun-2025 15:47:00 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 15:47:00 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 15:47:00 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 15:47:00 Europe/Berlin] 📨 POST Received: booking_id = 56, bstatus = approved
-[30-Jun-2025 15:47:00 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 15:47:00 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 15:47:00 Europe/Berlin] 📬 Notification sent to arju123
-[30-Jun-2025 15:47:03 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 15:47:03 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 15:47:03 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 15:47:03 Europe/Berlin] 📨 POST Received: booking_id = 57, bstatus = approved
-[30-Jun-2025 15:47:03 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 15:47:03 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 15:47:03 Europe/Berlin] 📬 Notification sent to arju123
-[30-Jun-2025 15:47:09 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 15:47:09 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 15:47:09 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 15:47:09 Europe/Berlin] 📨 POST Received: booking_id = 60, bstatus = approved
-[30-Jun-2025 15:47:09 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 15:47:09 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 15:47:09 Europe/Berlin] 📬 Notification sent to sana123
-========== Also Booked This [2025-06-30 15:47:19] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 15:50:20] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-[30-Jun-2025 15:50:28 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 15:50:28 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 15:50:28 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 15:50:28 Europe/Berlin] 📨 POST Received: booking_id = 102, bstatus = approved
-[30-Jun-2025 15:50:28 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 15:50:28 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 15:50:28 Europe/Berlin] 📬 Notification sent to bishal123
-========== Also Booked This [2025-06-30 15:52:38] ==========
-Current vehicle users: arju123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 15:53:14] ==========
-Current vehicle users: arju123, rashmita123
-Vehicle 14: intersection(1) / union(2) = 0.5
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 15:55:19] ==========
-Current vehicle users: arju123, rashmita123
-Vehicle 14: intersection(1) / union(2) = 0.5
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 15:56:39] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:14:51] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:15:13] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:15:25] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:16:10] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:17:02] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:17:04] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:17:04] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:17:15] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:18:16] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:18:34] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:18:35] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:18:47] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:18:57] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:20:19] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:20:37] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:20:53] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:21:03] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:21:19] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:21:27] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:22:43] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:25:43] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:26:36] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16
-
-========== Also Booked This [2025-06-30 16:28:58] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:29:47] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:29:54] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:30:23] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:31:40] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:31:50] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:31:56] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:32:10] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:32:40] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:32:45] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:32:53] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:33:15] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:33:24] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:33:40] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:33:50] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:34:21] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:34:46] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:35:12] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:35:27] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:35:29] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:35:29] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:35:29] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:35:32] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:36:03] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:36:40] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:36:45] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:36:51] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:36:56] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:37:01] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:37:21] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:37:35] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:38:02] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:38:14] ==========
-Current vehicle users: bishal123
-Vehicle 14: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 16:38:51] ==========
-Current vehicle users: bishal123, rashmita123
-Vehicle 14: intersection(1) / union(2) = 0.5
-Vehicle 16: intersection(1) / union(2) = 0.5
-Vehicle 29: intersection(1) / union(2) = 0.5
-Top recommended vehicle IDs: 14, 16, 29
-
-========== Also Booked This [2025-06-30 16:38:59] ==========
-Current vehicle users: bishal123, rashmita123
-Vehicle 14: intersection(1) / union(2) = 0.5
-Vehicle 16: intersection(1) / union(2) = 0.5
-Vehicle 29: intersection(1) / union(2) = 0.5
-Top recommended vehicle IDs: 14, 16, 29
-
-========== Also Booked This [2025-06-30 16:42:32] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Vehicle 30: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16, 30
-
-========== Also Booked This [2025-06-30 16:42:48] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Vehicle 30: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16, 30
-
-========== Also Booked This [2025-06-30 17:50:54] ==========
-Current vehicle users: bipana123, arju123, ganesh123, bishal123
-Vehicle 15: intersection(1) / union(4) = 0.25
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Vehicle 30: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17, 30
-
-========== Also Booked This [2025-06-30 17:51:01] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Vehicle 30: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16, 30
-
-========== Also Booked This [2025-06-30 17:52:31] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Vehicle 30: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16, 30
-
-========== Also Booked This [2025-06-30 17:52:46] ==========
-Current vehicle users: rashmita123
-Vehicle 16: intersection(1) / union(1) = 1
-Vehicle 30: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 16, 30
-
-========== Also Booked This [2025-06-30 17:55:47] ==========
-Current vehicle users: ganesh123
-Vehicle 14: intersection(1) / union(1) = 1
-Vehicle 17: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14, 17
-
-========== Also Booked This [2025-06-30 17:56:05] ==========
-Current vehicle users: ganesh123
-Vehicle 14: intersection(1) / union(1) = 1
-Vehicle 17: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14, 17
-
-[30-Jun-2025 17:56:51 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 17:56:51 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 17:56:51 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 17:56:51 Europe/Berlin] 📨 POST Received: booking_id = 107, bstatus = denied
-[30-Jun-2025 17:56:51 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'denied'
-[30-Jun-2025 17:56:51 Europe/Berlin] ✅ Booking status updated to denied
-[30-Jun-2025 17:56:51 Europe/Berlin] 📬 Notification sent to rashmita123
-[30-Jun-2025 17:56:57 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 17:56:57 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 17:56:57 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 17:56:57 Europe/Berlin] 📨 POST Received: booking_id = 108, bstatus = approved
-[30-Jun-2025 17:56:57 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 17:56:57 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 17:56:57 Europe/Berlin] 📬 Notification sent to ganesh123
-[30-Jun-2025 17:57:04 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 17:57:04 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 17:57:04 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 17:57:04 Europe/Berlin] 📨 POST Received: booking_id = 106, bstatus = approved
-[30-Jun-2025 17:57:04 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 17:57:04 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 17:57:04 Europe/Berlin] 📬 Notification sent to rashmita123
-[30-Jun-2025 17:57:10 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 17:57:10 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 17:57:10 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 17:57:10 Europe/Berlin] 📨 POST Received: booking_id = 105, bstatus = approved
-[30-Jun-2025 17:57:10 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 17:57:10 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 17:57:10 Europe/Berlin] 📬 Notification sent to rashmita123
-[30-Jun-2025 17:57:21 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 17:57:21 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 17:57:21 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 17:57:21 Europe/Berlin] 📨 POST Received: booking_id = 103, bstatus = approved
-[30-Jun-2025 17:57:21 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 17:57:21 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 17:57:21 Europe/Berlin] 📬 Notification sent to rashmita123
-========== Also Booked This [2025-06-30 18:09:08] ==========
-Current vehicle users: ganesh123
-Vehicle 14: intersection(1) / union(1) = 1
-Vehicle 17: intersection(1) / union(1) = 1
-Vehicle 21: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14, 17, 21
-
-========== Also Booked This [2025-06-30 18:09:17] ==========
-Current vehicle users: ganesh123
-Vehicle 14: intersection(1) / union(1) = 1
-Vehicle 17: intersection(1) / union(1) = 1
-Vehicle 21: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14, 17, 21
-
-========== Also Booked This [2025-06-30 18:09:37] ==========
-Current vehicle users: bipana123, arju123, ganesh123, bishal123
-Vehicle 15: intersection(1) / union(4) = 0.25
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Vehicle 30: intersection(1) / union(4) = 0.25
-Vehicle 21: intersection(1) / union(4) = 0.25
-Vehicle 24: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17, 30
-
-[30-Jun-2025 18:10:00 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 18:10:00 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 18:10:00 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 18:10:00 Europe/Berlin] 📨 POST Received: booking_id = 109, bstatus = approved
-[30-Jun-2025 18:10:00 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 18:10:00 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 18:10:00 Europe/Berlin] 📬 Notification sent to ganesh123
-[30-Jun-2025 18:16:58 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 18:16:58 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 18:16:58 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 18:16:58 Europe/Berlin] 📨 POST Received: booking_id = 109, bstatus = completed
-[30-Jun-2025 18:16:58 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'completed'
-[30-Jun-2025 18:16:58 Europe/Berlin] ✅ Booking status updated to completed
-[30-Jun-2025 18:16:58 Europe/Berlin] 📬 Notification sent to ganesh123
-[30-Jun-2025 18:17:31 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 18:17:31 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 18:17:31 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 18:17:31 Europe/Berlin] 📨 POST Received: booking_id = 109, bstatus = denied
-[30-Jun-2025 18:17:31 Europe/Berlin] 🔄 Attempting to change status from 'completed' to 'denied'
-[30-Jun-2025 18:17:31 Europe/Berlin] 🚫 Invalid transition: completed ➝ denied
-[30-Jun-2025 18:17:38 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 18:17:38 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 18:17:38 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 18:17:38 Europe/Berlin] 📨 POST Received: booking_id = 109, bstatus = completed
-[30-Jun-2025 18:17:38 Europe/Berlin] 🔄 Attempting to change status from 'completed' to 'completed'
-[30-Jun-2025 18:17:38 Europe/Berlin] 🚫 Invalid transition: completed ➝ completed
-[30-Jun-2025 18:17:51 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 18:17:51 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 18:17:51 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 18:17:51 Europe/Berlin] 📨 POST Received: booking_id = 108, bstatus = completed
-[30-Jun-2025 18:17:51 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'completed'
-[30-Jun-2025 18:17:51 Europe/Berlin] ✅ Booking status updated to completed
-[30-Jun-2025 18:17:51 Europe/Berlin] 📬 Notification sent to ganesh123
-========== Also Booked This [2025-06-30 18:44:23] ==========
-Current vehicle users: bipana123, arju123, ganesh123, bishal123
-Vehicle 15: intersection(1) / union(4) = 0.25
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Vehicle 30: intersection(1) / union(4) = 0.25
-Vehicle 21: intersection(1) / union(4) = 0.25
-Vehicle 24: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17, 30
-
-========== Also Booked This [2025-06-30 18:50:47] ==========
-Current vehicle users: bipana123, arju123, ganesh123, bishal123
-Vehicle 15: intersection(1) / union(4) = 0.25
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Vehicle 30: intersection(1) / union(4) = 0.25
-Vehicle 21: intersection(1) / union(4) = 0.25
-Vehicle 24: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17, 30
-
-========== Also Booked This [2025-06-30 18:51:19] ==========
-Current vehicle users: bipana123, arju123, ganesh123, bishal123
-Vehicle 15: intersection(1) / union(4) = 0.25
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Vehicle 30: intersection(1) / union(4) = 0.25
-Vehicle 21: intersection(1) / union(4) = 0.25
-Vehicle 24: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17, 30
-
-========== Also Booked This [2025-06-30 18:52:53] ==========
-Current vehicle users: bipana123, sana123
-Vehicle 14: intersection(1) / union(2) = 0.5
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 18:53:00] ==========
-Current vehicle users: bipana123, sana123
-Vehicle 14: intersection(1) / union(2) = 0.5
-Top recommended vehicle IDs: 14
-
-========== Also Booked This [2025-06-30 19:05:14] ==========
-Current vehicle users: bipana123, arju123, ganesh123, bishal123
-Vehicle 15: intersection(1) / union(4) = 0.25
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Vehicle 30: intersection(1) / union(4) = 0.25
-Vehicle 21: intersection(1) / union(4) = 0.25
-Vehicle 24: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17, 30
-
-========== Also Booked This [2025-06-30 19:05:45] ==========
-Current vehicle users: bishal123, rashmita123
-Vehicle 14: intersection(1) / union(2) = 0.5
-Vehicle 16: intersection(1) / union(2) = 0.5
-Vehicle 29: intersection(1) / union(2) = 0.5
-Top recommended vehicle IDs: 14, 16, 29
-
-[30-Jun-2025 19:08:07 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 19:08:07 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 19:08:07 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 19:08:07 Europe/Berlin] 📨 POST Received: booking_id = 109, bstatus = approved
-[30-Jun-2025 19:08:07 Europe/Berlin] 🔄 Attempting to change status from 'completed' to 'approved'
-[30-Jun-2025 19:08:07 Europe/Berlin] 🚫 Invalid transition: completed ➝ approved
-========== Also Booked This [2025-06-30 19:08:59] ==========
-Current vehicle users: ujjwal123
-Vehicle 27: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 27
-
-========== Also Booked This [2025-06-30 19:09:47] ==========
-Current vehicle users: bipana123, arju123, ganesh123, bishal123
-Vehicle 15: intersection(1) / union(4) = 0.25
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Vehicle 30: intersection(1) / union(4) = 0.25
-Vehicle 21: intersection(1) / union(4) = 0.25
-Vehicle 24: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17, 30
-
-========== Also Booked This [2025-06-30 19:09:54] ==========
-Current vehicle users: bishal123, rashmita123
-Vehicle 14: intersection(1) / union(2) = 0.5
-Vehicle 16: intersection(1) / union(2) = 0.5
-Vehicle 29: intersection(1) / union(2) = 0.5
-Top recommended vehicle IDs: 14, 16, 29
-
-========== Also Booked This [2025-06-30 19:10:06] ==========
-Current vehicle users: ujjwal123
-Vehicle 27: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 27
-
-========== Also Booked This [2025-06-30 19:10:57] ==========
-Current vehicle users: ujjwal123
-Vehicle 27: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 27
-
-[30-Jun-2025 19:11:23 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 19:11:23 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 19:11:23 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 19:11:23 Europe/Berlin] 📨 POST Received: booking_id = 110, bstatus = approved
-[30-Jun-2025 19:11:23 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 19:11:23 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 19:11:23 Europe/Berlin] 📬 Notification sent to ujjwal123
-[30-Jun-2025 19:11:28 Europe/Berlin] ✅ update_booking_status.php started
-[30-Jun-2025 19:11:28 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
-[30-Jun-2025 19:11:28 Europe/Berlin] ✅ Notification file loaded
-[30-Jun-2025 19:11:28 Europe/Berlin] 📨 POST Received: booking_id = 111, bstatus = approved
-[30-Jun-2025 19:11:28 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
-[30-Jun-2025 19:11:28 Europe/Berlin] ✅ Booking status updated to approved
-[30-Jun-2025 19:11:28 Europe/Berlin] 📬 Notification sent to ujjwal123
-========== Also Booked This [2025-06-30 19:11:36] ==========
-Current vehicle users: ujjwal123
-Vehicle 27: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 27
-
-========== Also Booked This [2025-06-30 19:11:42] ==========
-Current vehicle users: ujjwal123
-Vehicle 27: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 27
-
-========== Also Booked This [2025-06-30 19:12:11] ==========
-Current vehicle users: ujjwal123, anusha123
-Vehicle 27: intersection(1) / union(2) = 0.5
-Top recommended vehicle IDs: 27
-
-========== Also Booked This [2025-06-30 19:12:58] ==========
-Current vehicle users: anusha123
-Vehicle 25: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 25
-
-========== Also Booked This [2025-06-30 19:14:41] ==========
-Current vehicle users: anusha123
-Vehicle 25: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 25
-
-========== Also Booked This [2025-06-30 19:15:09] ==========
-Current vehicle users: bipana123, arju123, ganesh123, bishal123
-Vehicle 15: intersection(1) / union(4) = 0.25
-Vehicle 16: intersection(1) / union(4) = 0.25
-Vehicle 17: intersection(1) / union(4) = 0.25
-Vehicle 30: intersection(1) / union(4) = 0.25
-Vehicle 21: intersection(1) / union(4) = 0.25
-Vehicle 24: intersection(1) / union(4) = 0.25
-Top recommended vehicle IDs: 15, 16, 17, 30
-
-========== Also Booked This [2025-06-30 19:48:04] ==========
-Current vehicle users: anusha123
-Vehicle 25: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 25
-
-========== Also Booked This [2025-06-30 19:49:00] ==========
-Current vehicle users: anusha123
-Vehicle 25: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 25
-
-========== Also Booked This [2025-06-30 19:49:32] ==========
-Current vehicle users: anusha123
-Vehicle 25: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 25
-
-========== Also Booked This [2025-06-30 19:49:34] ==========
-Current vehicle users: anusha123
-Vehicle 25: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 25
-
-========== Also Booked This [2025-06-30 19:52:37] ==========
-Current vehicle users: ganesh123
-Vehicle 14: intersection(1) / union(1) = 1
-Vehicle 21: intersection(1) / union(1) = 1
-Vehicle 24: intersection(1) / union(1) = 1
-Top recommended vehicle IDs: 14, 21, 24
+[2025-07-06 04:19:50] Recommended vehicles for user 'rashmita123' (count: 4): 30, 16, 29, 14
+[2025-07-06 04:19:50] Booking Summary:
+Vehicle ID 14 booked by: arju123, arju123, bipana123, bishal123, ganesh123
+Vehicle ID 15 booked by: bipana123, sana123
+Vehicle ID 16 booked by: arju123, rashmita123
+Vehicle ID 17 booked by: ganesh123
+Vehicle ID 18 booked by: bipana123, bipana123, bipana123
+Vehicle ID 21 booked by: ganesh123
+Vehicle ID 24 booked by: ganesh123
+Vehicle ID 25 booked by: anusha123, bipana123, ujjwal123
+Vehicle ID 26 booked by: anusha123
+Vehicle ID 27 booked by: ujjwal123
+Vehicle ID 29 booked by: rashmita123, rashmita123, rashmita123
+Vehicle ID 30 booked by: bishal123, bishal123, rashmita123
+
+[2025-07-06 05:12:48] Recommended vehicles for user 'arju123' (count: 10): 14, 16, 30, 29, 18, 15, 25, 17, 21, 24
+[2025-07-06 05:12:48] Booking Summary:
+Vehicle ID 14 booked by: arju123, arju123, bipana123, bishal123, ganesh123
+Vehicle ID 15 booked by: bipana123, sana123
+Vehicle ID 16 booked by: arju123, rashmita123
+Vehicle ID 17 booked by: ganesh123
+Vehicle ID 18 booked by: bipana123, bipana123, bipana123
+Vehicle ID 21 booked by: ganesh123
+Vehicle ID 24 booked by: ganesh123
+Vehicle ID 25 booked by: anusha123, bipana123, ujjwal123
+Vehicle ID 26 booked by: anusha123
+Vehicle ID 27 booked by: ujjwal123
+Vehicle ID 29 booked by: rashmita123, rashmita123, rashmita123
+Vehicle ID 30 booked by: bishal123, bishal123, rashmita123
+
+[06-Jul-2025 05:14:04 Europe/Berlin] ✅ update_booking_status.php started
+[06-Jul-2025 05:14:04 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[06-Jul-2025 05:14:04 Europe/Berlin] ✅ Notification file loaded
+[06-Jul-2025 05:14:04 Europe/Berlin] 📨 POST Received: booking_id = 119, bstatus = approved
+[06-Jul-2025 05:14:04 Europe/Berlin] 🔄 Attempting to change status from 'pending' to 'approved'
+[06-Jul-2025 05:14:04 Europe/Berlin] ✅ Booking status updated to approved
+[06-Jul-2025 05:14:04 Europe/Berlin] 📬 Notification sent to arju123
+[2025-07-06 05:15:18] Recommended vehicles for user 'rashmita123' (count: 5): 30, 16, 29, 14, 28
+[2025-07-06 05:15:18] Booking Summary:
+Vehicle ID 14 booked by: arju123, arju123, bipana123, bishal123, ganesh123
+Vehicle ID 15 booked by: bipana123, sana123
+Vehicle ID 16 booked by: arju123, rashmita123
+Vehicle ID 17 booked by: ganesh123
+Vehicle ID 18 booked by: bipana123, bipana123, bipana123
+Vehicle ID 21 booked by: ganesh123
+Vehicle ID 24 booked by: ganesh123
+Vehicle ID 25 booked by: anusha123, bipana123, ujjwal123
+Vehicle ID 26 booked by: anusha123
+Vehicle ID 27 booked by: ujjwal123
+Vehicle ID 28 booked by: arju123
+Vehicle ID 29 booked by: rashmita123, rashmita123, rashmita123
+Vehicle ID 30 booked by: bishal123, bishal123, rashmita123
+
+[2025-07-06 05:15:50] Recommended vehicles for user 'rashmita123' (count: 5): 30, 16, 29, 14, 28
+[2025-07-06 05:15:50] Booking Summary:
+Vehicle ID 14 booked by: arju123, arju123, bipana123, bishal123, ganesh123
+Vehicle ID 15 booked by: bipana123, sana123
+Vehicle ID 16 booked by: arju123, rashmita123
+Vehicle ID 17 booked by: ganesh123
+Vehicle ID 18 booked by: bipana123, bipana123, bipana123
+Vehicle ID 21 booked by: ganesh123
+Vehicle ID 24 booked by: ganesh123
+Vehicle ID 25 booked by: anusha123, bipana123, ujjwal123
+Vehicle ID 26 booked by: anusha123
+Vehicle ID 27 booked by: ujjwal123
+Vehicle ID 28 booked by: arju123
+Vehicle ID 29 booked by: rashmita123, rashmita123, rashmita123
+Vehicle ID 30 booked by: bishal123, bishal123, rashmita123
+
+[2025-07-06 05:16:11] Recommended vehicles for user 'rashmita123' (count: 5): 30, 16, 29, 14, 28
+[2025-07-06 05:16:11] Booking Summary:
+Vehicle ID 14 booked by: arju123, arju123, bipana123, bishal123, ganesh123
+Vehicle ID 15 booked by: bipana123, sana123
+Vehicle ID 16 booked by: arju123, rashmita123
+Vehicle ID 17 booked by: ganesh123
+Vehicle ID 18 booked by: bipana123, bipana123, bipana123
+Vehicle ID 21 booked by: ganesh123
+Vehicle ID 24 booked by: ganesh123
+Vehicle ID 25 booked by: anusha123, bipana123, ujjwal123
+Vehicle ID 26 booked by: anusha123
+Vehicle ID 27 booked by: ujjwal123
+Vehicle ID 28 booked by: arju123
+Vehicle ID 29 booked by: rashmita123, rashmita123, rashmita123
+Vehicle ID 30 booked by: bishal123, bishal123, rashmita123
+
+[06-Jul-2025 05:16:38 Europe/Berlin] ✅ update_booking_status.php started
+[06-Jul-2025 05:16:38 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[06-Jul-2025 05:16:38 Europe/Berlin] ✅ Notification file loaded
+[06-Jul-2025 05:16:38 Europe/Berlin] 📨 POST Received: booking_id = 119, bstatus = completed
+[06-Jul-2025 05:16:38 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'completed'
+[06-Jul-2025 05:16:38 Europe/Berlin] ✅ Booking status updated to completed
+[06-Jul-2025 05:16:38 Europe/Berlin] 📬 Notification sent to arju123
+[2025-07-06 05:17:42] Recommended vehicles for user 'arju123' (count: 11): 14, 16, 28, 30, 29, 18, 15, 25, 17, 21, 24
+[2025-07-06 05:17:42] Booking Summary:
+Vehicle ID 14 booked by: arju123, arju123, bipana123, bishal123, ganesh123
+Vehicle ID 15 booked by: bipana123, sana123
+Vehicle ID 16 booked by: arju123, rashmita123
+Vehicle ID 17 booked by: ganesh123
+Vehicle ID 18 booked by: bipana123, bipana123, bipana123
+Vehicle ID 21 booked by: ganesh123
+Vehicle ID 24 booked by: ganesh123
+Vehicle ID 25 booked by: anusha123, bipana123, ujjwal123
+Vehicle ID 26 booked by: anusha123
+Vehicle ID 27 booked by: ujjwal123
+Vehicle ID 28 booked by: arju123
+Vehicle ID 29 booked by: rashmita123, rashmita123, rashmita123
+Vehicle ID 30 booked by: bishal123, bishal123, rashmita123
+
+[2025-07-06 05:21:25] Recommended vehicles for user 'arju123' (count: 11): 14, 16, 28, 30, 29, 18, 15, 25, 17, 21, 24
+[2025-07-06 05:21:25] Booking Summary:
+Vehicle ID 14 booked by: arju123, arju123, bipana123, bishal123, ganesh123
+Vehicle ID 15 booked by: bipana123, sana123
+Vehicle ID 16 booked by: arju123, rashmita123
+Vehicle ID 17 booked by: ganesh123
+Vehicle ID 18 booked by: bipana123, bipana123, bipana123
+Vehicle ID 21 booked by: ganesh123
+Vehicle ID 24 booked by: ganesh123
+Vehicle ID 25 booked by: anusha123, bipana123, ujjwal123
+Vehicle ID 26 booked by: anusha123
+Vehicle ID 27 booked by: ujjwal123
+Vehicle ID 28 booked by: arju123
+Vehicle ID 29 booked by: rashmita123, rashmita123, rashmita123
+Vehicle ID 30 booked by: bishal123, bishal123, rashmita123
+
+[06-Jul-2025 05:41:37 Europe/Berlin] ✅ update_booking_status.php started
+[06-Jul-2025 05:41:37 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\project\User\Php\get_notifications.php on line 2
+[06-Jul-2025 05:41:37 Europe/Berlin] ✅ Notification file loaded
+[06-Jul-2025 05:41:37 Europe/Berlin] 📨 POST Received: booking_id = 57, bstatus = cancelled
+[06-Jul-2025 05:41:37 Europe/Berlin] 🔄 Attempting to change status from 'approved' to 'cancelled'
+[06-Jul-2025 05:41:37 Europe/Berlin] ✅ Booking status updated to cancelled
+[06-Jul-2025 05:41:37 Europe/Berlin] 📬 Notification sent to arju123
+[2025-07-06 05:48:35] Recommended vehicles for user 'arju123' (count: 11): 29, 14, 16, 28, 30, 18, 15, 25, 17, 21, 24
+[2025-07-06 05:48:35] Booking Summary:
+Vehicle ID 14 booked by: arju123, arju123, bipana123, bishal123, ganesh123
+Vehicle ID 15 booked by: bipana123, sana123
+Vehicle ID 16 booked by: arju123, rashmita123
+Vehicle ID 17 booked by: ganesh123
+Vehicle ID 18 booked by: bipana123, bipana123, bipana123
+Vehicle ID 21 booked by: ganesh123
+Vehicle ID 24 booked by: ganesh123
+Vehicle ID 25 booked by: anusha123, bipana123, ujjwal123
+Vehicle ID 26 booked by: anusha123
+Vehicle ID 27 booked by: ujjwal123
+Vehicle ID 28 booked by: arju123
+Vehicle ID 29 booked by: arju123, rashmita123, rashmita123, rashmita123
+Vehicle ID 30 booked by: bishal123, bishal123, rashmita123
+
+[2025-07-06 05:52:43] Recommended vehicles for user 'arju123' (count: 11): 29, 14, 16, 28, 30, 18, 15, 25, 17, 21, 24
+[2025-07-06 05:52:43] Booking Summary:
+Vehicle ID 14 booked by: arju123, arju123, arju123, bipana123, bishal123, ganesh123
+Vehicle ID 15 booked by: bipana123, sana123
+Vehicle ID 16 booked by: arju123, rashmita123
+Vehicle ID 17 booked by: ganesh123
+Vehicle ID 18 booked by: bipana123, bipana123, bipana123
+Vehicle ID 21 booked by: ganesh123
+Vehicle ID 24 booked by: ganesh123
+Vehicle ID 25 booked by: anusha123, bipana123, ujjwal123
+Vehicle ID 26 booked by: anusha123
+Vehicle ID 27 booked by: ujjwal123
+Vehicle ID 28 booked by: arju123
+Vehicle ID 29 booked by: arju123, rashmita123, rashmita123, rashmita123
+Vehicle ID 30 booked by: bishal123, bishal123, rashmita123
+
+[2025-07-06 05:55:37] Recommended vehicles for user 'arju123' (count: 11): 29, 14, 16, 28, 30, 18, 15, 25, 17, 21, 24
+[2025-07-06 05:55:37] Booking Summary:
+Vehicle ID 14 booked by: arju123, arju123, arju123, bipana123, bishal123, ganesh123
+Vehicle ID 15 booked by: bipana123, sana123
+Vehicle ID 16 booked by: arju123, rashmita123
+Vehicle ID 17 booked by: ganesh123
+Vehicle ID 18 booked by: bipana123, bipana123, bipana123
+Vehicle ID 21 booked by: ganesh123
+Vehicle ID 24 booked by: ganesh123
+Vehicle ID 25 booked by: anusha123, bipana123, ujjwal123
+Vehicle ID 26 booked by: anusha123
+Vehicle ID 27 booked by: ujjwal123
+Vehicle ID 28 booked by: arju123
+Vehicle ID 29 booked by: arju123, rashmita123, rashmita123, rashmita123
+Vehicle ID 30 booked by: bishal123, bishal123, rashmita123
 

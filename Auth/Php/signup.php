@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../User/Css/style.css">
 
 
@@ -28,7 +25,11 @@
             if (isset($_GET['error']) && $_GET['error'] == 'username_taken') {
                 echo "<p style='color:red; text-align:center;'>Username already exists. Please choose a different one.</p>";
             }
+            if (isset($_GET['error']) && $_GET['error'] == 'phone_taken') {
+                echo "<p style='color:red; text-align:center;'>Phone number already exists. Please use a different one.</p>";
+            }
             ?>
+
 
             <form action="../../Database/Insert_data.php" method="post" onsubmit="return check();">
                 <button type="button" class="black-btn"><a href="login.php">Back</a></button>
@@ -37,7 +38,8 @@
 
                 <div class="form">
                     <!-- for name -->
-                    <div style="display: flex; flex-direction: row;column-gap:10px; justify-content: space-between; width:100%">
+                    <div
+                        style="display: flex; flex-direction: row;column-gap:10px; justify-content: space-between; width:100%">
                         <div>
                             <label for="firstname">Firstname:</label>
                             <input type="text" id="firstname" name="firstname" required />

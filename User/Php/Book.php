@@ -198,11 +198,11 @@ if (isset($_SESSION['username']) && isset($_GET['vehicle_id'])) {
             }
             ?>
           </span>
-          <h2><?php echo htmlspecialchars($row['vehicle_model']); ?></h2>
+          <h4><?php echo htmlspecialchars($row['vehicle_model']); ?></h4>
           <div class="price-tag">Rs <?php echo htmlspecialchars($row['vehicle_price']); ?> / Day</div>
 
           <!-- HTML button -->
-          <div class="fevorite">
+          <div class="fevorite" style="margin-bottom: 8px;">
             <button class="blue-btn" id="add-to-favorite" style="<?php echo $is_favorite ? 'display:none;' : ''; ?>"
               data-vehicle-id="<?php echo htmlspecialchars($vehicle_id); ?>">
               <i class="fas fa-heart"></i> Add to Favorites
@@ -213,7 +213,7 @@ if (isset($_SESSION['username']) && isset($_GET['vehicle_id'])) {
               <i class="fas fa-heart"></i> Remove from Favorites
             </button>
           </div>
-          <hr style="margin: 15px 0; border-color: #444;" />
+          <hr>
 
         </div>
 
@@ -294,7 +294,7 @@ if (isset($_SESSION['username']) && isset($_GET['vehicle_id'])) {
     </div>
 
   </div>
-    <!-- Recommended Vehicles Section -->
+  <!-- Recommended Vehicles Section -->
   <div class="recommended-section">
 
 
@@ -305,64 +305,67 @@ if (isset($_SESSION['username']) && isset($_GET['vehicle_id'])) {
 
 
 
-  <hr style="margin: 30px 0; border: 0.5px solid #333;" />
+  <hr>
 
-  <h3 style="align-items: center; gap: 10px;  padding: 0px 40px;">Customer Reviews</h3>
+  <div class="review-comment">
+    <h4>Customer Reviews</h4>
 
-  <!-- Reviews Display -->
-  <div style="align-items: center; gap: 10px;  padding: 0px 40px;">
-    <?php if (empty($reviews)): ?>
-      <p style="color: #aaa;">No reviews yet.</p>
-    <?php else: ?>
-      <?php foreach ($reviews as $review): ?>
-        <div
-          style="background-color: white; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); padding: 15px; color: black;">
-          <strong><?php echo htmlspecialchars($review['username']); ?></strong>
-          <span style="color: #f5b301;">
-            <?php echo str_repeat("★", $review['rating']) . str_repeat("☆", 5 - $review['rating']); ?></span>
-          <p style="margin: 5px 0;"><?php echo nl2br(htmlspecialchars($review['feedback'])); ?></p>
-          <small style="color: #888;"><?php echo date("F j, Y, g:i a", strtotime($review['rated_at'])); ?></small>
-        </div>
-      <?php endforeach; ?>
-    <?php endif; ?>
+    <!-- Reviews Display -->
+    <div style="align-items: center; gap: 10px; ">
+      <?php if (empty($reviews)): ?>
+        <p style="color: #aaa;">No reviews yet.</p>
+      <?php else: ?>
+        <?php foreach ($reviews as $review): ?>
+          <div
+            style="background-color: white; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); padding: 15px; color: black;">
+            <strong><?php echo htmlspecialchars($review['username']); ?></strong>
+            <span style="color: #f5b301;">
+              <?php echo str_repeat("★", $review['rating']) . str_repeat("☆", 5 - $review['rating']); ?></span>
+            <p style="margin: 5px 0;"><?php echo nl2br(htmlspecialchars($review['feedback'])); ?></p>
+            <small style="color: #888;"><?php echo date("F j, Y, g:i a", strtotime($review['rated_at'])); ?></small>
+          </div>
+        <?php endforeach; ?>
+      <?php endif; ?>
+    </div>
   </div>
-  <hr style="margin: 40px 0; border: 0.5px solid #444;" />
+  <hr>
 
-  <div class="policy-section" style="padding: 10px 40px; background: #f9f9f9; border-radius: 10px;">
-    <h2 style="color: #333;">🚗 Rental Policies</h2>
+  <div class="policy-section">
+    <h4>🚗Rental Policies</h4>
+    
 
-    <h3 style="color: #555;">✅ Cancellation Policy</h3>
-    <p style="font-size: 16px;">
+    <h5>✅ Cancellation Policy</h5>
+    <p >
       <b>Instant Confirmation:</b> Cancellations are processed immediately. <b>Rs500</b> cancellation fee applies to all
       cancellations.
       Cancellations must be done via the <b>cancel button from booking history.</b>
     </p>
     <br>
 
-    <h3 style="color: #555;">📅 Booking Policy</h3>
-    <p style="font-size: 16px;">
+    <h5>📅 Booking Policy</h5>
+    <p >
       <b>Valid ID Required:</b> Renter must provide a valid government-issued ID at the time of pickup.
       Bookings are subject to <b>vehicle availability</b> and must follow the <b>minimum booking duration of 2
         hours</b>.
     </p>
     <br>
 
-    <h3 style="color: #555;">⛽ Fuel Policy</h3>
-    <p style="font-size: 16px;">
+    <h5>⛽ Fuel Policy</h5>
+    <p >
       <b>Same Level Return:</b> The vehicle must be returned with the same fuel level as at pickup. <b>Fuel charges</b>
       will apply if returned with less fuel.
     </p>
     <br>
 
-    <h3 style="color: #555;">⏰ Late Return Policy</h3>
-    <p style="font-size: 16px;">
+    <h5>⏰ Late Return Policy</h5>
+    <p >
       <b>Hourly Charges:</b> If the vehicle is returned late, hourly rates will be applied. In case of a delay beyond
       the return time, additional <b>fines</b> may apply.
     </p>
     <br>
 
-    <h3 style="color: #555;">🔧 Damage Policy</h3>
-    <p style="font-size: 16px;">
+    <h5>🔧 Damage Policy</h5>
+    <p >
       <b>Renter Responsibility:</b> Any damage caused to the vehicle during the rental period is the responsibility of
       the renter. <b>Repair costs</b> will be charged accordingly.
     </p>
@@ -370,7 +373,7 @@ if (isset($_SESSION['username']) && isset($_GET['vehicle_id'])) {
   </div>
 
 
- 
+
 
 
 

@@ -6,7 +6,7 @@
   <div class="vehicle-details">
     <div class="vehicle-header">
       <h3>
-        <a style="color: black;" href="Book.php?vehicle_id=<?php echo $row['vehicle_id']; ?>">
+        <a style="color: black; text-decoration: none;" href="Book.php?vehicle_id=<?php echo $row['vehicle_id']; ?>">
           <?php echo htmlspecialchars($row['vehicle_model']); ?>
         </a>
         <span class="badge"><?php echo htmlspecialchars($row['vehicle_type']); ?></span>

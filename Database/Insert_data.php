@@ -1,6 +1,4 @@
-
 <?php
-
 include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -11,30 +9,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $username = $_POST["username"];
     $password = $_POST["password"];
-    // $userPassword = password_hash($Password, PASSWORD_DEFAULT);
-    // Check if username already exists
-    $checkQuery = "SELECT * FROM user WHERE username = '$username'";
-    $result = mysqli_query($conn, $checkQuery);
 
-    if (mysqli_num_rows($result) > 0) {
+    // ✅ Hash the password securely
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    // Check if username already exists (use prepared statement for safety)
+    $checkQuery = "SELECT * FROM user WHERE username = ?";
+    $stmt = $conn->prepare($checkQuery);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $checkResult = $stmt->get_result();
+
+    if ($checkResult->num_rows > 0) {
         // Redirect back with error
         header("Location: ../../Auth/Php/signup.php?error=username_taken");
         exit();
     }
+
+    // ✅ Insert user with hashed password (also use prepared statement)
     $sql = "INSERT INTO user (firstname, middlename, lastname, number, email, username, password) 
-    VALUES ('$firstname', '$middlename', '$lastname', '$number', '$email', '$username', '$password')";
+            VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssssss", $firstname, $middlename, $lastname, $number, $email, $username, $hashedPassword);
 
-
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-
-        include __DIR__ . '../../Auth/Php/login.php';
-        echo '<script>alert("Signup Successful");</script>';
+    if ($stmt->execute()) {
+        echo '<script>alert("Signup Successful"); window.location.href="../../Auth/Php/login.php";</script>';
         exit();
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo "Error: " . $stmt->error;
     }
 }
 
-mysqli_close($conn);
+$conn->close();
 ?>

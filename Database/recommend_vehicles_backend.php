@@ -160,6 +160,11 @@ if (empty($recommendedVehicles)) {
     overflow: hidden;
     width: 100%;
   }
+  .rec-img{
+    width: 100%;
+    height: 180px !important; /* Fixed height for consistency */
+    object-fit: cover; /* Maintain aspect ratio */
+  }
 
   .carousel-track {
     display: flex;
@@ -186,13 +191,6 @@ if (empty($recommendedVehicles)) {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
-  h2 {
-    font-size: 0.9em;
-    font-weight: 600;
-    margin: 10px 0 5px 0;
-    color: #333;
-    min-height: 2.5em;
-  }
 
   p {
     margin: 5px 0;
@@ -235,9 +233,9 @@ if (empty($recommendedVehicles)) {
 
           <a href="Book.php?vehicle_id=<?php echo $vehicle['vehicle_id']; ?>" class="vehicle-card-wrapper">
             <div class="vehicle-card">
-              <img src="../../Admin/<?php echo htmlspecialchars($vehicle['vehicle_image']); ?>"
+              <img class="rec-img" src="../../Admin/<?php echo htmlspecialchars($vehicle['vehicle_image']); ?>"
                 style="width: 100%; height: auto;">
-              <h2><?php echo htmlspecialchars($vehicle['vehicle_model']); ?></h2>
+              <h3><?php echo htmlspecialchars($vehicle['vehicle_model']); ?></h3>
               <p>Brand: <?php echo $vehicle['brand']; ?></p>
               <p>Rs <?php echo intval($vehicle['vehicle_price']); ?>/day</p>
                             <p>❤️ <?php echo $favoriteCount; ?></p>

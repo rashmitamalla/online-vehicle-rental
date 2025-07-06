@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             // Send notification if function exists
             $msg = match ($newStatusLower) {
-                'approved' => "Your booking has been approved.Plaese select payment method.",
+                'approved' => "Your booking has been approved.",
                 'denied' => "Your booking  has been denied.",
                 'cancelled' => "Your booking was cancelled.",
                 'completed' => "Your booking  is completed. Please <a  href='rate_vehicle.php?booking_id=$bid'>rate vehicle</a>",

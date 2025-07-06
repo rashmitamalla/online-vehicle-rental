@@ -4,108 +4,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Enhanced Dashboard</title>
+  <title>Admin Dashboard</title>
 
   <!-- Icons & CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="../../Dashboard/Css/dashboard_home.css" />
   <link rel="stylesheet" href="../../Dashboard/Css/style.css" />
 
-  <!-- Inline dark-theme tweaks -->
-  <style>
-    .main-card {
-
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px;
-
-      border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
-    }
-
-    .cards,
-    .extra-activities {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 20px;
-    }
-
-    .card,
-    .chart-card,
-    .recent-activity,
-    .summary-card {
-
-      background: #2c2f48;
-      padding: 1.5rem;
-      border-radius: 15px;
-      flex: 1;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
-    }
-
-    .card i {
-      font-size: 30px;
-      margin-bottom: 10px;
-      color: #76ff03;
-    }
-
-    table {
-      width: 100%;
-      color: #fff;
-      color: black;
-    }
-
-    th,
-    td {
-      padding: 10px;
-      text-align: left;
-      border-bottom: 1px solid #444;
-      color: black;
-    }
-
-    .summary-section {
-      margin-top: 2rem;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    .card-header i {
-      font-size: 28px;
-      color: #76ff03;
-    }
-  </style>
+ 
 
   <?php
   include '../../Database/database.php';
 
   /* ─────────────  COUNTS  ───────────── */
   $vehicle_count = $conn->query("SELECT COUNT(*) total FROM vehicle")->fetch_assoc()['total'];
-  $user_count    = $conn->query("SELECT COUNT(*) total FROM user")->fetch_assoc()['total'];
-  $driver_count  = $conn->query("SELECT COUNT(*) total FROM driver")->fetch_assoc()['total'];
+  $user_count = $conn->query("SELECT COUNT(*) total FROM user")->fetch_assoc()['total'];
+  $driver_count = $conn->query("SELECT COUNT(*) total FROM driver")->fetch_assoc()['total'];
   $booking_count = $conn->query("SELECT COUNT(*) total FROM booking")->fetch_assoc()['total'];
 
   /* ─────────────  MONEY  ───────────── */
-  $total_income   = $conn->query("SELECT IFNULL(SUM(total_price),0) income FROM booking WHERE bstatus='completed'")
+  $total_income = $conn->query("SELECT IFNULL(SUM(total_price),0) income FROM booking WHERE bstatus='completed'")
     ->fetch_assoc()['income'];
   /* ─────────────  WEEKLY REVENUE (last 6 weeks)  ───────────── */
-  $weeklyData   = [];
+  $weeklyData = [];
   $weeklyLabels = [];
   for ($i = 5; $i >= 0; $i--) {
     $start = date('Y-m-d', strtotime("last sunday -$i week"));
-    $end   = date('Y-m-d', strtotime("next saturday -$i week"));
-    $row   = $conn->query("
+    $end = date('Y-m-d', strtotime("next saturday -$i week"));
+    $row = $conn->query("
           SELECT IFNULL(SUM(total_price),0) revenue
           FROM booking
           WHERE bstatus='completed' AND booking_date BETWEEN '$start' AND '$end'
       ")->fetch_assoc();
-    $weeklyData[]   = (float)$row['revenue'];
+    $weeklyData[] = (float) $row['revenue'];
     $weeklyLabels[] = date('M d', strtotime($start)) . ' - ' . date('M d', strtotime($end));
   }
 
@@ -132,6 +63,11 @@
       ORDER BY event_time DESC
       LIMIT 5
   ");
+
+  $sql = "SELECT COUNT(*) AS total_cancellations FROM booking WHERE bstatus = 'cancelled'";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $totalCancellations = $row['total_cancellations'];
   ?>
 </head>
 
@@ -146,7 +82,7 @@
       <div class="card">
         <div class="card-header">
           <i class="fas fa-car"></i>
-          <h3>Total Vehicles</h3>
+          <h4>Total Vehicles</h4>
         </div>
         <p><?= $vehicle_count ?></p>
       </div>
@@ -154,7 +90,7 @@
       <div class="card">
         <div class="card-header">
           <i class="fas fa-user"></i>
-          <h3>Total Users</h3>
+          <h4>Total Users</h4>
         </div>
         <p><?= $user_count ?></p>
       </div>
@@ -162,7 +98,7 @@
       <div class="card">
         <div class="card-header">
           <i class="fas fa-user-tie"></i>
-          <h3>Total Drivers</h3>
+          <h4>Total Drivers</h4>
         </div>
         <p><?= $driver_count ?></p>
       </div>
@@ -170,25 +106,38 @@
       <div class="card">
         <div class="card-header">
           <i class="fas fa-calendar-check"></i>
-          <h3>Total Bookings</h3>
+          <h4>Total Bookings</h4>
         </div>
         <p><?= $booking_count ?></p>
       </div>
 
       <div class="card">
         <div class="card-header">
+          
+          <i class="fas fa-ban"></i>
+          <h4>Total Cancellations</h4>
+              
+
+
+        </div>
+        <h3><?php echo $totalCancellations; ?></h3> 
+      </div>
+
+      <div class="card">
+        <div class="card-header">
           <i class="fas fa-chart-line"></i>
-          <h3>Weekly Revenue</h3>
+          <h4>Weekly Revenue</h4>
         </div>
         <p>Rs <?= number_format(array_sum($weeklyData)) ?></p>
       </div>
     </div>
 
 
+
     <!-- ====== MONEY SUMMARY ====== -->
     <div class="summary-section">
       <div class="summary-card">
-        <h3>Total Income</h3>
+        <h4>Total Income</h4>
         <p style="color:#76ff03;font-size:24px">Rs <?= number_format($total_income) ?></p>
       </div>
     </div>
@@ -196,12 +145,12 @@
     <!-- ====== CHART + RECENT ACTIVITY ====== -->
     <div class="extra-activities">
       <div class="chart-card">
-        <h3>Weekly Revenue</h3>
+        <h4>Weekly Revenue</h4>
         <canvas id="revenueChart"></canvas>
       </div>
 
       <div class="recent-activity">
-        <h3>Recent Activity</h3>
+        <h4>Recent Activity</h4>
         <table>
           <thead>
             <tr>

@@ -44,58 +44,78 @@ if ($row_rating = $result_rating->fetch_assoc()) {
 
 <head>
     <title>Rate Vehicle</title>
+  <link rel="stylesheet" href="../../user/Css/style.css" />
     <style>
-        /* Your styles here */
+        .rate-container{
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .vehicle-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            column-gap: 20px;
+        }
     </style>
 </head>
 
 <body>
+    <?php include '../Php/header.php'; ?>
 
-    <h2>Rate Your Booking </h2>
+    <div class="rate-container">
+        <h3>Rate Your Booking </h3>
 
-    <div class="vehicle-card">
-        <img src="../../uploads/<?= htmlspecialchars($row['vehicle_image']) ?>" alt="Vehicle" style="width:100px;height:100px;object-fit:cover;">
-        <div>
-            <h3><?= htmlspecialchars($row['vehicle_model']) ?> (<?= htmlspecialchars($row['vehicle_number']) ?>)</h3>
-            <p>Type: <?= htmlspecialchars($row['vehicle_type']) ?></p>
-            <p>Color: <?= htmlspecialchars($row['vehicle_color']) ?></p>
+        <div class="vehicle-card">
+            <img src="../../uploads/<?= htmlspecialchars($row['vehicle_image']) ?>" alt="Vehicle"
+                style="width:100px;height:100px;object-fit:cover;">
+            <div>
+                <h4><?= htmlspecialchars($row['vehicle_model']) ?> (<?= htmlspecialchars($row['vehicle_number']) ?>)
+                </h4>
+                <p>Type: <?= htmlspecialchars($row['vehicle_type']) ?></p>
+                <p>Color: <?= htmlspecialchars($row['vehicle_color']) ?></p>
+            </div>
         </div>
+
+        <?php if ($existing_rating): ?>
+            <p style="color: green; font-weight: bold;">
+                You have already rated this vehicle. You can update your rating below.
+            </p>
+        <?php endif; ?>
+
+        <form action="submit_rating.php" method="post">
+            <input type="hidden" name="booking_id" value="<?= htmlspecialchars($booking_id) ?>">
+            <input type="hidden" name="vehicle_id" value="<?= htmlspecialchars($vehicle_id) ?>">
+
+            <label for="rating">Your Rating:</label>
+            <select name="rating" required>
+                <option value="">--Select Rating--</option>
+                <?php
+                $ratings = [5 => '★★★★★ (Excellent)', 4 => '★★★★ (Good)', 3 => '★★★ (Average)', 2 => '★★ (Poor)', 1 => '★ (Very Poor)'];
+                foreach ($ratings as $val => $label) {
+                    $selected = ($existing_rating && $existing_rating['rating'] == $val) ? 'selected' : '';
+                    echo "<option value='$val' $selected>$label</option>";
+                }
+                ?>
+            </select><br><br>
+
+            <label for="feedback">Feedback:</label><br>
+            <textarea name="feedback" rows="4" cols="40"
+                placeholder="Write something (optional)..."><?= htmlspecialchars($existing_rating['feedback'] ?? '') ?></textarea><br><br>
+
+            <input type="submit" value="<?= $existing_rating ? 'Update Rating' : 'Submit Rating' ?>">
+        </form>
     </div>
-
-    <?php if ($existing_rating): ?>
-        <p style="color: green; font-weight: bold;">
-            You have already rated this vehicle. You can update your rating below.
-        </p>
-    <?php endif; ?>
-
-    <form action="submit_rating.php" method="post">
-        <input type="hidden" name="booking_id" value="<?= htmlspecialchars($booking_id) ?>">
-        <input type="hidden" name="vehicle_id" value="<?= htmlspecialchars($vehicle_id) ?>">
-
-        <label for="rating">Your Rating:</label>
-        <select name="rating" required>
-            <option value="">--Select Rating--</option>
-            <?php
-            $ratings = [5 => '★★★★★ (Excellent)', 4 => '★★★★ (Good)', 3 => '★★★ (Average)', 2 => '★★ (Poor)', 1 => '★ (Very Poor)'];
-            foreach ($ratings as $val => $label) {
-                $selected = ($existing_rating && $existing_rating['rating'] == $val) ? 'selected' : '';
-                echo "<option value='$val' $selected>$label</option>";
-            }
-            ?>
-        </select><br><br>
-
-        <label for="feedback">Feedback:</label><br>
-        <textarea name="feedback" rows="4" cols="40" placeholder="Write something (optional)..."><?= htmlspecialchars($existing_rating['feedback'] ?? '') ?></textarea><br><br>
-
-        <input type="submit" value="<?= $existing_rating ? 'Update Rating' : 'Submit Rating' ?>">
-    </form>
 
 </body>
 
 </html>
 
 <?php
-$stmt->close();
+
 $stmt_rating->close();
 $conn->close();
 ?>

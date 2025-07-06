@@ -131,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bind_param("ssssssssssssss", $fullname, $username, $email, $number, $vid, $pickup_date, $pickup_time, $return_date, $return_time, $pickup_location, $bstatus, $vehicle_price, $total_price, $vehicle_number);
 
     if ($stmt->execute()) {
-        $_SESSION['booking_success'] = "Booking successful!";
+        $_SESSION['booking_success'] = "Booking successful! Wait for approval from admin. If you have any issues, please contact us.";
         header("Location: ../../User/Php/Book.php?vehicle_id=" . urlencode($vid));
         exit;
     } else {

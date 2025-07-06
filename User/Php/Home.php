@@ -51,14 +51,6 @@ include '../../Database/database.php';
     <?php include 'also_booked.php'; ?>
   </div>
 
-
- 
-
-
-
-
-
-
   <div class="container">
     <h2>Discover the Nepal's largest car rental marketplace</h2>
 
@@ -73,7 +65,7 @@ include '../../Database/database.php';
       <div class="feature">
         <div class="feature-icon">🎧</div>
         <h3>24/7 customer support</h3>
-        <p>Rest easy knowing that everyone in the Sajilo rental community is screened, and 24/7 customer support and
+        <p>Rest easy knowing that everyone in the RB Rental community is screened, and 24/7 customer support and
           roadside assistance are just a click away.</p>
       </div>
 
@@ -81,7 +73,7 @@ include '../../Database/database.php';
         <div class="feature-icon">🛡️</div>
         <h3>Go for trip confidently</h3>
         <p>Go for trip confidently with your choice of protection plans — all plans include varying levels of liability
-          insurance provided through Sajilo Rental's Insurance Agency.</p>
+          insurance provided through RB Rental's Insurance Agency.</p>
       </div>
     </div>
 

@@ -43,10 +43,7 @@ $result = $conn->query($sql);
   align-items: center;
 }
 
-.car-title h3 {
-  margin: 0;
-  font-size: 18px;
-}
+
 
 .likes {
   font-size: 14px;
@@ -93,9 +90,9 @@ $result = $conn->query($sql);
 }
 </style>
 
-<h1 style="padding: 0px 60px;">Popular Vehicles Based on Rating</h1>
+<h2 style="padding: 20px 100px;">Popular Vehicles Based on Rating</h2>
 
-<div class="popular-vehicles" style="display: flex; gap: 20px; flex-wrap: nowrap; overflow-x: auto; padding: 0px 60px;">
+<div class="popular-vehicles" style="display: flex; gap: 20px; flex-wrap: nowrap; overflow-x: auto; padding: 0px 100px;">
     <?php 
     function renderStarRating($rating) {
         $fullStars = floor($rating);
@@ -124,13 +121,16 @@ $result = $conn->query($sql);
             <div class="vehicle-card" style="border: 1px solid #ccc; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.3s;">
                 <img src="../../Admin/<?php echo htmlspecialchars($row['vehicle_image']); ?>" alt="Vehicle Image" class="vehicle-img" style="width: 100%; height: 180px; object-fit: cover;">
                 <div class="vehicle-info" style="padding: 12px 14px;">
-                    <h3 style="margin: 0 0 6px 0;"><?php echo htmlspecialchars($row['vehicle_model']); ?></h3>
+                    <h4 style="margin: 0 0 6px 0;"><?php echo htmlspecialchars($row['vehicle_model']); ?></h4>
                     
-                    <p class="price" style="margin-top: 8px; font-weight: bold;">Price: <strong>Rs <?php echo htmlspecialchars($row['vehicle_price']); ?></strong>/day</p>
+                    <p class="price" style="margin-top: 8px; ">Price: Rs <?php echo htmlspecialchars($row['vehicle_price']); ?>/day</p>
 
                     <p style="margin: 4px 0;">
                         Rating:
                         <?php renderStarRating(floatval($row['avg_rating'])); ?>
+                    </p>
+                    <p class="likes" style="margin: 4px 0; font-size: 14px; color: #666;">
+                        <?php echo htmlspecialchars($row['rating_count']); ?> people rated this
                     </p>
                 </div>
             </div>

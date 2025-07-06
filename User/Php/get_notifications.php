@@ -61,7 +61,7 @@ if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
 
     if ($result && $result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo "<div class='notification-item'>" . ($row['message']) . "</div>";
+    echo "<div class='notification-item'>" . strip_tags($row['message'], '<a>') . "</div>";
         }
     } else {
         echo "<div class='notification-item'>No notifications found.</div>";
